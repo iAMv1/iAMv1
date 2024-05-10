@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @iAMv1
 - 👀 I’m interested in cricket
-- 🌱 I’m currently learning java,python
+- 🌱 I’m currently learning c,pyhton
 - 💞️ I’m looking to collaborate on 
 - 📫 How to reach me ...
 
