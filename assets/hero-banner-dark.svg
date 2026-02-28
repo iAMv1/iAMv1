@@ -1,0 +1,76 @@
+<svg width="800" height="250" viewBox="0 0 800 250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&amp;family=Caveat:wght@700&amp;display=swap');
+      
+      .bg-gradient { fill: url(#main-grad); }
+      .glass-panel { fill: rgba(255, 255, 255, 0.03); stroke: rgba(255, 255, 255, 0.1); stroke-width: 1px; rx: 16px; backdrop-filter: blur(10px); }
+      
+      .title { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 56px; fill: #ffffff; letter-spacing: -1px; }
+      .gradient-text { fill: url(#text-grad); }
+      
+      .subtitle { font-family: 'Outfit', sans-serif; font-weight: 300; font-size: 18px; fill: #94a3b8; letter-spacing: 1px; }
+      .humor-text { font-family: 'Caveat', cursive; font-size: 24px; fill: #38bdf8; opacity: 0.9; transform: rotate(-2deg); }
+      
+      /* Subtle floating animations for background orbs */
+      @keyframes float1 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(15px, -20px); } }
+      @keyframes float2 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-20px, 15px); } }
+      
+      .orb1 { animation: float1 8s ease-in-out infinite; filter: blur(40px); opacity: 0.5; }
+      .orb2 { animation: float2 12s ease-in-out infinite; filter: blur(50px); opacity: 0.4; }
+    </style>
+    
+    <linearGradient id="main-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+    
+    <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="transparent" />
+    </radialGradient>
+    
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c084fc" />
+      <stop offset="100%" stop-color="transparent" />
+    </radialGradient>
+  </defs>
+
+  <!-- Deep Dark Background -->
+  <rect class="bg-gradient" width="800" height="250" />
+  
+  <!-- Glowing Orbs (Abstract aesthetic) -->
+  <circle cx="150" cy="50" r="100" fill="url(#glow1)" class="orb1" />
+  <circle cx="650" cy="200" r="120" fill="url(#glow2)" class="orb2" />
+  
+  <!-- Premium Glassmorphism Frame -->
+  <rect x="20" y="20" width="760" height="210" class="glass-panel" />
+  
+  <!-- Text Content -->
+  <g transform="translate(50, 90)">
+    <text x="0" y="0" class="title">VIBE <tspan class="gradient-text">ENGINEER</tspan></text>
+    <text x="0" y="40" class="subtitle">BUILDING 3D WEBSITES, AI MODELS, &amp; IMMERSIVE UX</text>
+    
+    <!-- Authentic 21yo dev humor -->
+    <text x="0" y="85" class="humor-text">"Just building cool stuff and trying not to break production."</text>
+  </g>
+  
+  <!-- Decorative Tech Dots -->
+  <g transform="translate(680, 50)" fill="#475569">
+    <circle cx="0" cy="0" r="3" />
+    <circle cx="15" cy="0" r="3" />
+    <circle cx="30" cy="0" r="3" />
+    <circle cx="0" cy="15" r="3" />
+    <circle cx="15" cy="15" r="3" />
+    <circle cx="30" cy="15" r="3" />
+    <circle cx="0" cy="30" r="3" />
+    <circle cx="15" cy="30" r="3" />
+    <circle cx="30" cy="30" r="3" />
+  </g>
+
+</svg>

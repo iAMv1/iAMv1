@@ -1,0 +1,23 @@
+{
+    "status": "CAFFEINE DEPLETED",
+    "missions": [
+        {
+            "id": 1,
+            "title": "Migrate database without breaking prod",
+            "progress": 85,
+            "color": "#39ff14"
+        },
+        {
+            "id": 2,
+            "title": "Fix that one hydration error",
+            "progress": 30,
+            "color": "#eab308"
+        },
+        {
+            "id": 3,
+            "title": "Train LLaMA-3 (Pray to CUDA)",
+            "progress": 60,
+            "color": "#3b82f6"
+        }
+    ]
+}

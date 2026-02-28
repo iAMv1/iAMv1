@@ -1,0 +1,79 @@
+<svg width="700" height="488" viewBox="0 0 700 488" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;display=swap');
+      
+      :root {
+        --bg-color: #0b132b;
+        --fg-color: #ffffff;
+        --ac-color: #ef233c;
+      }
+      
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg-color: #f8fafc;
+          --fg-color: #0f172a;
+          --ac-color: #ef233c;
+        }
+      }
+      
+      .vscode-bg { fill: var(--bg-color); rx: 10px; stroke: #27272a; stroke-width: 1px; }
+      .vscode-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; fill: var(--fg-color); opacity: 0.6; text-anchor: middle; }
+      .vscode-text { font-family: 'Fira Code', monospace; font-size: 15px; fill: var(--fg-color); }
+      
+      .mac-btn { fill: var(--fg-color); opacity: 0.3; }
+      .line-num { fill: var(--fg-color); opacity: 0.3; font-size: 14px; text-anchor: end; }
+      
+      .t-key { fill: var(--fg-color); }
+      .t-str { fill: var(--ac-color); }
+      .t-comment { fill: var(--fg-color); opacity: 0.4; }
+      .t-punct { fill: var(--fg-color); opacity: 0.7; }
+      
+      .bar-fill { fill: var(--ac-color); }
+      .bar-empty { fill: var(--fg-color); opacity: 0.2; }
+    </style>
+  </defs>
+
+  <rect class="vscode-bg" width="700" height="488" />
+  
+  <!-- Mac Window Controls -->
+  <circle cx="20" cy="20" r="6" class="mac-btn" />
+  <circle cx="40" cy="20" r="6" class="mac-btn" />
+  <circle cx="60" cy="20" r="6" class="mac-btn" />
+  
+  <text x="350.0" y="24" class="vscode-title">mission_control.yaml - Visual Studio Code</text>
+  
+  <rect x="0" y="40" width="700" height="1" fill="var(--fg-color)" opacity="0.1" />
+  <text x="40" y="80" class="vscode-text line-num">1</text>
+  <text x="60" y="80" class="vscode-text"><tspan class="t-key">status</tspan> <tspan class="t-punct">:</tspan> <tspan class="t-str">'System Nominal'</tspan></text>
+  <text x="40" y="104" class="vscode-text line-num">2</text>
+  <text x="60" y="104" class="vscode-text"><tspan class="t-key">last_uplink</tspan> <tspan class="t-punct">:</tspan> <tspan class="t-str">'2026-02-28 19:26'</tspan></text>
+  <text x="40" y="128" class="vscode-text line-num">3</text>
+  <text x="60" y="128" class="vscode-text"></text>
+  <text x="40" y="152" class="vscode-text line-num">4</text>
+  <text x="60" y="152" class="vscode-text"><tspan class="t-key">current_missions</tspan> <tspan class="t-punct">:</tspan></text>
+  <text x="40" y="176" class="vscode-text line-num">5</text>
+  <text x="60" y="176" class="vscode-text"><tspan class="t-punct">-   </tspan><tspan class="t-key">name</tspan><tspan class="t-punct">:</tspan> <tspan class="t-str">'- Migrate database without breaking prod'</tspan></text>
+  <text x="40" y="200" class="vscode-text line-num">6</text>
+  <text x="60" y="200" class="vscode-text"><tspan class="t-key" dx="36">progress</tspan> <tspan class="t-punct">:</tspan><tspan class="t-str">85%</tspan></text>
+  <text x="40" y="224" class="vscode-text line-num">7</text>
+  <text x="60" y="224" class="vscode-text"><tspan class="t-key" dx="36">status_bar</tspan> <tspan class="t-punct">:'</tspan><tspan class="bar-fill">█████████████████</tspan><tspan class="bar-empty">░░░</tspan><tspan class="t-punct">'</tspan>   <tspan class="t-comment"># 85%</tspan></text>
+  <text x="40" y="248" class="vscode-text line-num">8</text>
+  <text x="60" y="248" class="vscode-text"></text>
+  <text x="40" y="272" class="vscode-text line-num">9</text>
+  <text x="60" y="272" class="vscode-text"><tspan class="t-punct">-   </tspan><tspan class="t-key">name</tspan><tspan class="t-punct">:</tspan> <tspan class="t-str">'- Fix that one hydration error'</tspan></text>
+  <text x="40" y="296" class="vscode-text line-num">10</text>
+  <text x="60" y="296" class="vscode-text"><tspan class="t-key" dx="36">progress</tspan> <tspan class="t-punct">:</tspan><tspan class="t-str">30%</tspan></text>
+  <text x="40" y="320" class="vscode-text line-num">11</text>
+  <text x="60" y="320" class="vscode-text"><tspan class="t-key" dx="36">status_bar</tspan> <tspan class="t-punct">:'</tspan><tspan class="bar-fill">██████</tspan><tspan class="bar-empty">░░░░░░░░░░░░░░</tspan><tspan class="t-punct">'</tspan>   <tspan class="t-comment"># 30%</tspan></text>
+  <text x="40" y="344" class="vscode-text line-num">12</text>
+  <text x="60" y="344" class="vscode-text"></text>
+  <text x="40" y="368" class="vscode-text line-num">13</text>
+  <text x="60" y="368" class="vscode-text"><tspan class="t-punct">-   </tspan><tspan class="t-key">name</tspan><tspan class="t-punct">:</tspan> <tspan class="t-str">'- Train LLaMA-3 (Pray to CUDA)'</tspan></text>
+  <text x="40" y="392" class="vscode-text line-num">14</text>
+  <text x="60" y="392" class="vscode-text"><tspan class="t-key" dx="36">progress</tspan> <tspan class="t-punct">:</tspan><tspan class="t-str">60%</tspan></text>
+  <text x="40" y="416" class="vscode-text line-num">15</text>
+  <text x="60" y="416" class="vscode-text"><tspan class="t-key" dx="36">status_bar</tspan> <tspan class="t-punct">:'</tspan><tspan class="bar-fill">████████████</tspan><tspan class="bar-empty">░░░░░░░░</tspan><tspan class="t-punct">'</tspan>   <tspan class="t-comment"># 60%</tspan></text>
+  <text x="40" y="440" class="vscode-text line-num">16</text>
+  <text x="60" y="440" class="vscode-text"></text>
+</svg>

@@ -1,0 +1,30 @@
+name: Update Cricket Contribution SVG
+on:
+  schedule:
+    - cron: '0 0 * * *' # Midnight daily
+  workflow_dispatch:
+
+jobs:
+  update-cricket:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Generate Cricket Graph
+        run: python scripts/generate_cricket_graph.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit and Push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add assets/cricket_graph.svg
+          git commit -m "[Automated] Update Cricket Graph SVG" -a || exit 0
+          git push
