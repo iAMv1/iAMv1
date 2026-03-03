@@ -1,0 +1,44 @@
+name: Interactive Audio Player
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  switch-audio:
+    runs-on: ubuntu-latest
+    if: startsWith(github.event.issue.title, 'cassette|')
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Process Audio Command
+        id: process_cmd
+        run: |
+          # Extract the command (next or prev) from the title
+          # e.g., "cassette|next" -> "next"
+          ISSUE_TITLE="${{ github.event.issue.title }}"
+          COMMAND=$(echo "$ISSUE_TITLE" | cut -d'|' -f2 | tr -d ' ')
+          
+          echo "Running command: $COMMAND"
+          python scripts/update_audio.py $COMMAND
+
+      - name: Commit and Push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          git commit -m "[Automated] Switch Audio Track" || echo "No changes to commit"
+          git push
+
+      - name: Close Issue
+        uses: peter-evans/close-issue@v3
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          comment: "Tape inserted. Now playing."

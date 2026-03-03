@@ -1,12 +1,69 @@
 import os
 import random
+import requests
+from datetime import datetime
+
+# GitHub API setup
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
+GITHUB_USER = "iAMv1"
+
+def fetch_contributions():
+    if not GITHUB_TOKEN:
+        print("Warning: GITHUB_TOKEN not found. Using empty data.")
+        return []
+        
+    query = """
+    query($userName:String!) {
+      user(login: $userName){
+        contributionsCollection {
+          contributionCalendar {
+            totalContributions
+            weeks {
+              contributionDays {
+                contributionCount
+                date
+                weekday
+              }
+            }
+          }
+        }
+      }
+    }
+    """
+    
+    headers = {"Authorization": f"Bearer {GITHUB_TOKEN}"}
+    variables = {"userName": GITHUB_USER}
+    
+    try:
+        response = requests.post(
+            'https://api.github.com/graphql', 
+            json={'query': query, 'variables': variables}, 
+            headers=headers
+        )
+        data = response.json()
+        
+        # Flatten the weeks into a single list of days tracking exact grid coordinates
+        weeks = data['data']['user']['contributionsCollection']['contributionCalendar']['weeks']
+        days = []
+        for week_idx, week in enumerate(weeks):
+            for day in week['contributionDays']:
+                days.append({
+                    'date': day['date'],
+                    'count': day['contributionCount'],
+                    'weekday': day.get('weekday', 0),
+                    'week_idx': week_idx
+                })
+        return days
+    except Exception as e:
+        print(f"Error fetching contributions: {e}")
+        return []
 
 def generate_cricket_svg():
     WIDTH = 800
     HEIGHT = 200
     
-    # 52 weeks x 7 days
-    COLS = 52
+    # Up to 53 weeks * 7 days
+    COLS = 53
     ROWS = 7
     CELL_SIZE = 12
     CELL_GAP = 3
@@ -17,45 +74,48 @@ def generate_cricket_svg():
     OFFSET_X = (WIDTH - GRID_W) / 2
     OFFSET_Y = (HEIGHT - GRID_H) / 2 + 10 # slightly lower
     
-    # Generate mock contribution data
-    days = []
-    highlights = [] # days with hits
+    # Fetch real data
+    contrib_data = fetch_contributions()
     
-    for c in range(COLS):
-        for r in range(ROWS):
-            val = random.random()
-            if val > 0.95:
-                commits = random.randint(6, 12)
-                css_class = "cricket-level-4"
-            elif val > 0.85:
-                commits = random.randint(3, 5)
-                css_class = "cricket-level-3"
-            elif val > 0.6:
-                commits = random.randint(1, 2)
-                css_class = "cricket-level-2"
-            else:
-                commits = 0
-                css_class = "cricket-level-1"
-                
-            x = OFFSET_X + c * (CELL_SIZE + CELL_GAP)
-            y = OFFSET_Y + r * (CELL_SIZE + CELL_GAP)
+    # We need to map up to 53 weeks. Let's process exact real data
+    days = []
+    
+    for d in contrib_data:
+        commits = d['count']
+        
+        if commits >= 15: css_class = "cricket-level-4"
+        elif commits >= 8: css_class = "cricket-level-3"
+        elif commits >= 3: css_class = "cricket-level-2"
+        elif commits >= 1: css_class = "cricket-level-1"
+        else: css_class = "cricket-level-0"
             
-            days.append({'x': x, 'y': y, 'class': css_class, 'commits': commits})
-            
-            # Select random moments for the highlight animations
-            if random.random() > 0.96 and len(highlights) < 8:
-                if commits >= 6: score = "6"
-                elif commits >= 3: score = "4"
-                elif commits == 2: score = "2"
-                elif commits == 1: score = "1"
-                else: score = "W"
-                
-                highlights.append({
-                    'x': x + CELL_SIZE/2, 
-                    'y': y + CELL_SIZE/2, 
-                    'delay': len(highlights) * 2.5, # 2.5 seconds between hits
-                    'score': score
-                })
+        x = OFFSET_X + d['week_idx'] * (CELL_SIZE + CELL_GAP)
+        y = OFFSET_Y + d['weekday'] * (CELL_SIZE + CELL_GAP)
+        
+        days.append({'x': x, 'y': y, 'class': css_class, 'commits': commits, 'date': d['date']})
+
+    # Pick the top N days with the highest commits strictly (no random!)
+    valid_days = [d for d in days if d['commits'] > 0]
+    top_days = sorted(valid_days, key=lambda d: d['commits'], reverse=True)[:8]
+
+    # Sort them by x-coordinate (time) so the animation flows left-to-right
+    top_days = sorted(top_days, key=lambda d: d['x'])
+    
+    highlights = []
+    for i, d in enumerate(top_days):
+        commits = d['commits']
+        if commits >= 20: score = "6"
+        elif commits >= 12: score = "4"
+        elif commits >= 6: score = "2"
+        elif commits >= 3: score = "1"
+        else: score = "W"
+        
+        highlights.append({
+            'x': d['x'] + CELL_SIZE/2, 
+            'y': d['y'] + CELL_SIZE/2, 
+            'delay': i * 2.0, # 2.0 seconds between each chronological hit
+            'score': score
+        })
 
     # Render Base Grid
     grid_svg = ""
@@ -121,16 +181,16 @@ def generate_cricket_svg():
       @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@900&amp;display=swap');
       
       :root {{
-        --bg-color: #0b132b;
-        --fg-color: #ffffff;
-        --ac-color: #ef233c;
+        --bg-color: #0f172a;
+        --fg-color: #f8fafc;
+        --ac-color: #38bdf8;
       }}
       
       @media (prefers-color-scheme: light) {{
         :root {{
-          --bg-color: #f8fafc;
+          --bg-color: #ffffff;
           --fg-color: #0f172a;
-          --ac-color: #ef233c;
+          --ac-color: #38bdf8;
         }}
       }}
       
