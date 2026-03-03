@@ -1,22 +1,92 @@
 import os
 import math
+import requests
+
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
+GITHUB_USER = "iAMv1"
+
+def fetch_top_languages():
+    if not GITHUB_TOKEN:
+        print("Warning: GITHUB_TOKEN not found. Using empty data.")
+        return []
+
+    query = """
+    query($userName:String!) {
+      user(login: $userName){
+        repositories(first: 100, ownerAffiliations: OWNER, isFork: false, orderBy: {field: PUSHED_AT, direction: DESC}) {
+          nodes {
+            languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
+              edges {
+                size
+                node {
+                  name
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    """
+    
+    headers = {"Authorization": f"Bearer {GITHUB_TOKEN}"}
+    variables = {"userName": GITHUB_USER}
+    
+    try:
+        response = requests.post(
+            'https://api.github.com/graphql', 
+            json={'query': query, 'variables': variables}, 
+            headers=headers
+        )
+        data = response.json()
+        
+        repos = data['data']['user']['repositories']['nodes']
+        lang_stats = {}
+        
+        for repo in repos:
+            for edge in repo['languages']['edges']:
+                lang_name = edge['node']['name'].upper()
+                # Group common ones if needed
+                if lang_name in ["HTML", "CSS"]: lang_name = "UI/VIBES"
+                if lang_name == "JUPYTER NOTEBOOK": lang_name = "PYTHON (AI)"
+                
+                lang_stats[lang_name] = lang_stats.get(lang_name, 0) + edge['size']
+                
+        if not lang_stats:
+            return [{"name": "NO DATA", "value": 0.5}] * 6
+            
+        # Sort and take top 6
+        sorted_langs = sorted(lang_stats.items(), key=lambda x: x[1], reverse=True)[:6]
+        
+        # Normalize to max 1.0 (or max value representing 1.0)
+        max_size = max([l[1] for l in sorted_langs]) if sorted_langs else 1
+        
+        skills = []
+        for name, size in sorted_langs:
+            # We don't want the biggest to be completely at the edge 1.0 always, maybe max 0.95
+            # and the smallest not to be 0
+            val = max(0.2, (size / max_size) * 0.95)
+            skills.append({"name": name[:10], "value": val})
+            
+        # Pad to exactly 6 for the hexagon shape
+        while len(skills) < 6:
+            skills.append({"name": "---", "value": 0.2})
+            
+        return skills
+        
+    except Exception as e:
+        print(f"Error fetching languages: {e}")
+        return [{"name": "ERROR", "value": 0.5}] * 6
 
 def generate_radar_svg():
-    # Mock data for Tech Radar
-    skills = [
-        {"name": "PYTHON", "value": 0.95},
-        {"name": "REACT/3D", "value": 0.85},
-        {"name": "AI/Agents", "value": 0.90},
-        {"name": "DEVOPS", "value": 0.60},
-        {"name": "CSS/VIBES", "value": 0.98},
-        {"name": "RUST", "value": 0.20}
-    ]
+    # Fetch real data
+    skills = fetch_top_languages()
     
-    WIDTH = 400
-    HEIGHT = 250
-    CX = 200
-    CY = 125
-    MAX_RADIUS = 80
+    WIDTH = 420
+    HEIGHT = 420
+    CX = 210
+    CY = 210
+    MAX_RADIUS = 110
     
     # Generate Polygon Points
     points = []
@@ -24,7 +94,7 @@ def generate_radar_svg():
     axes = []
     
     num_skills = len(skills)
-    angle_step = (2 * math.pi) / num_skills
+    angle_step = (2 * math.pi) / max(1, num_skills)
     
     for i, skill in enumerate(skills):
         angle = i * angle_step - (math.pi / 2) # Start at top
@@ -39,9 +109,10 @@ def generate_radar_svg():
         py = CY + (MAX_RADIUS * skill["value"]) * math.sin(angle)
         points.append(f"{px},{py}")
         
-        # Label placement (push outward)
-        lx = CX + (MAX_RADIUS + 25) * math.cos(angle)
-        ly = CY + (MAX_RADIUS + 25) * math.sin(angle)
+        # Label placement (push outward more to prevent overlap)
+        # Using 45 instead of 25 pushes them significantly clear of the grid lines
+        lx = CX + (MAX_RADIUS + 40) * math.cos(angle)
+        ly = CY + (MAX_RADIUS + 40) * math.sin(angle)
         
         # Align text based on quadrant
         anchor = "middle"
@@ -56,32 +127,20 @@ def generate_radar_svg():
     svg = f"""<svg width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap');
-      
-      :root {{
-        --bg-color: #0b132b;
-        --fg-color: #ffffff;
-        --ac-color: #ef233c;
-      }}
-      
-      @media (prefers-color-scheme: light) {{
-        :root {{
-          --bg-color: #f8fafc;
-          --fg-color: #0f172a;
-          --ac-color: #ef233c;
-        }}
-      }}
-      
-      .st-bg {{ fill: transparent; }}
-      .st-stroke {{ stroke: var(--fg-color); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }}
-      .st-poly {{ stroke: var(--ac-color); fill: var(--ac-color); fill-opacity: 0.15; stroke-width: 2; stroke-linejoin: round; }}
-      .st-fill {{ fill: var(--fg-color); }}
-      .st-accent {{ fill: var(--ac-color); }}
-      
-      .st-text {{ font-family: 'Space Mono', monospace; fill: var(--fg-color); font-size: 14px; font-weight: 700; }}
-      .st-text-small {{ font-family: 'Space Mono', monospace; fill: var(--fg-color); font-size: 10px; font-weight: 700; letter-spacing: 1px; }}
-      .st-dim {{ stroke-opacity: 0.3; }}
-      
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;display=swap');
+
+      .st-bg {{ fill: #0f172a; }}
+      .st-stroke {{ stroke: #f8fafc; fill: none; stroke-width: 2; }}
+      .st-border {{ fill: none; stroke: #334155; stroke-width: 1.5; }}
+      .st-poly {{ stroke: #38bdf8; fill: #38bdf8; fill-opacity: 0.3; stroke-width: 2; stroke-linejoin: round; }}
+      .st-fill {{ fill: #f8fafc; }}
+      .st-accent {{ fill: #38bdf8; }}
+
+      .st-text {{ font-family: 'Outfit', sans-serif; fill: #f8fafc; font-size: 16px; font-weight: 700; letter-spacing: 1px;}}
+      .st-text-small {{ font-family: 'Fira Code', monospace; fill: #f8fafc; font-size: 11px; font-weight: 600; letter-spacing: 1px; }}
+      .st-dim {{ stroke-opacity: 0.4; }}
+
       @keyframes radar-pulse {{
         0% {{ transform: scale(0.95); opacity: 0.8; }}
         50% {{ transform: scale(1.05); opacity: 1; }}
@@ -91,10 +150,8 @@ def generate_radar_svg():
     </style>
   </defs>
 
-  <rect width="{WIDTH}" height="{HEIGHT}" class="st-bg" />
-  
-  <!-- Outer Box -->
-  <rect x="10" y="10" width="380" height="230" class="st-stroke" rx="10" />
+  <rect width="{WIDTH}" height="{HEIGHT}" rx="16" class="st-bg" />
+  <rect x="1" y="1" width="{WIDTH-2}" height="{HEIGHT-2}" rx="16" class="st-border" />
   
   <!-- Title -->
   <text x="20" y="35" class="st-text">SYSTEM.CAPABILITIES()</text>

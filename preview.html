@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iAMv1 — GitHub Profile Preview</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0d1117;
+      color: #f0f6fc;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .section {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #f0f6fc;
+      margin-bottom: 16px;
+    }
+
+    .section p {
+      color: #8b949e;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .section p b {
+      color: #f0f6fc;
+    }
+
+    /* Media/Object scaling */
+    .section img,
+    .section object {
+      max-width: 100%;
+      height: auto;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    /* Grid for side-by-side elements */
+    .grid-row {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 24px;
+      flex-wrap: wrap;
+      /* Allows wrapping on tiny screens, side-by-side on wide screens */
+      margin-bottom: 60px;
+    }
+
+    .grid-col {
+      flex: 1;
+      min-width: 380px;
+      max-width: 440px;
+      text-align: center;
+    }
+
+    .grid-col h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #f0f6fc;
+      margin-bottom: 16px;
+    }
+
+    .badges {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .badges img {
+      height: 26px;
+    }
+
+    .now-playing-title {
+      font-family: 'Fira Code', monospace;
+      font-size: 12px;
+      color: #94a3b8;
+      margin-top: 8px;
+    }
+
+    .btn-row {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .btn-row img {
+      height: 28px;
+    }
+
+    a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- 1. HEADER -->
+    <div class="section" style="margin-bottom: 24px;">
+      <object data="./assets/hero-banner-dark.svg" type="image/svg+xml" width="100%"></object>
+    </div>
+
+    <!-- Typing SVG -->
+    <div class="section" style="margin-bottom: 32px;">
+      <img
+        src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=3000&pause=1000&color=38bdf8&center=true&vCenter=true&width=800&lines=I+write+Python+and+break+React.;Building+3D+websites+because+flat+is+boring.;Just+figuring+things+out+one+error+at+a+time.;Training+models+and+touching+grass."
+        alt="Typing SVG" />
+    </div>
+
+    <!-- 2. THE PERSONA -->
+    <div class="section" style="margin-bottom: 24px;">
+      <p>Yo. I build 3D websites, chaotic full-stack apps, and train AI models in my room.<br>Just a 21yo figuring out
+        how to make screens look cool and systems run fast.</p>
+      <p>🔭 Currently building: <b>Next-Gen 3D Web Experiences</b><br>🧠 Currently fighting: <b>CUDA out of memory
+          errors</b><br>⚡ Fun fact: <b>Everything looks better in dark mode.</b></p>
+    </div>
+
+    <!-- Cassette -->
+    <div class="section" style="margin-bottom: 60px;">
+      <object data="./assets/now_playing.svg" type="image/svg+xml" width="100%"
+        style="max-width: 400px; pointer-events: none;"></object>
+      <div class="now-playing-title">Now Playing: Lag Ja Gale - Lata Mangeshkar</div>
+      <div class="btn-row">
+        <img src="https://img.shields.io/badge/⏮️_Prev-0f172a?style=for-the-badge&logoColor=white" />
+        <img src="https://img.shields.io/badge/Next_⏭️-0f172a?style=for-the-badge&logoColor=white" />
+      </div>
+    </div>
+
+    <!-- 3. THE ARSENAL -->
+    <div class="section">
+      <h2>✦ Stack Loadout</h2>
+      <object data="./assets/3d_stack.svg" type="image/svg+xml" width="100%" style="max-width: 800px;"></object>
+      <div class="badges">
+        <img
+          src="https://img.shields.io/badge/Next.js-0f172a?style=for-the-badge&logo=nextdotjs&logoColor=white&labelColor=020617" />
+        <img
+          src="https://img.shields.io/badge/Three.js-0f172a?style=for-the-badge&logo=threedotjs&logoColor=white&labelColor=020617" />
+        <img
+          src="https://img.shields.io/badge/PyTorch-0f172a?style=for-the-badge&logo=pytorch&logoColor=EE4C2C&labelColor=020617" />
+        <img
+          src="https://img.shields.io/badge/LangChain-0f172a?style=for-the-badge&logo=langchain&logoColor=white&labelColor=020617" />
+        <img
+          src="https://img.shields.io/badge/Docker-0f172a?style=for-the-badge&logo=docker&logoColor=2496ED&labelColor=020617" />
+        <img
+          src="https://img.shields.io/badge/Git-0f172a?style=for-the-badge&logo=git&logoColor=F05032&labelColor=020617" />
+      </div>
+    </div>
+
+    <!-- 4. THE GRIND (Side by side) -->
+    <div class="grid-row">
+      <div class="grid-col">
+        <h2>✦ System Telemetry</h2>
+        <object data="./assets/github_stats.svg" type="image/svg+xml" width="100%"></object>
+      </div>
+      <div class="grid-col">
+        <h2>✦ System Capabilities</h2>
+        <object data="./assets/contribution_dashboard.svg" type="image/svg+xml" width="100%"></object>
+      </div>
+    </div>
+
+    <!-- 5. DEEP SCAN (Side by side) -->
+    <div class="grid-row">
+      <div class="grid-col">
+        <h2>✦ Burn Rate Matrix</h2>
+        <object data="./assets/wakatime_heatmap.svg" type="image/svg+xml" width="100%"></object>
+      </div>
+      <div class="grid-col">
+        <h2>✦ Live Directives 🔴</h2>
+        <object data="./assets/crt_terminal_missions.svg" type="image/svg+xml" width="100%"></object>
+      </div>
+    </div>
+
+    <!-- 6. THE IMPACT -->
+    <div class="section">
+      <h2>✦ The Pitch — Contribution Cricket 🏏</h2>
+      <p>Every commit is a delivery. High-commit days light up as boundaries & sixes.</p>
+      <object data="./assets/cricket_graph.svg" type="image/svg+xml" width="100%" style="max-width: 800px;"></object>
+    </div>
+
+    <!-- 6b. Visitor Counter -->
+    <div class="section" style="margin-bottom: 24px;">
+      <img
+        src="https://komarev.com/ghpvc/?username=iAMv1&style=for-the-badge&color=0f172a&labelColor=020617&label=PROFILE+VIEWS"
+        alt="Profile Views" />
+    </div>
+
+    <!-- 7. FOOTER -->
+    <div class="section" style="margin-bottom: 0;">
+      <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f172a,100:38bdf8&height=100&section=footer"
+        width="100%" />
+    </div>
+
+  </div>
+</body>
+
+</html>
