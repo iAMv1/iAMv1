@@ -11,11 +11,12 @@ def fetch_github_stats():
     if not GITHUB_TOKEN:
         print("Warning: GITHUB_TOKEN not found. Using mock data.")
         return {"stars": 0, "commits": 0, "prs": 0, "issues": 0, "repos": 0,
-                "contrib": 0, "languages": [], "streak": 0}
+                "contrib": 0, "languages": [], "streak": 0, "followers": 0}
 
     query = """
     query($userName:String!) {
       user(login: $userName) {
+        followers { totalCount }
         repositories(first: 100, ownerAffiliations: OWNER, isFork: false, orderBy: {field: PUSHED_AT, direction: DESC}) {
           totalCount
           nodes {
@@ -83,11 +84,12 @@ def fetch_github_stats():
             "contrib": data['contributionsCollection']['contributionCalendar']['totalContributions'],
             "languages": languages,
             "streak": streak,
+            "followers": data['followers']['totalCount'],
         }
     except Exception as e:
         print(f"Error fetching stats: {e}")
         return {"stars": 0, "commits": 0, "prs": 0, "issues": 0, "repos": 0,
-                "contrib": 0, "languages": [], "streak": 0}
+                "contrib": 0, "languages": [], "streak": 0, "followers": 0}
 
 
 def generate_stats_svg():
@@ -104,13 +106,13 @@ def generate_stats_svg():
         lang_bars += f'<animate attributeName="width" from="0" to="{segment_w}" dur="1.2s" fill="freeze" begin="{0.3 + i * 0.15}s" /></rect>\n'
         lang_bars += f'<text x="{bar_start_x + segment_w + 8}" y="{274 + i * 22}" class="label">{lang["name"]} ({lang["pct"]}%)</text>\n'
 
-    # Stat items
+    # Stat items — replace Contrib with Followers for better profile relevance
     stat_items = [
         ("⭐", "Stars", stats['stars']),
         ("🔥", "Commits", stats['commits']),
         ("📦", "Repos", stats['repos']),
         ("🔀", "PRs", stats['prs']),
-        ("⚡", "Contrib", stats['contrib']),
+        ("👥", "Followers", stats['followers']),
         ("🏏", "Streak", f"{stats['streak']}d"),
     ]
 

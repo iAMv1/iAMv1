@@ -101,6 +101,10 @@ def generate_svg():
         '    @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&amp;display=swap");',
         '    text { font-family: "Fira Code", monospace; font-weight: 700; letter-spacing: 2px; }',
         '    .block-group { filter: url(#drop-shadow); }',
+        '    @keyframes block-rise {',
+        '      0% { transform: translateY(20px); opacity: 0; }',
+        '      100% { transform: translateY(0); opacity: 1; }',
+        '    }',
         '  </style>',
         f'</defs>',
         f'<rect width="100%" height="100%" fill="{BASE_COLOR}" />',
@@ -112,18 +116,21 @@ def generate_svg():
     SPACING = 1.3  # Adds a nice gap between the blocks
     
     blocks = [
+        {"x": -3 * SPACING, "y":  3 * SPACING, "label": "NEXT.JS",  "color": "#ffffff"},
         {"x": -2 * SPACING, "y":  2 * SPACING, "label": "PYTHON",   "color": "#3776AB"},
         {"x": -1 * SPACING, "y":  1 * SPACING, "label": "REACT",    "color": "#61DAFB"},
         {"x":  0 * SPACING, "y":  0 * SPACING, "label": "TAILWIND", "color": "#0ea5e9"},
         {"x":  1 * SPACING, "y": -1 * SPACING, "label": "FASTAPI",  "color": "#009688"},
         {"x":  2 * SPACING, "y": -2 * SPACING, "label": "AI/LLM",   "color": "#d946ef"},
+        {"x":  3 * SPACING, "y": -3 * SPACING, "label": "DOCKER",   "color": "#2496ED"},
     ]
 
     # Sort blocks by depth (x + y). For isometric, it's roughly painter's algorithm.
     blocks = sorted(blocks, key=lambda b: (b["y"], b["x"]))
 
-    for block in blocks:
-        svg_content.append(f'<g class="block-group">')
+    for idx, block in enumerate(blocks):
+        delay = 0.1 * idx
+        svg_content.append(f'<g class="block-group" style="animation: block-rise 0.5s ease-out {delay}s both;">')
         svg_content.append(draw_block(block["x"], block["y"], block["label"], block["color"]))
         svg_content.append(f'</g>')
 
