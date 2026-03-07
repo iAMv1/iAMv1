@@ -1,5 +1,5 @@
 import os
-import random
+import sys
 import requests
 from datetime import datetime
 
@@ -9,8 +9,8 @@ GITHUB_USER = "iAMv1"
 
 def fetch_contributions():
     if not GITHUB_TOKEN:
-        print("Warning: GITHUB_TOKEN not found. Using empty data.")
-        return []
+        print("Error: GITHUB_TOKEN is not set. Cannot fetch live contribution data.")
+        sys.exit(1)
         
     query = """
     query($userName:String!) {
@@ -40,10 +40,14 @@ def fetch_contributions():
             json={'query': query, 'variables': variables}, 
             headers=headers
         )
-        data = response.json()
-        
+        response.raise_for_status()
+        payload = response.json()
+        if 'errors' in payload:
+            print(f"Error: GitHub GraphQL returned errors: {payload['errors']}")
+            sys.exit(1)
+
         # Flatten the weeks into a single list of days tracking exact grid coordinates
-        weeks = data['data']['user']['contributionsCollection']['contributionCalendar']['weeks']
+        weeks = payload['data']['user']['contributionsCollection']['contributionCalendar']['weeks']
         days = []
         for week_idx, week in enumerate(weeks):
             for day in week['contributionDays']:
@@ -54,9 +58,15 @@ def fetch_contributions():
                     'week_idx': week_idx
                 })
         return days
+    except requests.RequestException as e:
+        print(f"Error: GitHub API network request failed: {e}")
+        sys.exit(1)
+    except (KeyError, TypeError) as e:
+        print(f"Error: Unexpected GitHub API response structure: {e}")
+        sys.exit(1)
     except Exception as e:
         print(f"Error fetching contributions: {e}")
-        return []
+        sys.exit(1)
 
 def generate_cricket_svg():
     WIDTH = 800

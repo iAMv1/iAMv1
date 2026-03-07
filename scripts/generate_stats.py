@@ -1,4 +1,5 @@
 import os
+import sys
 import requests
 from datetime import datetime
 
@@ -9,13 +10,13 @@ GITHUB_USER = "iAMv1"
 def fetch_github_stats():
     """Fetch comprehensive stats from GitHub GraphQL API."""
     if not GITHUB_TOKEN:
-        print("Warning: GITHUB_TOKEN not found. Using mock data.")
-        return {"stars": 0, "commits": 0, "prs": 0, "issues": 0, "repos": 0,
-                "contrib": 0, "languages": [], "streak": 0}
+        print("Error: GITHUB_TOKEN is not set. Cannot fetch live GitHub stats.")
+        sys.exit(1)
 
     query = """
     query($userName:String!) {
       user(login: $userName) {
+        followers { totalCount }
         repositories(first: 100, ownerAffiliations: OWNER, isFork: false, orderBy: {field: PUSHED_AT, direction: DESC}) {
           totalCount
           nodes {
@@ -44,10 +45,15 @@ def fetch_github_stats():
         r = requests.post('https://api.github.com/graphql',
                           json={'query': query, 'variables': {'userName': GITHUB_USER}},
                           headers=headers)
-        data = r.json()['data']['user']
+        r.raise_for_status()
+        payload = r.json()
+        if 'errors' in payload:
+            print(f"Error: GitHub GraphQL returned errors: {payload['errors']}")
+            sys.exit(1)
+        data = payload['data']['user']
 
         # Stars
-        total_stars = sum(r['stargazerCount'] for r in data['repositories']['nodes'])
+        total_stars = sum(repo['stargazerCount'] for repo in data['repositories']['nodes'])
         # Languages
         lang_map = {}
         for repo in data['repositories']['nodes']:
@@ -83,11 +89,17 @@ def fetch_github_stats():
             "contrib": data['contributionsCollection']['contributionCalendar']['totalContributions'],
             "languages": languages,
             "streak": streak,
+            "followers": data['followers']['totalCount'],
         }
+    except requests.RequestException as e:
+        print(f"Error: GitHub API network request failed: {e}")
+        sys.exit(1)
+    except (KeyError, TypeError) as e:
+        print(f"Error: Unexpected GitHub API response structure: {e}")
+        sys.exit(1)
     except Exception as e:
         print(f"Error fetching stats: {e}")
-        return {"stars": 0, "commits": 0, "prs": 0, "issues": 0, "repos": 0,
-                "contrib": 0, "languages": [], "streak": 0}
+        sys.exit(1)
 
 
 def generate_stats_svg():
@@ -104,13 +116,13 @@ def generate_stats_svg():
         lang_bars += f'<animate attributeName="width" from="0" to="{segment_w}" dur="1.2s" fill="freeze" begin="{0.3 + i * 0.15}s" /></rect>\n'
         lang_bars += f'<text x="{bar_start_x + segment_w + 8}" y="{274 + i * 22}" class="label">{lang["name"]} ({lang["pct"]}%)</text>\n'
 
-    # Stat items
+    # Stat items — replace Contrib with Followers for better profile relevance
     stat_items = [
         ("⭐", "Stars", stats['stars']),
         ("🔥", "Commits", stats['commits']),
         ("📦", "Repos", stats['repos']),
         ("🔀", "PRs", stats['prs']),
-        ("⚡", "Contrib", stats['contrib']),
+        ("👥", "Followers", stats['followers']),
         ("🏏", "Streak", f"{stats['streak']}d"),
     ]
 

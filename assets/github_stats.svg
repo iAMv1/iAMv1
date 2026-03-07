@@ -86,7 +86,7 @@
   <circle cx="20" cy="30" r="4" class="accent-dot pulse" />
   <text x="36" y="26" class="title">IAMV1</text>
   <text x="36" y="42" class="subtitle">LIVE SYSTEM TELEMETRY</text>
-  <text x="400" y="36" class="subtitle" text-anchor="end">2026-03-03 04:04 UTC</text>
+  <text x="400" y="36" class="subtitle" text-anchor="end">2026-03-07 19:50 UTC</text>
 
   <!-- Divider -->
   <line x1="20" y1="65" x2="400" y2="65" class="divider" />
@@ -105,29 +105,29 @@
           <rect width="120" height="65" rx="10" class="stat-card">
             <animate attributeName="opacity" from="0" to="1" dur="0.6s" fill="freeze" begin="0.2s" />
           </rect>
-          <text x="60" y="28" class="stat-value" text-anchor="middle">83</text>
+          <text x="60" y="28" class="stat-value" text-anchor="middle">0</text>
           <text x="60" y="48" class="stat-label" text-anchor="middle">🔥 Commits</text>
         </g>
         <g transform="translate(290, 100)">
           <rect width="120" height="65" rx="10" class="stat-card">
             <animate attributeName="opacity" from="0" to="1" dur="0.6s" fill="freeze" begin="0.30000000000000004s" />
           </rect>
-          <text x="60" y="28" class="stat-value" text-anchor="middle">10</text>
+          <text x="60" y="28" class="stat-value" text-anchor="middle">0</text>
           <text x="60" y="48" class="stat-label" text-anchor="middle">📦 Repos</text>
         </g>
         <g transform="translate(30, 180)">
           <rect width="120" height="65" rx="10" class="stat-card">
             <animate attributeName="opacity" from="0" to="1" dur="0.6s" fill="freeze" begin="0.4s" />
           </rect>
-          <text x="60" y="28" class="stat-value" text-anchor="middle">7</text>
+          <text x="60" y="28" class="stat-value" text-anchor="middle">0</text>
           <text x="60" y="48" class="stat-label" text-anchor="middle">🔀 PRs</text>
         </g>
         <g transform="translate(160, 180)">
           <rect width="120" height="65" rx="10" class="stat-card">
             <animate attributeName="opacity" from="0" to="1" dur="0.6s" fill="freeze" begin="0.5s" />
           </rect>
-          <text x="60" y="28" class="stat-value" text-anchor="middle">100</text>
-          <text x="60" y="48" class="stat-label" text-anchor="middle">⚡ Contrib</text>
+          <text x="60" y="28" class="stat-value" text-anchor="middle">0</text>
+          <text x="60" y="48" class="stat-label" text-anchor="middle">👥 Followers</text>
         </g>
         <g transform="translate(290, 180)">
           <rect width="120" height="65" rx="10" class="stat-card">
@@ -142,17 +142,7 @@
 
   <!-- Section: Languages -->
   <text x="30" y="258" class="section-title">▸ LANGUAGE PROFILE</text>
-  <rect x="30" y="262" width="181.21999999999997" height="14" rx="3" fill="#3572A5" opacity="0.85"><animate attributeName="width" from="0" to="181.21999999999997" dur="1.2s" fill="freeze" begin="0.3s" /></rect>
-<text x="219.21999999999997" y="274" class="label">Python (53.3%)</text>
-<rect x="30" y="284" width="94.85999999999999" height="14" rx="3" fill="#3178c6" opacity="0.85"><animate attributeName="width" from="0" to="94.85999999999999" dur="1.2s" fill="freeze" begin="0.44999999999999996s" /></rect>
-<text x="132.85999999999999" y="296" class="label">TypeScript (27.9%)</text>
-<rect x="30" y="306" width="54.06" height="14" rx="3" fill="#DA5B0B" opacity="0.85"><animate attributeName="width" from="0" to="54.06" dur="1.2s" fill="freeze" begin="0.6s" /></rect>
-<text x="92.06" y="318" class="label">Jupyter Notebook (15.9%)</text>
-<rect x="30" y="328" width="6.8" height="14" rx="3" fill="#f1e05a" opacity="0.85"><animate attributeName="width" from="0" to="6.8" dur="1.2s" fill="freeze" begin="0.75s" /></rect>
-<text x="44.8" y="340" class="label">JavaScript (2.0%)</text>
-<rect x="30" y="350" width="4" height="14" rx="3" fill="#663399" opacity="0.85"><animate attributeName="width" from="0" to="4" dur="1.2s" fill="freeze" begin="0.8999999999999999s" /></rect>
-<text x="42" y="362" class="label">CSS (1.0%)</text>
-
+  
 
   <!-- Bottom accent line -->
   <line x1="30" y1="400" x2="120" y2="400" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" opacity="0.5" />

@@ -4,6 +4,9 @@ on:
     - cron: '0 0 * * *' # Midnight daily
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   update-dashboard:
     runs-on: ubuntu-latest
@@ -21,9 +24,19 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
 
-      - name: Generate Dashboard
+      - name: Generate WakaTime SVG
+        # WakaTime is optional — an absent or misconfigured key should not
+        # block the rest of the dashboard from updating with live GitHub data.
+        continue-on-error: true
+        run: python scripts/generate_wakatime.py
+        env:
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+
+      - name: Generate GitHub Data SVGs
+        # All GitHub-based scripts require a valid token and real API data.
+        # If any script fails (bad token, API error, empty response) the step
+        # fails loudly so the workflow never commits stale or fake data.
         run: |
-          python scripts/generate_wakatime.py
           python scripts/generate_stats.py
           python scripts/generate_dashboard.py
           python scripts/generate_3d_stack.py
@@ -31,7 +44,6 @@ jobs:
           python scripts/build_mission_svg.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
 
       - name: Commit and Push
         run: |
