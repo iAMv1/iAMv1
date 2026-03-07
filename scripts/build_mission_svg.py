@@ -5,15 +5,17 @@ from datetime import datetime
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
 GITHUB_USER = "iAMv1"
 
+FALLBACK_REPOS = [
+    {"name": "cryo-cluster", "desc": "3D Web Experiences & Landing Pages", "lang": "TypeScript", "stars": 2, "progress": 75},
+    {"name": "ai-playground", "desc": "LLM Fine-tuning & RAG Pipelines", "lang": "Python", "stars": 1, "progress": 60},
+    {"name": "iAMv1", "desc": "This Profile — Automated SVG Pipeline", "lang": "Python", "stars": 0, "progress": 90},
+]
+
 def fetch_top_repos():
     """Fetch the top 3 most recently pushed repos with real activity data."""
     if not GITHUB_TOKEN:
         print("Warning: GITHUB_TOKEN not set. Using fallback repos.")
-        return [
-            {"name": "cryo-cluster", "desc": "3D Web Experiences & Landing Pages", "lang": "TypeScript", "stars": 2, "progress": 75},
-            {"name": "ai-playground", "desc": "LLM Fine-tuning & RAG Pipelines", "lang": "Python", "stars": 1, "progress": 60},
-            {"name": "iAMv1", "desc": "This Profile — Automated SVG Pipeline", "lang": "Python", "stars": 0, "progress": 90},
-        ]
+        return FALLBACK_REPOS
 
     query = """
     query($userName:String!) {
@@ -65,14 +67,10 @@ def fetch_top_repos():
                 "stars": repo.get('stargazerCount', 0),
                 "progress": max(10, progress),
             })
-        return results if results else fetch_top_repos.__wrapped__()
+        return results if results else FALLBACK_REPOS
     except Exception as e:
         print(f"Error fetching repos: {e}")
-        return [
-            {"name": "cryo-cluster", "desc": "3D Web Experiences", "lang": "TypeScript", "stars": 2, "progress": 75},
-            {"name": "ai-playground", "desc": "LLM Fine-tuning Pipelines", "lang": "Python", "stars": 1, "progress": 60},
-            {"name": "iAMv1", "desc": "Profile SVG Pipeline", "lang": "Python", "stars": 0, "progress": 90},
-        ]
+        return FALLBACK_REPOS
 
 
 def generate_mission_svg():

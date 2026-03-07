@@ -4,6 +4,9 @@ on:
     - cron: '0 0 * * *' # Midnight daily
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   update-dashboard:
     runs-on: ubuntu-latest
