@@ -1,21 +1,17 @@
+import math
 import os
+import sys
 import requests
 from datetime import datetime
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
 GITHUB_USER = "iAMv1"
 
-FALLBACK_REPOS = [
-    {"name": "cryo-cluster", "desc": "3D Web Experiences & Landing Pages", "lang": "TypeScript", "stars": 2, "progress": 75},
-    {"name": "ai-playground", "desc": "LLM Fine-tuning & RAG Pipelines", "lang": "Python", "stars": 1, "progress": 60},
-    {"name": "iAMv1", "desc": "This Profile — Automated SVG Pipeline", "lang": "Python", "stars": 0, "progress": 90},
-]
-
 def fetch_top_repos():
     """Fetch the top 3 most recently pushed repos with real activity data."""
     if not GITHUB_TOKEN:
-        print("Warning: GITHUB_TOKEN not set. Using fallback repos.")
-        return FALLBACK_REPOS
+        print("Error: GITHUB_TOKEN is not set. Cannot fetch live repo data.")
+        sys.exit(1)
 
     query = """
     query($userName:String!) {
@@ -45,8 +41,12 @@ def fetch_top_repos():
         r = requests.post('https://api.github.com/graphql',
                           json={'query': query, 'variables': {'userName': GITHUB_USER}},
                           headers=headers)
-        data = r.json()
-        repos = data['data']['user']['repositories']['nodes']
+        r.raise_for_status()
+        payload = r.json()
+        if 'errors' in payload:
+            print(f"Error: GitHub GraphQL returned errors: {payload['errors']}")
+            sys.exit(1)
+        repos = payload['data']['user']['repositories']['nodes']
         results = []
         for repo in repos:
             commits = 0
@@ -54,12 +54,8 @@ def fetch_top_repos():
                 commits = repo['defaultBranchRef']['target']['history']['totalCount']
             except (TypeError, KeyError):
                 pass
-            # Map commits to a "progress" percentage (cap at 100)
-            progress = min(100, int((commits / max(commits, 1)) * 100)) if commits > 0 else 10
-            # More nuanced progress: use log scale
-            import math
             progress = min(95, int(math.log(max(1, commits)) / math.log(500) * 100))
-            
+
             results.append({
                 "name": repo['name'],
                 "desc": (repo.get('description') or 'No description')[:50],
@@ -67,10 +63,19 @@ def fetch_top_repos():
                 "stars": repo.get('stargazerCount', 0),
                 "progress": max(10, progress),
             })
-        return results if results else FALLBACK_REPOS
+        if not results:
+            print("Error: GitHub API returned no repositories.")
+            sys.exit(1)
+        return results
+    except requests.RequestException as e:
+        print(f"Error: GitHub API network request failed: {e}")
+        sys.exit(1)
+    except (KeyError, TypeError) as e:
+        print(f"Error: Unexpected GitHub API response structure: {e}")
+        sys.exit(1)
     except Exception as e:
         print(f"Error fetching repos: {e}")
-        return FALLBACK_REPOS
+        sys.exit(1)
 
 
 def generate_mission_svg():

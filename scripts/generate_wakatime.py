@@ -1,90 +1,135 @@
 import os
-import random
+import sys
 import base64
 import requests
 from datetime import datetime, timedelta
 
 WAKATIME_API_KEY = os.environ.get("WAKATIME_API_KEY", "")
 
-def fetch_wakatime_data():
-    """Fetch coding activity from WakaTime, or generate simulated data if no key."""
-    if not WAKATIME_API_KEY:
-        print("Warning: WAKATIME_API_KEY not found. Generating simulated WakaTime data for preview.")
-        return generate_simulated_data()
+DAYS_ORDER = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 
-    # WakaTime Basic auth requires base64-encoded "{api_key}:"
+
+def _wakatime_headers():
+    """Return Basic-auth headers with the API key correctly base64-encoded."""
     encoded_key = base64.b64encode(f"{WAKATIME_API_KEY}:".encode()).decode()
-    headers = {
-        "Authorization": f"Basic {encoded_key}"
-    }
-    
+    return {"Authorization": f"Basic {encoded_key}"}
+
+
+def fetch_wakatime_data():
+    """
+    Fetch real coding activity from WakaTime.
+
+    Uses:
+      /summaries?range=last_7_days  — real per-day totals that drive the heatmap
+      /stats/last_7_days            — aggregated summary stats (total time, daily avg, top lang)
+
+    Returns None when WAKATIME_API_KEY is not configured.
+    Exits with code 1 when the key is set but the API call fails, so the
+    workflow never silently commits fake data.
+    """
+    if not WAKATIME_API_KEY:
+        print("Info: WAKATIME_API_KEY not set — generating 'not configured' placeholder SVG.")
+        return None
+
+    headers = _wakatime_headers()
+
     try:
-        # We need the last 7 days of data
-        url = "https://wakatime.com/api/v1/users/current/stats/last_7_days"
-        r = requests.get(url, headers=headers)
-        if r.status_code == 200:
-            data = r.json().get("data", {})
-            languages = data.get("languages", [])
-            daily_avg = data.get("human_readable_daily_average", "0 hrs")
-            total_time = data.get("human_readable_total", "0 hrs")
-            
-            # For the heatmap, we simulate the time-of-day buckets since WakaTime's free tier
-            # doesn't easily expose hourly heartbeat graphs over API without specific setups.
-            # We'll map their language data and overall activity to our heatmap.
-            return format_wakatime_data(languages, daily_avg, total_time)
-        else:
-            print(f"WakaTime API returned {r.status_code}. Using fallback data.")
-            return generate_simulated_data()
+        # --- Per-day summaries (drives heatmap) ---
+        summaries_url = "https://wakatime.com/api/v1/users/current/summaries?range=last_7_days"
+        sr = requests.get(summaries_url, headers=headers, timeout=15)
+        if sr.status_code != 200:
+            print(f"Error: WakaTime summaries API returned HTTP {sr.status_code}: {sr.text[:200]}")
+            sys.exit(1)
+        summaries = sr.json().get("data", [])
+
+        # --- Aggregated stats (total time, daily avg, top language) ---
+        stats_url = "https://wakatime.com/api/v1/users/current/stats/last_7_days"
+        tr = requests.get(stats_url, headers=headers, timeout=15)
+        if tr.status_code != 200:
+            print(f"Error: WakaTime stats API returned HTTP {tr.status_code}: {tr.text[:200]}")
+            sys.exit(1)
+        stats = tr.json().get("data", {})
+
+        daily_avg = stats.get("human_readable_daily_average", "N/A")
+        total_time = stats.get("human_readable_total", "N/A")
+        languages = stats.get("languages", [])
+        top_lang = languages[0].get("name", "N/A") if languages else "N/A"
+
+        # --- Build real heatmap from per-day total_seconds ---
+        # Map abbreviated weekday name → total coding seconds for that day
+        day_totals = {}
+        for summary in summaries:
+            date_str = summary.get("range", {}).get("date", "")
+            if not date_str:
+                continue
+            dt = datetime.strptime(date_str, "%Y-%m-%d")
+            day_name = dt.strftime("%a")  # "Mon", "Tue", …
+            day_totals[day_name] = summary.get("grand_total", {}).get("total_seconds", 0.0)
+
+        max_secs = max(day_totals.values(), default=0) or 1  # avoid division by zero
+
+        heatmap = []
+        for day in DAYS_ORDER:
+            secs = day_totals.get(day, 0)
+            # Intensity 0–4 proportional to that day's real coding time
+            intensity = round(secs / max_secs * 4)
+            # All 24 hour-columns share the same daily intensity
+            # (free-tier WakaTime doesn't expose per-hour breakdowns)
+            heatmap.append([intensity] * 24)
+
+        return {
+            "heatmap": heatmap,
+            "daily_avg": daily_avg,
+            "total_time": total_time,
+            "top_lang": top_lang,
+            "days": DAYS_ORDER,
+            "hours": [f"{i:02d}:00" for i in range(24)],
+        }
+
+    except requests.RequestException as e:
+        print(f"Error: WakaTime network request failed: {e}")
+        sys.exit(1)
     except Exception as e:
-        print(f"Error fetching WakaTime: {e}")
-        return generate_simulated_data()
+        print(f"Error: Unexpected failure fetching WakaTime data: {e}")
+        sys.exit(1)
 
-def generate_simulated_data():
-    """Generates realistic-looking coding activity data."""
-    days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-    hours = [f"{i:02d}:00" for i in range(24)]
-    
-    # Simulate a "Night Owl" coder profile
-    heatmap = []
-    for day in days:
-        day_data = []
-        for hour in range(24):
-            # Higher probability of coding late night/early morning
-            if 0 <= hour <= 4 or 20 <= hour <= 23:
-                intensity = random.choices([0, 1, 2, 3, 4], weights=[0.2, 0.2, 0.3, 0.2, 0.1])[0]
-            # Some afternoon coding
-            elif 13 <= hour <= 18:
-                intensity = random.choices([0, 1, 2, 3], weights=[0.4, 0.3, 0.2, 0.1])[0]
-            # Sleep/Classes
-            else:
-                intensity = random.choices([0, 1], weights=[0.8, 0.2])[0]
-            day_data.append(intensity)
-        heatmap.append(day_data)
+def generate_not_configured_svg(svg_width, svg_height):
+    """Return a clean placeholder SVG shown when WAKATIME_API_KEY is absent."""
+    return f'''<svg width="{svg_width}" height="{svg_height}" viewBox="0 0 {svg_width} {svg_height}" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;display=swap');
+      .bg {{ fill: #0f172a; }}
+      .border-box {{ fill: none; stroke: #334155; stroke-width: 1.5; }}
+      .title {{ font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 700; fill: #f8fafc; letter-spacing: 1px; }}
+      .sub {{ font-family: 'Fira Code', monospace; font-size: 11px; fill: #38bdf8; opacity: 0.8; }}
+      .hint {{ font-family: 'Fira Code', monospace; font-size: 10px; fill: #f8fafc; opacity: 0.45; }}
+    </style>
+  </defs>
+  <rect width="{svg_width}" height="{svg_height}" rx="10" class="bg" />
+  <rect x="1" y="1" width="{svg_width-2}" height="{svg_height-2}" rx="10" class="border-box" />
+  <text x="{svg_width//2}" y="{svg_height//2 - 30}" class="title" text-anchor="middle">WAKATIME / CODING ACTIVITY</text>
+  <text x="{svg_width//2}" y="{svg_height//2}" class="sub" text-anchor="middle">⚙ Not Configured</text>
+  <text x="{svg_width//2}" y="{svg_height//2 + 24}" class="hint" text-anchor="middle">Add WAKATIME_API_KEY to your repo secrets</text>
+  <text x="{svg_width//2}" y="{svg_height//2 + 42}" class="hint" text-anchor="middle">to see real coding activity here.</text>
+</svg>'''
 
-    return {
-        "heatmap": heatmap,
-        "daily_avg": "4 hrs 20 mins",
-        "total_time": "30 hrs 15 mins",
-        "top_lang": "Python",
-        "days": days,
-        "hours": hours
-    }
-
-def format_wakatime_data(languages, daily_avg, total_time):
-    # Base simulation driven by real stats
-    sim_data = generate_simulated_data()
-    sim_data["daily_avg"] = daily_avg
-    sim_data["total_time"] = total_time
-    if languages:
-        sim_data["top_lang"] = languages[0].get("name", "Unknown")
-    return sim_data
 
 def generate_wakatime_svg():
     data = fetch_wakatime_data()
-    
+
     svg_width = 480
     svg_height = 488
-    
+
+    # No WakaTime key configured — write a clean placeholder and exit cleanly
+    if data is None:
+        os.makedirs('assets', exist_ok=True)
+        with open('assets/wakatime_heatmap.svg', 'w', encoding='utf-8') as f:
+            f.write(generate_not_configured_svg(svg_width, svg_height))
+        print("Generated WakaTime placeholder SVG (WAKATIME_API_KEY not configured).")
+        return
+
     # Calculate vertical centering offset: (488 - 250) / 2 = 119
     offset_y = 119
 

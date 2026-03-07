@@ -1,4 +1,5 @@
 import os
+import sys
 import math
 import requests
 
@@ -7,8 +8,8 @@ GITHUB_USER = "iAMv1"
 
 def fetch_top_languages():
     if not GITHUB_TOKEN:
-        print("Warning: GITHUB_TOKEN not found. Using empty data.")
-        return []
+        print("Error: GITHUB_TOKEN is not set. Cannot fetch live language data.")
+        sys.exit(1)
 
     query = """
     query($userName:String!) {
@@ -38,9 +39,13 @@ def fetch_top_languages():
             json={'query': query, 'variables': variables}, 
             headers=headers
         )
-        data = response.json()
-        
-        repos = data['data']['user']['repositories']['nodes']
+        response.raise_for_status()
+        payload = response.json()
+        if 'errors' in payload:
+            print(f"Error: GitHub GraphQL returned errors: {payload['errors']}")
+            sys.exit(1)
+
+        repos = payload['data']['user']['repositories']['nodes']
         lang_stats = {}
         
         for repo in repos:
@@ -51,10 +56,7 @@ def fetch_top_languages():
                 if lang_name == "JUPYTER NOTEBOOK": lang_name = "PYTHON (AI)"
                 
                 lang_stats[lang_name] = lang_stats.get(lang_name, 0) + edge['size']
-                
-        if not lang_stats:
-            return [{"name": "NO DATA", "value": 0.5}] * 6
-            
+
         # Sort and take top 6
         sorted_langs = sorted(lang_stats.items(), key=lambda x: x[1], reverse=True)[:6]
         
@@ -63,8 +65,6 @@ def fetch_top_languages():
         
         skills = []
         for name, size in sorted_langs:
-            # We don't want the biggest to be completely at the edge 1.0 always, maybe max 0.95
-            # and the smallest not to be 0
             val = max(0.2, (size / max_size) * 0.95)
             skills.append({"name": name[:10], "value": val})
             
@@ -73,10 +73,16 @@ def fetch_top_languages():
             skills.append({"name": "---", "value": 0.2})
             
         return skills
-        
+
+    except requests.RequestException as e:
+        print(f"Error: GitHub API network request failed: {e}")
+        sys.exit(1)
+    except (KeyError, TypeError) as e:
+        print(f"Error: Unexpected GitHub API response structure: {e}")
+        sys.exit(1)
     except Exception as e:
         print(f"Error fetching languages: {e}")
-        return [{"name": "ERROR", "value": 0.5}] * 6
+        sys.exit(1)
 
 def generate_radar_svg():
     # Fetch real data
