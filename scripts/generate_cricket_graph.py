@@ -131,23 +131,12 @@ def generate_cricket_svg():
     START_Y = OFFSET_Y + GRID_H/2
     
     for i, h in enumerate(highlights):
-        anim_name = f"cricket-hit{i}"
         pop_name = f"cricket-pop{i}"
         delay = h['delay']
         
         # Calculate a Bezier curve control point for the arc
         mid_x = (START_X + h['x']) / 2
         mid_y = min(START_Y, h['y']) - 60 # Arc goes UP
-        
-        # KEYFRAMES for BALL
-        anim_css += f"""
-        @keyframes {anim_name} {{
-            0%, {delay/16 * 100}% {{ offset-distance: 0%; opacity: 0; }}
-            {(delay+0.1)/16 * 100}% {{ opacity: 1; }}
-            {(delay+1.5)/16 * 100}% {{ offset-distance: 100%; opacity: 1; }}
-            {(delay+1.6)/16 * 100}%, 100% {{ offset-distance: 100%; opacity: 0; }}
-        }}
-        """
         
         # KEYFRAMES for POPUP TEXT
         anim_css += f"""
@@ -159,14 +148,18 @@ def generate_cricket_svg():
         }}
         """
         
-        # The invisible path the ball follows
-        path_id = f"cricket-path{i}"
-        anim_elements += f'<path id="{path_id}" d="M {START_X} {START_Y} Q {mid_x} {mid_y} {h["x"]} {h["y"]}" fill="none" />\n'
+        # Path for the ball to follow
+        path_d = f"M {START_X} {START_Y} Q {mid_x} {mid_y} {h['x']} {h['y']}"
         
-        # The Ball
-        anim_elements += f'<circle r="4" class="cricket-ball" style="offset-path: url(#{path_id}); animation: {anim_name} 16s linear infinite;" />\n'        
+        # The Ball using animateMotion (better browser support than offset-path)
+        begin_time = f"{delay}s"
+        anim_elements += f'''<circle r="4" class="cricket-ball" opacity="0">
+          <animateMotion path="{path_d}" dur="1.5s" begin="{begin_time}" repeatCount="indefinite" fill="freeze" />
+          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.9;1" dur="1.5s" begin="{begin_time}" repeatCount="indefinite" />
+        </circle>
+        '''
         
-        # The Popup Text (Always Accent / Red in this theme to stick to 3-colors, or Contrast for numbers and Accent for W)
+        # The Popup Text
         text_class = "cricket-popup-accent" if h['score'] == 'W' else "cricket-popup-contrast"
         
         anim_elements += f"""
@@ -197,6 +190,7 @@ def generate_cricket_svg():
       .cricket-bg {{ fill: var(--bg-color); }}
       .cricket-title {{ font-family: 'Outfit', sans-serif; font-size: 14px; fill: var(--fg-color); opacity: 0.6; font-weight: bold; letter-spacing: 2px; }}
       
+      .cricket-level-0 {{ fill: var(--bg-color); stroke: var(--fg-color); stroke-width: 0.5; stroke-opacity: 0.1; }}
       /* 3-Color Logic: Variations of Contrast (White) on Base (Navy) */
       .cricket-level-1 {{ fill: var(--fg-color); opacity: 0.05; }}
       .cricket-level-2 {{ fill: var(--fg-color); opacity: 0.3; }}

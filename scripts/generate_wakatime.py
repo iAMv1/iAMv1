@@ -1,6 +1,7 @@
 import os
 import random
 import requests
+import base64
 from datetime import datetime, timedelta
 
 WAKATIME_API_KEY = os.environ.get("WAKATIME_API_KEY", "")
@@ -11,8 +12,9 @@ def fetch_wakatime_data():
         print("Warning: WAKATIME_API_KEY not found. Generating simulated WakaTime data for preview.")
         return generate_simulated_data()
 
+    auth_encoded = base64.b64encode(f":{WAKATIME_API_KEY}".encode()).decode()
     headers = {
-        "Authorization": f"Basic {WAKATIME_API_KEY}"
+        "Authorization": f"Basic {auth_encoded}"
     }
     
     try:
