@@ -5,15 +5,17 @@ from datetime import datetime
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
 GITHUB_USER = "iAMv1"
 
+FALLBACK_REPOS = [
+    {"name": "cryo-cluster", "desc": "3D Web Experiences", "lang": "TypeScript", "stars": 2, "progress": 75},
+    {"name": "ai-playground", "desc": "LLM Fine-tuning Pipelines", "lang": "Python", "stars": 1, "progress": 60},
+    {"name": "iAMv1", "desc": "Profile SVG Pipeline", "lang": "Python", "stars": 0, "progress": 90},
+]
+
 def fetch_top_repos():
     """Fetch the top 3 most recently pushed repos with real activity data."""
     if not GITHUB_TOKEN:
         print("Warning: GITHUB_TOKEN not set. Using fallback repos.")
-        return [
-            {"name": "cryo-cluster", "desc": "3D Web Experiences & Landing Pages", "lang": "TypeScript", "stars": 2, "progress": 75},
-            {"name": "ai-playground", "desc": "LLM Fine-tuning & RAG Pipelines", "lang": "Python", "stars": 1, "progress": 60},
-            {"name": "iAMv1", "desc": "This Profile — Automated SVG Pipeline", "lang": "Python", "stars": 0, "progress": 90},
-        ]
+        return list(FALLBACK_REPOS)
 
     query = """
     query($userName:String!) {
@@ -65,14 +67,10 @@ def fetch_top_repos():
                 "stars": repo.get('stargazerCount', 0),
                 "progress": max(10, progress),
             })
-        return results if results else fetch_top_repos.__wrapped__()
+        return results if results else list(FALLBACK_REPOS)
     except Exception as e:
         print(f"Error fetching repos: {e}")
-        return [
-            {"name": "cryo-cluster", "desc": "3D Web Experiences", "lang": "TypeScript", "stars": 2, "progress": 75},
-            {"name": "ai-playground", "desc": "LLM Fine-tuning Pipelines", "lang": "Python", "stars": 1, "progress": 60},
-            {"name": "iAMv1", "desc": "Profile SVG Pipeline", "lang": "Python", "stars": 0, "progress": 90},
-        ]
+        return list(FALLBACK_REPOS)
 
 
 def generate_mission_svg():
@@ -81,6 +79,7 @@ def generate_mission_svg():
     status = "System Nominal"
 
     line_height = 24
+    line_anim_delay_step = 0.12
     top_padding = 60
     # 3 header lines + 4 lines per repo + 1 footer
     total_lines = 4 + (len(repos) * 4) + 1
@@ -93,8 +92,11 @@ def generate_mission_svg():
 
     def add_line(content_svg):
         nonlocal current_line, y_pos, lines_svg
-        lines_svg += f'  <text x="40" y="{y_pos}" class="vscode-text line-num">{current_line}</text>\n'
-        lines_svg += f'  <text x="60" y="{y_pos}" class="vscode-text">{content_svg}</text>\n'
+        delay = current_line * line_anim_delay_step
+        lines_svg += f'  <g class="code-line" style="animation-delay: {delay}s;">\n'
+        lines_svg += f'    <text x="40" y="{y_pos}" class="vscode-text line-num">{current_line}</text>\n'
+        lines_svg += f'    <text x="60" y="{y_pos}" class="vscode-text">{content_svg}</text>\n'
+        lines_svg += f'  </g>\n'
         y_pos += line_height
         current_line += 1
 
@@ -136,6 +138,23 @@ def generate_mission_svg():
 
       .bar-fill {{ fill: #38bdf8; }}
       .bar-empty {{ fill: #f8fafc; opacity: 0.2; }}
+
+      /* Live animations */
+      @keyframes fadeInLine {{
+        from {{ opacity: 0; transform: translateX(-8px); }}
+        to {{ opacity: 1; transform: translateX(0); }}
+      }}
+      @keyframes blink {{
+        0%, 100% {{ opacity: 1; }}
+        50% {{ opacity: 0; }}
+      }}
+      @keyframes scanline {{
+        0% {{ transform: translateY(0); }}
+        100% {{ transform: translateY({HEIGHT}px); }}
+      }}
+      .code-line {{ opacity: 0; animation: fadeInLine 0.4s ease-out forwards; }}
+      .cursor {{ animation: blink 1s step-end infinite; }}
+      .scan {{ fill: #38bdf8; opacity: 0.03; animation: scanline 4s linear infinite; }}
     </style>
   </defs>
 
@@ -150,7 +169,12 @@ def generate_mission_svg():
 
   <rect x="0" y="40" width="{WIDTH}" height="1" fill="#f8fafc" opacity="0.1" />
 
+  <!-- Scanline effect -->
+  <rect x="0" y="0" width="{WIDTH}" height="3" rx="1" class="scan" />
+
 {lines_svg}
+  <!-- Blinking cursor at end -->
+  <rect x="60" y="{y_pos - line_height + 4}" width="8" height="14" fill="#38bdf8" class="cursor" />
 </svg>'''
 
     os.makedirs('assets', exist_ok=True)

@@ -11,10 +11,20 @@
     @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&amp;display=swap");
     text { font-family: "Fira Code", monospace; font-weight: 700; letter-spacing: 2px; }
     .block-group { filter: url(#drop-shadow); }
+
+    @keyframes block-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .block-anim-0 { animation: block-float 3.0s ease-in-out infinite; }
+    .block-anim-1 { animation: block-float 3.4s ease-in-out 0.3s infinite; }
+    .block-anim-2 { animation: block-float 3.8s ease-in-out 0.6s infinite; }
+    .block-anim-3 { animation: block-float 3.2s ease-in-out 0.9s infinite; }
+    .block-anim-4 { animation: block-float 3.6s ease-in-out 1.2s infinite; }
   </style>
 </defs>
 <rect width="100%" height="100%" fill="#0f172a" />
-<g class="block-group">
+<g class="block-group block-anim-0">
 <polygon points="618.2384017536785,105.0 670.1999259807449,135.0 670.1999259807449,160.0 618.2384017536785,130.0" fill="#020617" stroke="#d946ef" stroke-width="0.5" />
 <polygon points="670.1999259807449,135.0 722.1614502078112,105.0 722.1614502078112,130.0 670.1999259807449,160.0" fill="#0f172a" stroke="#d946ef" stroke-width="0.5" />
 <polygon points="670.1999259807449,75.0 722.1614502078112,105.0 670.1999259807449,135.0 618.2384017536785,105.0" fill="#1e293b" stroke="#d946ef" stroke-width="1.5" />
@@ -22,7 +32,7 @@
   <text x="0" y="5" fill="#d946ef" font-family="monospace" font-size="24" font-weight="900" text-anchor="middle" dominant-baseline="middle" style="text-shadow: 0px 0px 8px #d946ef;" >AI/LLM</text>
 </g>
 </g>
-<g class="block-group">
+<g class="block-group block-anim-1">
 <polygon points="483.1384387633061,105.0 535.0999629903724,135.0 535.0999629903724,160.0 483.1384387633061,130.0" fill="#020617" stroke="#009688" stroke-width="0.5" />
 <polygon points="535.0999629903724,135.0 587.0614872174388,105.0 587.0614872174388,130.0 535.0999629903724,160.0" fill="#0f172a" stroke="#009688" stroke-width="0.5" />
 <polygon points="535.0999629903724,75.0 587.0614872174388,105.0 535.0999629903724,135.0 483.1384387633061,105.0" fill="#1e293b" stroke="#009688" stroke-width="1.5" />
@@ -30,7 +40,7 @@
   <text x="0" y="5" fill="#009688" font-family="monospace" font-size="24" font-weight="900" text-anchor="middle" dominant-baseline="middle" style="text-shadow: 0px 0px 8px #009688;" >FASTAPI</text>
 </g>
 </g>
-<g class="block-group">
+<g class="block-group block-anim-2">
 <polygon points="348.0384757729337,105.0 400.0,135.0 400.0,160.0 348.0384757729337,130.0" fill="#020617" stroke="#0ea5e9" stroke-width="0.5" />
 <polygon points="400.0,135.0 451.9615242270663,105.0 451.9615242270663,130.0 400.0,160.0" fill="#0f172a" stroke="#0ea5e9" stroke-width="0.5" />
 <polygon points="400.0,75.0 451.9615242270663,105.0 400.0,135.0 348.0384757729337,105.0" fill="#1e293b" stroke="#0ea5e9" stroke-width="1.5" />
@@ -38,7 +48,7 @@
   <text x="0" y="5" fill="#0ea5e9" font-family="monospace" font-size="24" font-weight="900" text-anchor="middle" dominant-baseline="middle" style="text-shadow: 0px 0px 8px #0ea5e9;" >TAILWIND</text>
 </g>
 </g>
-<g class="block-group">
+<g class="block-group block-anim-3">
 <polygon points="212.93851278256125,105.0 264.90003700962757,135.0 264.90003700962757,160.0 212.93851278256125,130.0" fill="#020617" stroke="#61DAFB" stroke-width="0.5" />
 <polygon points="264.90003700962757,135.0 316.8615612366939,105.0 316.8615612366939,130.0 264.90003700962757,160.0" fill="#0f172a" stroke="#61DAFB" stroke-width="0.5" />
 <polygon points="264.90003700962757,75.0 316.8615612366939,105.0 264.90003700962757,135.0 212.93851278256125,105.0" fill="#1e293b" stroke="#61DAFB" stroke-width="1.5" />
@@ -46,7 +56,7 @@
   <text x="0" y="5" fill="#61DAFB" font-family="monospace" font-size="24" font-weight="900" text-anchor="middle" dominant-baseline="middle" style="text-shadow: 0px 0px 8px #61DAFB;" >REACT</text>
 </g>
 </g>
-<g class="block-group">
+<g class="block-group block-anim-4">
 <polygon points="77.83854979218881,105.0 129.80007401925513,135.0 129.80007401925513,160.0 77.83854979218881,130.0" fill="#020617" stroke="#3776AB" stroke-width="0.5" />
 <polygon points="129.80007401925513,135.0 181.76159824632146,105.0 181.76159824632146,130.0 129.80007401925513,160.0" fill="#0f172a" stroke="#3776AB" stroke-width="0.5" />
 <polygon points="129.80007401925513,75.0 181.76159824632146,105.0 129.80007401925513,135.0 77.83854979218881,105.0" fill="#1e293b" stroke="#3776AB" stroke-width="1.5" />

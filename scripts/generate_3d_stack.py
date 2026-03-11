@@ -101,6 +101,16 @@ def generate_svg():
         '    @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&amp;display=swap");',
         '    text { font-family: "Fira Code", monospace; font-weight: 700; letter-spacing: 2px; }',
         '    .block-group { filter: url(#drop-shadow); }',
+        '',
+        '    @keyframes block-float {',
+        '      0%, 100% { transform: translateY(0); }',
+        '      50% { transform: translateY(-6px); }',
+        '    }',
+        '    .block-anim-0 { animation: block-float 3.0s ease-in-out infinite; }',
+        '    .block-anim-1 { animation: block-float 3.4s ease-in-out 0.3s infinite; }',
+        '    .block-anim-2 { animation: block-float 3.8s ease-in-out 0.6s infinite; }',
+        '    .block-anim-3 { animation: block-float 3.2s ease-in-out 0.9s infinite; }',
+        '    .block-anim-4 { animation: block-float 3.6s ease-in-out 1.2s infinite; }',
         '  </style>',
         f'</defs>',
         f'<rect width="100%" height="100%" fill="{BASE_COLOR}" />',
@@ -122,8 +132,8 @@ def generate_svg():
     # Sort blocks by depth (x + y). For isometric, it's roughly painter's algorithm.
     blocks = sorted(blocks, key=lambda b: (b["y"], b["x"]))
 
-    for block in blocks:
-        svg_content.append(f'<g class="block-group">')
+    for idx, block in enumerate(blocks):
+        svg_content.append(f'<g class="block-group block-anim-{idx}">')
         svg_content.append(draw_block(block["x"], block["y"], block["label"], block["color"]))
         svg_content.append(f'</g>')
 
