@@ -61,6 +61,7 @@ def fetch_contributions():
 def generate_cricket_svg():
     WIDTH = 800
     HEIGHT = 200
+    BALL_ANIM_DUR = "1.5s"
     
     # Up to 53 weeks * 7 days
     COLS = 53
@@ -154,8 +155,8 @@ def generate_cricket_svg():
         # The Ball using animateMotion (better browser support than offset-path)
         begin_time = f"{delay}s"
         anim_elements += f'''<circle r="4" class="cricket-ball" opacity="0">
-          <animateMotion path="{path_d}" dur="1.5s" begin="{begin_time}" repeatCount="indefinite" fill="freeze" />
-          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.9;1" dur="1.5s" begin="{begin_time}" repeatCount="indefinite" />
+          <animateMotion path="{path_d}" dur="{BALL_ANIM_DUR}" begin="{begin_time}" repeatCount="indefinite" fill="freeze" />
+          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.9;1" dur="{BALL_ANIM_DUR}" begin="{begin_time}" repeatCount="indefinite" />
         </circle>
         '''
         
