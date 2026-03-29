@@ -168,14 +168,14 @@
 <rect x="137.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="137.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="137.5" y="87.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="137.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-0" />
+<rect x="137.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-2" />
 <rect x="137.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="137.5" y="132.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="137.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="152.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="152.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="152.5" y="87.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="152.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-2" />
+<rect x="152.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="152.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="152.5" y="132.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="152.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-0" />
@@ -220,15 +220,15 @@
 <rect x="242.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="242.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="242.5" y="132.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="242.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="257.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-0" />
+<rect x="242.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-1" />
+<rect x="257.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-1" />
 <rect x="257.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="257.5" y="87.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="257.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="257.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="257.5" y="132.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="257.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-1" />
-<rect x="272.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-1" />
+<rect x="257.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-0" />
+<rect x="272.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="272.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="272.5" y="87.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="272.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-0" />
@@ -242,14 +242,14 @@
 <rect x="287.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="287.5" y="132.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="287.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="302.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-0" />
+<rect x="302.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-3" />
 <rect x="302.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="302.5" y="87.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="302.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="302.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="302.5" y="132.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="302.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="317.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-3" />
+<rect x="317.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="317.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="317.5" y="87.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="317.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-0" />
@@ -322,14 +322,14 @@
 <rect x="467.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="467.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="467.5" y="87.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="467.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-0" />
+<rect x="467.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-1" />
 <rect x="467.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="467.5" y="132.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="467.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="482.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="482.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="482.5" y="87.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="482.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-1" />
+<rect x="482.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="482.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="482.5" y="132.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="482.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-0" />
@@ -383,34 +383,34 @@
 <rect x="587.5" y="132.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="587.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="602.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="602.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="602.5" y="87.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="602.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-0" />
+<rect x="602.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-1" />
+<rect x="602.5" y="87.5" width="12" height="12" rx="2" class="cricket-level-2" />
+<rect x="602.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-1" />
 <rect x="602.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="602.5" y="132.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="602.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="617.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="617.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-1" />
+<rect x="602.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-3" />
+<rect x="617.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-4" />
+<rect x="617.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-2" />
 <rect x="617.5" y="87.5" width="12" height="12" rx="2" class="cricket-level-2" />
 <rect x="617.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-1" />
-<rect x="617.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="617.5" y="132.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="617.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-3" />
-<rect x="632.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-4" />
-<rect x="632.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-2" />
-<rect x="632.5" y="87.5" width="12" height="12" rx="2" class="cricket-level-2" />
+<rect x="617.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-1" />
+<rect x="617.5" y="132.5" width="12" height="12" rx="2" class="cricket-level-1" />
+<rect x="617.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-1" />
+<rect x="632.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-1" />
+<rect x="632.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-1" />
+<rect x="632.5" y="87.5" width="12" height="12" rx="2" class="cricket-level-1" />
 <rect x="632.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-1" />
 <rect x="632.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-1" />
 <rect x="632.5" y="132.5" width="12" height="12" rx="2" class="cricket-level-1" />
 <rect x="632.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-1" />
-<rect x="647.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-1" />
-<rect x="647.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-1" />
-<rect x="647.5" y="87.5" width="12" height="12" rx="2" class="cricket-level-1" />
-<rect x="647.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-1" />
-<rect x="647.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-1" />
-<rect x="647.5" y="132.5" width="12" height="12" rx="2" class="cricket-level-1" />
-<rect x="647.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-1" />
-<rect x="662.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-2" />
+<rect x="647.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-2" />
+<rect x="647.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-0" />
+<rect x="647.5" y="87.5" width="12" height="12" rx="2" class="cricket-level-0" />
+<rect x="647.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-0" />
+<rect x="647.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-0" />
+<rect x="647.5" y="132.5" width="12" height="12" rx="2" class="cricket-level-0" />
+<rect x="647.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-0" />
+<rect x="662.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="662.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="662.5" y="87.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="662.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-0" />
@@ -424,55 +424,49 @@
 <rect x="677.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="677.5" y="132.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="677.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="692.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-0" />
+<rect x="692.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-2" />
 <rect x="692.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="692.5" y="87.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="692.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="692.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="692.5" y="132.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="692.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="707.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-2" />
+<rect x="707.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="707.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="707.5" y="87.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="707.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="707.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-0" />
+<rect x="707.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-1" />
 <rect x="707.5" y="132.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="707.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-0" />
+<rect x="707.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-2" />
 <rect x="722.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="722.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="722.5" y="87.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="722.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="722.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-1" />
+<rect x="722.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-2" />
+<rect x="722.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="722.5" y="132.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="722.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-2" />
-<rect x="737.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="737.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="737.5" y="87.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="737.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-2" />
-<rect x="737.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-0" />
+<rect x="722.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-3" />
+<rect x="737.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-3" />
+<rect x="737.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-3" />
+<rect x="737.5" y="87.5" width="12" height="12" rx="2" class="cricket-level-1" />
+<rect x="737.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-3" />
+<rect x="737.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-2" />
 <rect x="737.5" y="132.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="737.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-3" />
-<rect x="752.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-3" />
-<rect x="752.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-3" />
-<rect x="752.5" y="87.5" width="12" height="12" rx="2" class="cricket-level-1" />
-<rect x="752.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-3" />
-<rect x="752.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-2" />
+<rect x="737.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-0" />
+<rect x="752.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-0" />
+<rect x="752.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-0" />
+<rect x="752.5" y="87.5" width="12" height="12" rx="2" class="cricket-level-0" />
+<rect x="752.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-0" />
+<rect x="752.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="752.5" y="132.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="752.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="767.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="767.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="767.5" y="87.5" width="12" height="12" rx="2" class="cricket-level-0" />
+<rect x="767.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-2" />
+<rect x="767.5" y="87.5" width="12" height="12" rx="2" class="cricket-level-2" />
 <rect x="767.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="767.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="767.5" y="132.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="767.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-0" />
 <rect x="782.5" y="57.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="782.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-2" />
-<rect x="782.5" y="87.5" width="12" height="12" rx="2" class="cricket-level-2" />
-<rect x="782.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="782.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="782.5" y="132.5" width="12" height="12" rx="2" class="cricket-level-0" />
-<rect x="782.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-0" />
 
   
   <!-- Batsman minimal pixel art / silhouette -->
@@ -487,68 +481,68 @@
 
   <!-- Animations -->
   <circle r="4" class="cricket-ball" opacity="0">
-          <animateMotion path="M -37.5 110.0 Q 143.0 3.5 323.5 63.5" dur="1.5s" begin="0.0s" repeatCount="indefinite" fill="freeze" />
+          <animateMotion path="M -37.5 110.0 Q 135.5 3.5 308.5 63.5" dur="1.5s" begin="0.0s" repeatCount="indefinite" fill="freeze" />
           <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.9;1" dur="1.5s" begin="0.0s" repeatCount="indefinite" />
         </circle>
         
-        <g style="animation: cricket-pop0 16s ease-out infinite; transform-origin: 323.5px 63.5px;">
-            <text x="323.5" y="63.5" class="cricket-popup cricket-popup-contrast">2</text>
+        <g style="animation: cricket-pop0 16s ease-out infinite; transform-origin: 308.5px 63.5px;">
+            <text x="308.5" y="63.5" class="cricket-popup cricket-popup-contrast">2</text>
         </g>
         <circle r="4" class="cricket-ball" opacity="0">
-          <animateMotion path="M -37.5 110.0 Q 293.0 50.0 623.5 153.5" dur="1.5s" begin="2.0s" repeatCount="indefinite" fill="freeze" />
+          <animateMotion path="M -37.5 110.0 Q 285.5 50.0 608.5 153.5" dur="1.5s" begin="2.0s" repeatCount="indefinite" fill="freeze" />
           <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.9;1" dur="1.5s" begin="2.0s" repeatCount="indefinite" />
         </circle>
         
-        <g style="animation: cricket-pop1 16s ease-out infinite; transform-origin: 623.5px 153.5px;">
-            <text x="623.5" y="153.5" class="cricket-popup cricket-popup-contrast">4</text>
+        <g style="animation: cricket-pop1 16s ease-out infinite; transform-origin: 608.5px 153.5px;">
+            <text x="608.5" y="153.5" class="cricket-popup cricket-popup-contrast">4</text>
         </g>
         <circle r="4" class="cricket-ball" opacity="0">
-          <animateMotion path="M -37.5 110.0 Q 300.5 3.5 638.5 63.5" dur="1.5s" begin="4.0s" repeatCount="indefinite" fill="freeze" />
+          <animateMotion path="M -37.5 110.0 Q 293.0 3.5 623.5 63.5" dur="1.5s" begin="4.0s" repeatCount="indefinite" fill="freeze" />
           <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.9;1" dur="1.5s" begin="4.0s" repeatCount="indefinite" />
         </circle>
         
-        <g style="animation: cricket-pop2 16s ease-out infinite; transform-origin: 638.5px 63.5px;">
-            <text x="638.5" y="63.5" class="cricket-popup cricket-popup-contrast">4</text>
+        <g style="animation: cricket-pop2 16s ease-out infinite; transform-origin: 623.5px 63.5px;">
+            <text x="623.5" y="63.5" class="cricket-popup cricket-popup-contrast">4</text>
         </g>
         <circle r="4" class="cricket-ball" opacity="0">
-          <animateMotion path="M -37.5 110.0 Q 300.5 18.5 638.5 78.5" dur="1.5s" begin="6.0s" repeatCount="indefinite" fill="freeze" />
+          <animateMotion path="M -37.5 110.0 Q 293.0 18.5 623.5 78.5" dur="1.5s" begin="6.0s" repeatCount="indefinite" fill="freeze" />
           <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.9;1" dur="1.5s" begin="6.0s" repeatCount="indefinite" />
         </circle>
         
-        <g style="animation: cricket-pop3 16s ease-out infinite; transform-origin: 638.5px 78.5px;">
-            <text x="638.5" y="78.5" class="cricket-popup cricket-popup-contrast">2</text>
+        <g style="animation: cricket-pop3 16s ease-out infinite; transform-origin: 623.5px 78.5px;">
+            <text x="623.5" y="78.5" class="cricket-popup cricket-popup-contrast">2</text>
         </g>
         <circle r="4" class="cricket-ball" opacity="0">
-          <animateMotion path="M -37.5 110.0 Q 353.0 50.0 743.5 153.5" dur="1.5s" begin="8.0s" repeatCount="indefinite" fill="freeze" />
+          <animateMotion path="M -37.5 110.0 Q 345.5 50.0 728.5 153.5" dur="1.5s" begin="8.0s" repeatCount="indefinite" fill="freeze" />
           <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.9;1" dur="1.5s" begin="8.0s" repeatCount="indefinite" />
         </circle>
         
-        <g style="animation: cricket-pop4 16s ease-out infinite; transform-origin: 743.5px 153.5px;">
-            <text x="743.5" y="153.5" class="cricket-popup cricket-popup-contrast">4</text>
+        <g style="animation: cricket-pop4 16s ease-out infinite; transform-origin: 728.5px 153.5px;">
+            <text x="728.5" y="153.5" class="cricket-popup cricket-popup-contrast">4</text>
         </g>
         <circle r="4" class="cricket-ball" opacity="0">
-          <animateMotion path="M -37.5 110.0 Q 360.5 18.5 758.5 78.5" dur="1.5s" begin="10.0s" repeatCount="indefinite" fill="freeze" />
+          <animateMotion path="M -37.5 110.0 Q 353.0 18.5 743.5 78.5" dur="1.5s" begin="10.0s" repeatCount="indefinite" fill="freeze" />
           <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.9;1" dur="1.5s" begin="10.0s" repeatCount="indefinite" />
         </circle>
         
-        <g style="animation: cricket-pop5 16s ease-out infinite; transform-origin: 758.5px 78.5px;">
-            <text x="758.5" y="78.5" class="cricket-popup cricket-popup-contrast">4</text>
+        <g style="animation: cricket-pop5 16s ease-out infinite; transform-origin: 743.5px 78.5px;">
+            <text x="743.5" y="78.5" class="cricket-popup cricket-popup-contrast">4</text>
         </g>
         <circle r="4" class="cricket-ball" opacity="0">
-          <animateMotion path="M -37.5 110.0 Q 360.5 48.5 758.5 108.5" dur="1.5s" begin="12.0s" repeatCount="indefinite" fill="freeze" />
+          <animateMotion path="M -37.5 110.0 Q 353.0 48.5 743.5 108.5" dur="1.5s" begin="12.0s" repeatCount="indefinite" fill="freeze" />
           <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.9;1" dur="1.5s" begin="12.0s" repeatCount="indefinite" />
         </circle>
         
-        <g style="animation: cricket-pop6 16s ease-out infinite; transform-origin: 758.5px 108.5px;">
-            <text x="758.5" y="108.5" class="cricket-popup cricket-popup-contrast">4</text>
+        <g style="animation: cricket-pop6 16s ease-out infinite; transform-origin: 743.5px 108.5px;">
+            <text x="743.5" y="108.5" class="cricket-popup cricket-popup-contrast">4</text>
         </g>
         <circle r="4" class="cricket-ball" opacity="0">
-          <animateMotion path="M -37.5 110.0 Q 360.5 3.5 758.5 63.5" dur="1.5s" begin="14.0s" repeatCount="indefinite" fill="freeze" />
+          <animateMotion path="M -37.5 110.0 Q 353.0 3.5 743.5 63.5" dur="1.5s" begin="14.0s" repeatCount="indefinite" fill="freeze" />
           <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.9;1" dur="1.5s" begin="14.0s" repeatCount="indefinite" />
         </circle>
         
-        <g style="animation: cricket-pop7 16s ease-out infinite; transform-origin: 758.5px 63.5px;">
-            <text x="758.5" y="63.5" class="cricket-popup cricket-popup-contrast">2</text>
+        <g style="animation: cricket-pop7 16s ease-out infinite; transform-origin: 743.5px 63.5px;">
+            <text x="743.5" y="63.5" class="cricket-popup cricket-popup-contrast">2</text>
         </g>
         
 
