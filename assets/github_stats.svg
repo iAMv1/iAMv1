@@ -86,7 +86,7 @@
   <circle cx="20" cy="30" r="4" class="accent-dot pulse" />
   <text x="36" y="26" class="title">IAMV1</text>
   <text x="36" y="42" class="subtitle">LIVE SYSTEM TELEMETRY</text>
-  <text x="400" y="36" class="subtitle" text-anchor="end">2026-04-01 02:25 UTC</text>
+  <text x="400" y="36" class="subtitle" text-anchor="end">2026-04-02 02:05 UTC</text>
 
   <!-- Divider -->
   <line x1="20" y1="65" x2="400" y2="65" class="divider" />
@@ -105,7 +105,7 @@
           <rect width="120" height="65" rx="10" class="stat-card">
             <animate attributeName="opacity" from="0" to="1" dur="0.6s" fill="freeze" begin="0.2s" />
           </rect>
-          <text x="60" y="28" class="stat-value" text-anchor="middle">141</text>
+          <text x="60" y="28" class="stat-value" text-anchor="middle">152</text>
           <text x="60" y="48" class="stat-label" text-anchor="middle">🔥 Commits</text>
         </g>
         <g transform="translate(290, 100)">
@@ -119,21 +119,21 @@
           <rect width="120" height="65" rx="10" class="stat-card">
             <animate attributeName="opacity" from="0" to="1" dur="0.6s" fill="freeze" begin="0.4s" />
           </rect>
-          <text x="60" y="28" class="stat-value" text-anchor="middle">6</text>
+          <text x="60" y="28" class="stat-value" text-anchor="middle">12</text>
           <text x="60" y="48" class="stat-label" text-anchor="middle">🔀 PRs</text>
         </g>
         <g transform="translate(160, 180)">
           <rect width="120" height="65" rx="10" class="stat-card">
             <animate attributeName="opacity" from="0" to="1" dur="0.6s" fill="freeze" begin="0.5s" />
           </rect>
-          <text x="60" y="28" class="stat-value" text-anchor="middle">163</text>
+          <text x="60" y="28" class="stat-value" text-anchor="middle">180</text>
           <text x="60" y="48" class="stat-label" text-anchor="middle">⚡ Contrib</text>
         </g>
         <g transform="translate(290, 180)">
           <rect width="120" height="65" rx="10" class="stat-card">
             <animate attributeName="opacity" from="0" to="1" dur="0.6s" fill="freeze" begin="0.6s" />
           </rect>
-          <text x="60" y="28" class="stat-value" text-anchor="middle">2d</text>
+          <text x="60" y="28" class="stat-value" text-anchor="middle">3d</text>
           <text x="60" y="48" class="stat-label" text-anchor="middle">🏏 Streak</text>
         </g>
 
@@ -142,14 +142,14 @@
 
   <!-- Section: Languages -->
   <text x="30" y="258" class="section-title">▸ LANGUAGE PROFILE</text>
-  <rect x="30" y="262" width="194.48000000000002" height="14" rx="3" fill="#3572A5" opacity="0.85"><animate attributeName="width" from="0" to="194.48000000000002" dur="1.2s" fill="freeze" begin="0.3s" /></rect>
-<text x="232.48000000000002" y="274" class="label">Python (57.2%)</text>
-<rect x="30" y="284" width="86.7" height="14" rx="3" fill="#3178c6" opacity="0.85"><animate attributeName="width" from="0" to="86.7" dur="1.2s" fill="freeze" begin="0.44999999999999996s" /></rect>
-<text x="124.7" y="296" class="label">TypeScript (25.5%)</text>
-<rect x="30" y="306" width="47.260000000000005" height="14" rx="3" fill="#DA5B0B" opacity="0.85"><animate attributeName="width" from="0" to="47.260000000000005" dur="1.2s" fill="freeze" begin="0.6s" /></rect>
-<text x="85.26" y="318" class="label">Jupyter Notebook (13.9%)</text>
-<rect x="30" y="328" width="7.48" height="14" rx="3" fill="#f1e05a" opacity="0.85"><animate attributeName="width" from="0" to="7.48" dur="1.2s" fill="freeze" begin="0.75s" /></rect>
-<text x="45.480000000000004" y="340" class="label">JavaScript (2.2%)</text>
+  <rect x="30" y="262" width="196.85999999999999" height="14" rx="3" fill="#3572A5" opacity="0.85"><animate attributeName="width" from="0" to="196.85999999999999" dur="1.2s" fill="freeze" begin="0.3s" /></rect>
+<text x="234.85999999999999" y="274" class="label">Python (57.9%)</text>
+<rect x="30" y="284" width="85.34" height="14" rx="3" fill="#3178c6" opacity="0.85"><animate attributeName="width" from="0" to="85.34" dur="1.2s" fill="freeze" begin="0.44999999999999996s" /></rect>
+<text x="123.34" y="296" class="label">TypeScript (25.1%)</text>
+<rect x="30" y="306" width="46.57999999999999" height="14" rx="3" fill="#DA5B0B" opacity="0.85"><animate attributeName="width" from="0" to="46.57999999999999" dur="1.2s" fill="freeze" begin="0.6s" /></rect>
+<text x="84.57999999999998" y="318" class="label">Jupyter Notebook (13.7%)</text>
+<rect x="30" y="328" width="7.140000000000001" height="14" rx="3" fill="#f1e05a" opacity="0.85"><animate attributeName="width" from="0" to="7.140000000000001" dur="1.2s" fill="freeze" begin="0.75s" /></rect>
+<text x="45.14" y="340" class="label">JavaScript (2.1%)</text>
 <rect x="30" y="350" width="4.08" height="14" rx="3" fill="#e34c26" opacity="0.85"><animate attributeName="width" from="0" to="4.08" dur="1.2s" fill="freeze" begin="0.8999999999999999s" /></rect>
 <text x="42.08" y="362" class="label">HTML (1.2%)</text>
 
