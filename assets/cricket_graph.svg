@@ -472,6 +472,7 @@
 <rect x="782.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-1" />
 <rect x="782.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-4" />
 <rect x="782.5" y="132.5" width="12" height="12" rx="2" class="cricket-level-0" />
+<rect x="782.5" y="147.5" width="12" height="12" rx="2" class="cricket-level-0" />
 
   
   <!-- Batsman minimal pixel art / silhouette -->
