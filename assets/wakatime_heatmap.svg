@@ -59,16 +59,16 @@
             <rect x="35" y="0" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.0s" fill="freeze" />
             </rect>
-            <rect x="49" y="0" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="49" y="0" width="14" height="14" class="heat-tile" fill="#38bdf8" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.03s" fill="freeze" />
             </rect>
-            <rect x="63" y="0" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
+            <rect x="63" y="0" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.06s" fill="freeze" />
             </rect>
-            <rect x="77" y="0" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
+            <rect x="77" y="0" width="14" height="14" class="heat-tile" fill="#38bdf8" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.09s" fill="freeze" />
             </rect>
-            <rect x="91" y="0" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
+            <rect x="91" y="0" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.12s" fill="freeze" />
             </rect>
             <rect x="105" y="0" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
@@ -77,19 +77,19 @@
             <rect x="119" y="0" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.18s" fill="freeze" />
             </rect>
-            <rect x="133" y="0" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
+            <rect x="133" y="0" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.21s" fill="freeze" />
             </rect>
-            <rect x="147" y="0" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
+            <rect x="147" y="0" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.24s" fill="freeze" />
             </rect>
-            <rect x="161" y="0" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
+            <rect x="161" y="0" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.27s" fill="freeze" />
             </rect>
             <rect x="175" y="0" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.3s" fill="freeze" />
             </rect>
-            <rect x="189" y="0" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
+            <rect x="189" y="0" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.32999999999999996s" fill="freeze" />
             </rect>
             <rect x="203" y="0" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
@@ -98,49 +98,49 @@
             <rect x="217" y="0" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.39s" fill="freeze" />
             </rect>
-            <rect x="231" y="0" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
+            <rect x="231" y="0" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.42s" fill="freeze" />
             </rect>
-            <rect x="245" y="0" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="245" y="0" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.44999999999999996s" fill="freeze" />
             </rect>
-            <rect x="259" y="0" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="259" y="0" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.48s" fill="freeze" />
             </rect>
-            <rect x="273" y="0" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="273" y="0" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.51s" fill="freeze" />
             </rect>
-            <rect x="287" y="0" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="287" y="0" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.54s" fill="freeze" />
             </rect>
-            <rect x="301" y="0" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="301" y="0" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.57s" fill="freeze" />
             </rect>
-            <rect x="315" y="0" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
+            <rect x="315" y="0" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.6s" fill="freeze" />
             </rect>
             <rect x="329" y="0" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.63s" fill="freeze" />
             </rect>
-            <rect x="343" y="0" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="343" y="0" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.6599999999999999s" fill="freeze" />
             </rect>
-            <rect x="357" y="0" width="14" height="14" class="heat-tile" fill="#38bdf8" opacity="0">
+            <rect x="357" y="0" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.69s" fill="freeze" />
             </rect>
-            <rect x="35" y="14" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
+            <rect x="35" y="14" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.05s" fill="freeze" />
             </rect>
-            <rect x="49" y="14" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
+            <rect x="49" y="14" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.08s" fill="freeze" />
             </rect>
-            <rect x="63" y="14" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="63" y="14" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.11s" fill="freeze" />
             </rect>
-            <rect x="77" y="14" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
+            <rect x="77" y="14" width="14" height="14" class="heat-tile" fill="#38bdf8" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.14s" fill="freeze" />
             </rect>
-            <rect x="91" y="14" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
+            <rect x="91" y="14" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.16999999999999998s" fill="freeze" />
             </rect>
             <rect x="105" y="14" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
@@ -149,7 +149,7 @@
             <rect x="119" y="14" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.22999999999999998s" fill="freeze" />
             </rect>
-            <rect x="133" y="14" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="133" y="14" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.26s" fill="freeze" />
             </rect>
             <rect x="147" y="14" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
@@ -161,13 +161,13 @@
             <rect x="175" y="14" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.35s" fill="freeze" />
             </rect>
-            <rect x="189" y="14" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
+            <rect x="189" y="14" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.37999999999999995s" fill="freeze" />
             </rect>
             <rect x="203" y="14" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.41s" fill="freeze" />
             </rect>
-            <rect x="217" y="14" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
+            <rect x="217" y="14" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.44s" fill="freeze" />
             </rect>
             <rect x="231" y="14" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
@@ -185,16 +185,16 @@
             <rect x="287" y="14" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.5900000000000001s" fill="freeze" />
             </rect>
-            <rect x="301" y="14" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="301" y="14" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.62s" fill="freeze" />
             </rect>
             <rect x="315" y="14" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.65s" fill="freeze" />
             </rect>
-            <rect x="329" y="14" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
+            <rect x="329" y="14" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.68s" fill="freeze" />
             </rect>
-            <rect x="343" y="14" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
+            <rect x="343" y="14" width="14" height="14" class="heat-tile" fill="#38bdf8" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.71s" fill="freeze" />
             </rect>
             <rect x="357" y="14" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
@@ -203,16 +203,16 @@
             <rect x="35" y="28" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.1s" fill="freeze" />
             </rect>
-            <rect x="49" y="28" width="14" height="14" class="heat-tile" fill="#38bdf8" opacity="0">
+            <rect x="49" y="28" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.13s" fill="freeze" />
             </rect>
-            <rect x="63" y="28" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
+            <rect x="63" y="28" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.16s" fill="freeze" />
             </rect>
-            <rect x="77" y="28" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
+            <rect x="77" y="28" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.19s" fill="freeze" />
             </rect>
-            <rect x="91" y="28" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
+            <rect x="91" y="28" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.22s" fill="freeze" />
             </rect>
             <rect x="105" y="28" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
@@ -227,40 +227,40 @@
             <rect x="147" y="28" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.33999999999999997s" fill="freeze" />
             </rect>
-            <rect x="161" y="28" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="161" y="28" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.37s" fill="freeze" />
             </rect>
-            <rect x="175" y="28" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="175" y="28" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.4s" fill="freeze" />
             </rect>
-            <rect x="189" y="28" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
+            <rect x="189" y="28" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.42999999999999994s" fill="freeze" />
             </rect>
             <rect x="203" y="28" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.45999999999999996s" fill="freeze" />
             </rect>
-            <rect x="217" y="28" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
+            <rect x="217" y="28" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.49s" fill="freeze" />
             </rect>
-            <rect x="231" y="28" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
+            <rect x="231" y="28" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.52s" fill="freeze" />
             </rect>
             <rect x="245" y="28" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.5499999999999999s" fill="freeze" />
             </rect>
-            <rect x="259" y="28" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
+            <rect x="259" y="28" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.58s" fill="freeze" />
             </rect>
             <rect x="273" y="28" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.61s" fill="freeze" />
             </rect>
-            <rect x="287" y="28" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="287" y="28" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.64s" fill="freeze" />
             </rect>
-            <rect x="301" y="28" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
+            <rect x="301" y="28" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.6699999999999999s" fill="freeze" />
             </rect>
-            <rect x="315" y="28" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
+            <rect x="315" y="28" width="14" height="14" class="heat-tile" fill="#38bdf8" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.7s" fill="freeze" />
             </rect>
             <rect x="329" y="28" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
@@ -272,16 +272,16 @@
             <rect x="357" y="28" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.7899999999999999s" fill="freeze" />
             </rect>
-            <rect x="35" y="42" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
+            <rect x="35" y="42" width="14" height="14" class="heat-tile" fill="#38bdf8" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.15000000000000002s" fill="freeze" />
             </rect>
-            <rect x="49" y="42" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="49" y="42" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.18000000000000002s" fill="freeze" />
             </rect>
-            <rect x="63" y="42" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="63" y="42" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.21000000000000002s" fill="freeze" />
             </rect>
-            <rect x="77" y="42" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="77" y="42" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.24000000000000002s" fill="freeze" />
             </rect>
             <rect x="91" y="42" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
@@ -311,7 +311,7 @@
             <rect x="203" y="42" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.51s" fill="freeze" />
             </rect>
-            <rect x="217" y="42" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="217" y="42" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.54s" fill="freeze" />
             </rect>
             <rect x="231" y="42" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
@@ -326,43 +326,43 @@
             <rect x="273" y="42" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.66s" fill="freeze" />
             </rect>
-            <rect x="287" y="42" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
+            <rect x="287" y="42" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.6900000000000001s" fill="freeze" />
             </rect>
-            <rect x="301" y="42" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="301" y="42" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.72s" fill="freeze" />
             </rect>
-            <rect x="315" y="42" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
+            <rect x="315" y="42" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.75s" fill="freeze" />
             </rect>
-            <rect x="329" y="42" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
+            <rect x="329" y="42" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.78s" fill="freeze" />
             </rect>
             <rect x="343" y="42" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.8099999999999999s" fill="freeze" />
             </rect>
-            <rect x="357" y="42" width="14" height="14" class="heat-tile" fill="#38bdf8" opacity="0">
+            <rect x="357" y="42" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.84s" fill="freeze" />
             </rect>
-            <rect x="35" y="56" width="14" height="14" class="heat-tile" fill="#38bdf8" opacity="0">
+            <rect x="35" y="56" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.2s" fill="freeze" />
             </rect>
-            <rect x="49" y="56" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
+            <rect x="49" y="56" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.23s" fill="freeze" />
             </rect>
-            <rect x="63" y="56" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
+            <rect x="63" y="56" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.26s" fill="freeze" />
             </rect>
-            <rect x="77" y="56" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
+            <rect x="77" y="56" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.29000000000000004s" fill="freeze" />
             </rect>
-            <rect x="91" y="56" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
+            <rect x="91" y="56" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.32s" fill="freeze" />
             </rect>
             <rect x="105" y="56" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.35s" fill="freeze" />
             </rect>
-            <rect x="119" y="56" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
+            <rect x="119" y="56" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.38s" fill="freeze" />
             </rect>
             <rect x="133" y="56" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
@@ -374,7 +374,7 @@
             <rect x="161" y="56" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.47000000000000003s" fill="freeze" />
             </rect>
-            <rect x="175" y="56" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
+            <rect x="175" y="56" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.5s" fill="freeze" />
             </rect>
             <rect x="189" y="56" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
@@ -386,55 +386,55 @@
             <rect x="217" y="56" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.5900000000000001s" fill="freeze" />
             </rect>
-            <rect x="231" y="56" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="231" y="56" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.62s" fill="freeze" />
             </rect>
-            <rect x="245" y="56" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="245" y="56" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.6499999999999999s" fill="freeze" />
             </rect>
             <rect x="259" y="56" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.6799999999999999s" fill="freeze" />
             </rect>
-            <rect x="273" y="56" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
+            <rect x="273" y="56" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.71s" fill="freeze" />
             </rect>
-            <rect x="287" y="56" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="287" y="56" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.74s" fill="freeze" />
             </rect>
-            <rect x="301" y="56" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="301" y="56" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.77s" fill="freeze" />
             </rect>
-            <rect x="315" y="56" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
+            <rect x="315" y="56" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.8s" fill="freeze" />
             </rect>
             <rect x="329" y="56" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.8300000000000001s" fill="freeze" />
             </rect>
-            <rect x="343" y="56" width="14" height="14" class="heat-tile" fill="#38bdf8" opacity="0">
+            <rect x="343" y="56" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.8599999999999999s" fill="freeze" />
             </rect>
-            <rect x="357" y="56" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
+            <rect x="357" y="56" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.8899999999999999s" fill="freeze" />
             </rect>
-            <rect x="35" y="70" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
+            <rect x="35" y="70" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.25s" fill="freeze" />
             </rect>
-            <rect x="49" y="70" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="49" y="70" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.28s" fill="freeze" />
             </rect>
-            <rect x="63" y="70" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
+            <rect x="63" y="70" width="14" height="14" class="heat-tile" fill="#38bdf8" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.31s" fill="freeze" />
             </rect>
             <rect x="77" y="70" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.33999999999999997s" fill="freeze" />
             </rect>
-            <rect x="91" y="70" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
+            <rect x="91" y="70" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.37s" fill="freeze" />
             </rect>
-            <rect x="105" y="70" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
+            <rect x="105" y="70" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.4s" fill="freeze" />
             </rect>
-            <rect x="119" y="70" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
+            <rect x="119" y="70" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.43s" fill="freeze" />
             </rect>
             <rect x="133" y="70" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
@@ -443,7 +443,7 @@
             <rect x="147" y="70" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.49s" fill="freeze" />
             </rect>
-            <rect x="161" y="70" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="161" y="70" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.52s" fill="freeze" />
             </rect>
             <rect x="175" y="70" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
@@ -455,58 +455,58 @@
             <rect x="203" y="70" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.61s" fill="freeze" />
             </rect>
-            <rect x="217" y="70" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="217" y="70" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.64s" fill="freeze" />
             </rect>
-            <rect x="231" y="70" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
+            <rect x="231" y="70" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.6699999999999999s" fill="freeze" />
             </rect>
-            <rect x="245" y="70" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="245" y="70" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.7s" fill="freeze" />
             </rect>
-            <rect x="259" y="70" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
+            <rect x="259" y="70" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.73s" fill="freeze" />
             </rect>
             <rect x="273" y="70" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.76s" fill="freeze" />
             </rect>
-            <rect x="287" y="70" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="287" y="70" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.79s" fill="freeze" />
             </rect>
             <rect x="301" y="70" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.82s" fill="freeze" />
             </rect>
-            <rect x="315" y="70" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
+            <rect x="315" y="70" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.85s" fill="freeze" />
             </rect>
             <rect x="329" y="70" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.88s" fill="freeze" />
             </rect>
-            <rect x="343" y="70" width="14" height="14" class="heat-tile" fill="#38bdf8" opacity="0">
+            <rect x="343" y="70" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.9099999999999999s" fill="freeze" />
             </rect>
-            <rect x="357" y="70" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
+            <rect x="357" y="70" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.94s" fill="freeze" />
             </rect>
-            <rect x="35" y="84" width="14" height="14" class="heat-tile" fill="#38bdf8" opacity="0">
+            <rect x="35" y="84" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.30000000000000004s" fill="freeze" />
             </rect>
-            <rect x="49" y="84" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
+            <rect x="49" y="84" width="14" height="14" class="heat-tile" fill="#38bdf8" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.33000000000000007s" fill="freeze" />
             </rect>
-            <rect x="63" y="84" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="63" y="84" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.36000000000000004s" fill="freeze" />
             </rect>
             <rect x="77" y="84" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.39s" fill="freeze" />
             </rect>
-            <rect x="91" y="84" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
+            <rect x="91" y="84" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.42000000000000004s" fill="freeze" />
             </rect>
-            <rect x="105" y="84" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="105" y="84" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.45000000000000007s" fill="freeze" />
             </rect>
-            <rect x="119" y="84" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
+            <rect x="119" y="84" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.48000000000000004s" fill="freeze" />
             </rect>
             <rect x="133" y="84" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
@@ -515,49 +515,49 @@
             <rect x="147" y="84" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.54s" fill="freeze" />
             </rect>
-            <rect x="161" y="84" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="161" y="84" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.5700000000000001s" fill="freeze" />
             </rect>
             <rect x="175" y="84" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.6000000000000001s" fill="freeze" />
             </rect>
-            <rect x="189" y="84" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="189" y="84" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.63s" fill="freeze" />
             </rect>
-            <rect x="203" y="84" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="203" y="84" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.66s" fill="freeze" />
             </rect>
-            <rect x="217" y="84" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="217" y="84" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.6900000000000001s" fill="freeze" />
             </rect>
-            <rect x="231" y="84" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
+            <rect x="231" y="84" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.72s" fill="freeze" />
             </rect>
-            <rect x="245" y="84" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
+            <rect x="245" y="84" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.75s" fill="freeze" />
             </rect>
             <rect x="259" y="84" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.78s" fill="freeze" />
             </rect>
-            <rect x="273" y="84" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
+            <rect x="273" y="84" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.81s" fill="freeze" />
             </rect>
-            <rect x="287" y="84" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
+            <rect x="287" y="84" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.8400000000000001s" fill="freeze" />
             </rect>
             <rect x="301" y="84" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.87s" fill="freeze" />
             </rect>
-            <rect x="315" y="84" width="14" height="14" class="heat-tile" fill="#1e293b" opacity="0">
+            <rect x="315" y="84" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.9s" fill="freeze" />
             </rect>
             <rect x="329" y="84" width="14" height="14" class="heat-tile" fill="#0ea5e970" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.93s" fill="freeze" />
             </rect>
-            <rect x="343" y="84" width="14" height="14" class="heat-tile" fill="#38bdf8" opacity="0">
+            <rect x="343" y="84" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.96s" fill="freeze" />
             </rect>
-            <rect x="357" y="84" width="14" height="14" class="heat-tile" fill="#0ea5e9a0" opacity="0">
+            <rect x="357" y="84" width="14" height="14" class="heat-tile" fill="#0ea5e940" opacity="0">
               <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.99s" fill="freeze" />
             </rect>
   </g>
