@@ -57,7 +57,7 @@
   </g>
   <g class="code-line" style="animation-delay: 0.24s;">
     <text x="40" y="104" class="vscode-text line-num">2</text>
-    <text x="60" y="104" class="vscode-text"><tspan class="t-key">last_uplink</tspan> <tspan class="t-punct">:</tspan> <tspan class="t-str">'2026-05-22 03:26'</tspan></text>
+    <text x="60" y="104" class="vscode-text"><tspan class="t-key">last_uplink</tspan> <tspan class="t-punct">:</tspan> <tspan class="t-str">'2026-05-23 02:46'</tspan></text>
   </g>
   <g class="code-line" style="animation-delay: 0.36s;">
     <text x="40" y="128" class="vscode-text line-num">3</text>
@@ -69,11 +69,11 @@
   </g>
   <g class="code-line" style="animation-delay: 0.6s;">
     <text x="40" y="176" class="vscode-text line-num">5</text>
-    <text x="60" y="176" class="vscode-text"><tspan class="t-punct">-   </tspan><tspan class="t-key">name</tspan><tspan class="t-punct">:</tspan> <tspan class="t-str">'notes'</tspan></text>
+    <text x="60" y="176" class="vscode-text"><tspan class="t-punct">-   </tspan><tspan class="t-key">name</tspan><tspan class="t-punct">:</tspan> <tspan class="t-str">'iAMv1'</tspan></text>
   </g>
   <g class="code-line" style="animation-delay: 0.72s;">
     <text x="40" y="200" class="vscode-text line-num">6</text>
-    <text x="60" y="200" class="vscode-text"><tspan class="t-key" dx="36">lang</tspan> <tspan class="t-punct">:</tspan> <tspan class="t-str">HTML</tspan>  <tspan class="t-comment"># ⭐ 0</tspan></text>
+    <text x="60" y="200" class="vscode-text"><tspan class="t-key" dx="36">lang</tspan> <tspan class="t-punct">:</tspan> <tspan class="t-str">Python</tspan>  <tspan class="t-comment"># ⭐ 0</tspan></text>
   </g>
   <g class="code-line" style="animation-delay: 0.84s;">
     <text x="40" y="224" class="vscode-text line-num">7</text>
@@ -85,11 +85,11 @@
   </g>
   <g class="code-line" style="animation-delay: 1.08s;">
     <text x="40" y="272" class="vscode-text line-num">9</text>
-    <text x="60" y="272" class="vscode-text"><tspan class="t-punct">-   </tspan><tspan class="t-key">name</tspan><tspan class="t-punct">:</tspan> <tspan class="t-str">'iAMv1'</tspan></text>
+    <text x="60" y="272" class="vscode-text"><tspan class="t-punct">-   </tspan><tspan class="t-key">name</tspan><tspan class="t-punct">:</tspan> <tspan class="t-str">'notes'</tspan></text>
   </g>
   <g class="code-line" style="animation-delay: 1.2s;">
     <text x="40" y="296" class="vscode-text line-num">10</text>
-    <text x="60" y="296" class="vscode-text"><tspan class="t-key" dx="36">lang</tspan> <tspan class="t-punct">:</tspan> <tspan class="t-str">Python</tspan>  <tspan class="t-comment"># ⭐ 0</tspan></text>
+    <text x="60" y="296" class="vscode-text"><tspan class="t-key" dx="36">lang</tspan> <tspan class="t-punct">:</tspan> <tspan class="t-str">HTML</tspan>  <tspan class="t-comment"># ⭐ 0</tspan></text>
   </g>
   <g class="code-line" style="animation-delay: 1.3199999999999998s;">
     <text x="40" y="320" class="vscode-text line-num">11</text>
