@@ -40,11 +40,11 @@
   <line x1="210" y1="210" x2="210.0" y2="100.0" class="st-stroke st-dim" /><line x1="210" y1="210" x2="305.2627944162882" y2="155.0" class="st-stroke st-dim" /><line x1="210" y1="210" x2="305.2627944162883" y2="265.0" class="st-stroke st-dim" /><line x1="210" y1="210" x2="210.0" y2="320.0" class="st-stroke st-dim" /><line x1="210" y1="210" x2="114.73720558371177" y2="265.00000000000006" class="st-stroke st-dim" /><line x1="210" y1="210" x2="114.7372055837117" y2="155.00000000000006" class="st-stroke st-dim" />
 
   <!-- Data Polygon -->
-  <polygon points="210.0,105.5 240.8391048175831,192.19503453200133 229.05255888325766,221.0 210.0,232.0 190.94744111674237,221.0 190.94744111674234,199.0" class="st-poly st-animate-poly" />
+  <polygon points="210.0,105.5 255.78984622003253,183.56321995871264 229.05255888325766,221.0 210.0,232.0 190.94744111674237,221.0 190.94744111674234,199.0" class="st-poly st-animate-poly" />
   
   <!-- Vertices Dots -->
   <circle cx="210.0" cy="105.5" r="3" class="st-accent st-animate-poly" />
-  <circle cx="240.8391048175831" cy="192.19503453200133" r="3" class="st-accent st-animate-poly" />
+  <circle cx="255.78984622003253" cy="183.56321995871264" r="3" class="st-accent st-animate-poly" />
   <circle cx="229.05255888325766" cy="221.0" r="3" class="st-accent st-animate-poly" />
   <circle cx="210.0" cy="232.0" r="3" class="st-accent st-animate-poly" />
   <circle cx="190.94744111674237" cy="221.0" r="3" class="st-accent st-animate-poly" />
