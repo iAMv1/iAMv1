@@ -1,79 +1,52 @@
 name: ARA - Autonomous Repository Agent
 on:
   schedule:
-    - cron: '0 */6 * * *'   # every 6 hours
-  workflow_dispatch:          # manual trigger
-    inputs:
-      task:
-        description: 'Task: health|triage|research'
-        required: true
-        default: 'health'
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
 
 jobs:
-  analyze:
+  triage:
     runs-on: ubuntu-latest
     permissions:
       contents: write
       issues: write
-      pull-requests: write
     steps:
-      - uses: actions/checkout@v4
-      
-      - name: Collect repo state
-        id: state
+      - name: Auto-label unlabeled issues
         run: |
-          echo "issues=$(gh issue list --state open --json number,title,labels --limit 20)" >> $GITHUB_OUTPUT
-          echo "prs=$(gh pr list --state open --json number,title,headRefName --limit 10)" >> $GITHUB_OUTPUT
+          gh issue list --label "" --json number --jq '.[].number' | while read id; do
+            [ -z "$id" ] && continue
+            gh issue edit "$id" --add-label "untriaged" --repo $REPO
+          done
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: Run Gemini analysis
-        id: analyze
-        run: |
-          $PROMPT = @"
-          You are an autonomous repository agent. Analyze this repo state and decide ONE action:
-          
           REPO: ${{ github.repository }}
-          OPEN ISSUES: ${{ steps.state.outputs.issues }}
-          OPEN PRS: ${{ steps.state.outputs.prs }}
-          TRIGGER: ${{ github.event.inputs.task || 'health' }}
-          
-          Rules:
-          - If 'health': check if anything needs attention. If yes, create an issue summary.
-          - If 'triage': label unlabeled issues appropriately.
-          - If 'research': do nothing (reserved).
-          
-          Output ONLY valid JSON: {"action":"create_issue|label|none","title":"...","body":"...","labels":["..."]}
-          "@
-          
-          $body = @{
-            contents = @(@{parts=@(@{text=$PROMPT})})
-            system_instruction = @{parts=@(@{text="You output only valid JSON. No explanation."})}
-          } | ConvertTo-Json
-          
-          $response = Invoke-RestMethod -Uri "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${{ secrets.GEMINI_API_KEY }}" `
-            -Method POST `
-            -ContentType "application/json" `
-            -Body $body
-          
-          $text = $response.candidates[0].content.parts[0].text -replace '```json|```|\n', ''
-          echo "decision=$text" >> $GITHUB_OUTPUT
-        shell: pwsh
-      
-      - name: Execute decision
+
+      - name: Stale check (14d)
         run: |
-          $d = '${{ steps.analyze.outputs.decision }}' | ConvertFrom-Json
-          echo "Action: $($d.action)"
-          echo "Title: $($d.title)"
-          switch ($d.action) {
-            "create_issue" {
-              gh issue create --title "$($d.title)" --body "$($d.body)" --label "$($d.labels -join ',')"
-            }
-            "label" {
-              gh issue list --json number --jq '.[].number' | ForEach-Object {
-                gh issue edit $_ --add-label "$($d.labels -join ',')"
-              }
-            }
-          }
+          gh issue list --state open --json number,updatedAt --jq '.[] | select((now - (.updatedAt | fromdateiso8601)) > 14*86400) | .number' | while read id; do
+            [ -z "$id" ] && continue
+            gh issue comment "$id" --body "Stale 14d. Will close in 7d." --repo $REPO
+            gh issue edit "$id" --add-label "stale" --repo $REPO
+          done
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+
+      - name: Close stale (21d)
+        run: |
+          gh issue list --label "stale" --state open --json number,updatedAt --jq '.[] | select((now - (.updatedAt | fromdateiso8601)) > 21*86400) | .number' | while read id; do
+            [ -z "$id" ] && continue
+            gh issue close "$id" --comment "Auto-closed (21d stale)." --repo $REPO
+          done
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+
+      - name: Health report
+        run: |
+          echo "Open: $(gh issue list --state open --json number --jq 'length' --repo $REPO)"
+          echo "Unlabeled: $(gh issue list --label '' --json number --jq 'length' --repo $REPO)"
+          echo "Stale: $(gh issue list --label stale --state open --json number --jq 'length' --repo $REPO)"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
