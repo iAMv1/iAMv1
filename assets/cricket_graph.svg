@@ -470,7 +470,8 @@
 <rect x="782.5" y="72.5" width="12" height="12" rx="2" class="cricket-level-2" />
 <rect x="782.5" y="87.5" width="12" height="12" rx="2" class="cricket-level-4" />
 <rect x="782.5" y="102.5" width="12" height="12" rx="2" class="cricket-level-2" />
-<rect x="782.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-0" />
+<rect x="782.5" y="117.5" width="12" height="12" rx="2" class="cricket-level-4" />
+<rect x="782.5" y="132.5" width="12" height="12" rx="2" class="cricket-level-2" />
 
   
   <!-- Batsman minimal pixel art / silhouette -->
@@ -517,36 +518,36 @@
             <text x="473.5" y="78.5" class="cricket-popup cricket-popup-contrast">4</text>
         </g>
         <circle r="4" class="cricket-ball" opacity="0">
-          <animateMotion path="M -37.5 110.0 Q 218.0 48.5 473.5 108.5" dur="1.5s" begin="8.0s" repeatCount="indefinite" fill="freeze" />
+          <animateMotion path="M -37.5 110.0 Q 240.5 50.0 518.5 123.5" dur="1.5s" begin="8.0s" repeatCount="indefinite" fill="freeze" />
           <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.9;1" dur="1.5s" begin="8.0s" repeatCount="indefinite" />
         </circle>
         
-        <g style="animation: cricket-pop4 16s ease-out infinite; transform-origin: 473.5px 108.5px;">
-            <text x="473.5" y="108.5" class="cricket-popup cricket-popup-contrast">4</text>
-        </g>
-        <circle r="4" class="cricket-ball" opacity="0">
-          <animateMotion path="M -37.5 110.0 Q 240.5 50.0 518.5 123.5" dur="1.5s" begin="10.0s" repeatCount="indefinite" fill="freeze" />
-          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.9;1" dur="1.5s" begin="10.0s" repeatCount="indefinite" />
-        </circle>
-        
-        <g style="animation: cricket-pop5 16s ease-out infinite; transform-origin: 518.5px 123.5px;">
+        <g style="animation: cricket-pop4 16s ease-out infinite; transform-origin: 518.5px 123.5px;">
             <text x="518.5" y="123.5" class="cricket-popup cricket-popup-contrast">4</text>
         </g>
         <circle r="4" class="cricket-ball" opacity="0">
-          <animateMotion path="M -37.5 110.0 Q 263.0 3.5 563.5 63.5" dur="1.5s" begin="12.0s" repeatCount="indefinite" fill="freeze" />
-          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.9;1" dur="1.5s" begin="12.0s" repeatCount="indefinite" />
+          <animateMotion path="M -37.5 110.0 Q 263.0 3.5 563.5 63.5" dur="1.5s" begin="10.0s" repeatCount="indefinite" fill="freeze" />
+          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.9;1" dur="1.5s" begin="10.0s" repeatCount="indefinite" />
         </circle>
         
-        <g style="animation: cricket-pop6 16s ease-out infinite; transform-origin: 563.5px 63.5px;">
+        <g style="animation: cricket-pop5 16s ease-out infinite; transform-origin: 563.5px 63.5px;">
             <text x="563.5" y="63.5" class="cricket-popup cricket-popup-contrast">6</text>
         </g>
         <circle r="4" class="cricket-ball" opacity="0">
-          <animateMotion path="M -37.5 110.0 Q 375.5 33.5 788.5 93.5" dur="1.5s" begin="14.0s" repeatCount="indefinite" fill="freeze" />
+          <animateMotion path="M -37.5 110.0 Q 375.5 33.5 788.5 93.5" dur="1.5s" begin="12.0s" repeatCount="indefinite" fill="freeze" />
+          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.9;1" dur="1.5s" begin="12.0s" repeatCount="indefinite" />
+        </circle>
+        
+        <g style="animation: cricket-pop6 16s ease-out infinite; transform-origin: 788.5px 93.5px;">
+            <text x="788.5" y="93.5" class="cricket-popup cricket-popup-contrast">4</text>
+        </g>
+        <circle r="4" class="cricket-ball" opacity="0">
+          <animateMotion path="M -37.5 110.0 Q 375.5 50.0 788.5 123.5" dur="1.5s" begin="14.0s" repeatCount="indefinite" fill="freeze" />
           <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.9;1" dur="1.5s" begin="14.0s" repeatCount="indefinite" />
         </circle>
         
-        <g style="animation: cricket-pop7 16s ease-out infinite; transform-origin: 788.5px 93.5px;">
-            <text x="788.5" y="93.5" class="cricket-popup cricket-popup-contrast">4</text>
+        <g style="animation: cricket-pop7 16s ease-out infinite; transform-origin: 788.5px 123.5px;">
+            <text x="788.5" y="123.5" class="cricket-popup cricket-popup-contrast">4</text>
         </g>
         
 
