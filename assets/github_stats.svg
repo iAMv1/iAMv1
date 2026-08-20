@@ -86,7 +86,7 @@
   <circle cx="20" cy="30" r="4" class="accent-dot pulse" />
   <text x="36" y="26" class="title">IAMV1</text>
   <text x="36" y="42" class="subtitle">LIVE SYSTEM TELEMETRY</text>
-  <text x="400" y="36" class="subtitle" text-anchor="end">2026-08-19 01:03 UTC</text>
+  <text x="400" y="36" class="subtitle" text-anchor="end">2026-08-20 01:03 UTC</text>
 
   <!-- Divider -->
   <line x1="20" y1="65" x2="400" y2="65" class="divider" />
@@ -142,8 +142,8 @@
 
   <!-- Section: Languages -->
   <text x="30" y="258" class="section-title">▸ LANGUAGE PROFILE</text>
-  <rect x="30" y="262" width="178.5" height="14" rx="3" fill="#3572A5" opacity="0.85"><animate attributeName="width" from="0" to="178.5" dur="1.2s" fill="freeze" begin="0.3s" /></rect>
-<text x="216.5" y="274" class="label">Python (52.5%)</text>
+  <rect x="30" y="262" width="178.16" height="14" rx="3" fill="#3572A5" opacity="0.85"><animate attributeName="width" from="0" to="178.16" dur="1.2s" fill="freeze" begin="0.3s" /></rect>
+<text x="216.16" y="274" class="label">Python (52.4%)</text>
 <rect x="30" y="284" width="104.03999999999999" height="14" rx="3" fill="#3178c6" opacity="0.85"><animate attributeName="width" from="0" to="104.03999999999999" dur="1.2s" fill="freeze" begin="0.44999999999999996s" /></rect>
 <text x="142.04" y="296" class="label">TypeScript (30.6%)</text>
 <rect x="30" y="306" width="26.86" height="14" rx="3" fill="#DA5B0B" opacity="0.85"><animate attributeName="width" from="0" to="26.86" dur="1.2s" fill="freeze" begin="0.6s" /></rect>
