@@ -46,7 +46,7 @@ import math
 import os
 import sys
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from typing import NoReturn
 from xml.sax.saxutils import escape
 
@@ -474,6 +474,433 @@ def short_stamp(stamp: str) -> str:
         year = parts[0][-2:]
         return f"{parts[2]}\u00b7{parts[1]}\u00b7{year}"
     return stamp[:10]
+
+
+HERO_STYLE = '<style>.bg{fill:#0d1117}.field{fill:#161a22}.panel{fill:#1a1e27}.st-c{stroke:#f4f1e8}.st-d{stroke:#d9dde3}.st-y{stroke:#fbbf24}.st-cy{stroke:#7dd3fc}.st-r{stroke:#e26d5c}.tx{fill:#f4f1e8}.tx-d{fill:#d9dde3}.tx-y{fill:#fbbf24}.tx-cy{fill:#7dd3fc}.tx-r{fill:#e26d5c}.halo{stroke:#0d1117}@media (prefers-color-scheme: light){.bg{fill:#ffffff}.field{fill:#ece5d2}.panel{fill:#ffffff}.st-c{stroke:#2d3142}.st-d{stroke:#5b6270}.st-y{stroke:#b45309}.st-cy{stroke:#0369a1}.st-r{stroke:#b91c1c}.tx{fill:#2d3142}.tx-d{fill:#5b6270}.tx-y{fill:#b45309}.tx-cy{fill:#0369a1}.tx-r{fill:#b91c1c}.halo{stroke:#ffffff}}</style>'
+
+HERO_DEFS = '<defs>\n<filter id="wob" x="-6%" y="-6%" width="112%" height="112%"><feTurbulence type="fractalNoise" baseFrequency="0.028" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3"/></filter>\n<filter id="wob2" x="-6%" y="-6%" width="112%" height="112%"><feTurbulence type="fractalNoise" baseFrequency="0.038" numOctaves="2" seed="11" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4"/></filter>\n</defs>'
+
+# -- living hero: IST scenes, Delhi sky, festivals -------------------------------
+
+IST = timezone(timedelta(hours=5, minutes=30))
+
+# Scene by IST hour: (key, window caption lines). Cron slots 06:00 / 12:00 /
+# 18:00 / 00:00 IST land one per scene.
+def hero_scene(hour: int) -> str:
+    if 5 <= hour < 11:
+        return "morning"
+    if 11 <= hour < 16:
+        return "noon"
+    if 16 <= hour < 20:
+        return "evening"
+    return "night"
+
+
+SCENE_CAPTIONS = {
+    "morning": ("sun's up over Delhi.", "standup in ten."),
+    "noon": ("Delhi at noon.", "brightness: yes."),
+    "evening": ("golden hour.", "compiles faster."),
+    "night": ("the moon keeps attendance", "for the stars too."),
+}
+
+# Festival windows: ((start_month, start_day), (end_month, end_day), key).
+# Dates verified: Diwali 2026 = Nov 8, Holi 2027 = Mar 22, Christmas / New
+# Year / Independence Day are fixed. Wide windows cover the main day even if
+# a regional calendar differs by a day.
+FESTIVALS = (
+    ((3, 20), (3, 24), "holi"),
+    ((8, 13), (8, 16), "independence"),
+    ((11, 6), (11, 11), "diwali"),
+    ((12, 22), (12, 27), "christmas"),
+    ((12, 30), (1, 2), "newyear"),
+)
+
+
+def hero_festival(month: int, day: int) -> str | None:
+    for (sm, sd), (em, ed), key in FESTIVALS:
+        if sm <= em:
+            if (month, day) >= (sm, sd) and (month, day) <= (em, ed):
+                return key
+        elif (month, day) >= (sm, sd) or (month, day) <= (em, ed):
+            return key
+    return None
+
+
+# Open-Meteo current weather for Delhi. No key, no account. Any failure ->
+# None (the scene still renders; the readout is omitted, never guessed).
+WMO_WORDS = {
+    0: "clear", 1: "mostly clear", 2: "partly cloudy", 3: "overcast",
+    45: "fog", 48: "fog", 51: "drizzle", 53: "drizzle", 55: "drizzle",
+    56: "drizzle", 57: "drizzle", 61: "rain", 63: "rain", 65: "rain",
+    66: "rain", 67: "rain", 71: "snow", 73: "snow", 75: "snow", 77: "snow",
+    80: "showers", 81: "showers", 82: "showers", 95: "storm", 96: "storm",
+    99: "storm",
+}
+
+
+def fetch_weather() -> tuple[int, int] | None:
+    """(temperature C, WMO weather code) for Delhi right now, or None."""
+    try:
+        response = requests.get(
+            "https://api.open-meteo.com/v1/forecast",
+            params={"latitude": 28.61, "longitude": 77.21,
+                    "current": "temperature_2m,weather_code"},
+            timeout=15,
+        )
+    except requests.RequestException as exc:
+        print(f"weather: request failed ({exc}); scene renders without it")
+        return None
+    if response.status_code != 200:
+        print(f"weather: HTTP {response.status_code}; scene renders without it")
+        return None
+    try:
+        current = response.json()["current"]
+        return int(current["temperature_2m"]), int(current["weather_code"])
+    except (ValueError, KeyError, TypeError) as exc:
+        print(f"weather: bad payload ({exc}); scene renders without it")
+        return None
+
+
+def sun_disc(cx: float, cy: float, r: float) -> str:
+    rays = []
+    for k in range(8):
+        rad = math.radians(k * 45.0 + 22.5)
+        x1, y1 = cx + (r + 3) * math.cos(rad), cy + (r + 3) * math.sin(rad)
+        x2, y2 = cx + (r + 9) * math.cos(rad), cy + (r + 9) * math.sin(rad)
+        rays.append(f"M{f1(x1)},{f1(y1)} L{f1(x2)},{f1(y2)}")
+    return (
+        f'<circle class="st-y" cx="{f1(cx)}" cy="{f1(cy)}" r="{f1(r)}" '
+        f'stroke-width="2.4"/>'
+        f'<path class="st-y" d="{" ".join(rays)}" stroke-width="2"/>'
+    )
+
+
+def chalk_cloud(x: float, y: float, s: float) -> str:
+    return (
+        f'<path class="st-d" d="M{f1(x)},{f1(y)} '
+        f'a{f1(9 * s)},{f1(9 * s)} 0 0 1 {f1(10 * s)},{f1(-8 * s)} '
+        f'a{f1(8 * s)},{f1(8 * s)} 0 0 1 {f1(16 * s)},{f1(-2 * s)} '
+        f'a{f1(8 * s)},{f1(8 * s)} 0 0 1 {f1(12 * s)},{f1(10 * s)} Z" '
+        f'stroke-width="2" fill="none"/>'
+    )
+
+
+def rain_streaks(x: float, y: float) -> str:
+    return " ".join(
+        f"M{f1(x + i * 16)},{f1(y)} l-6,15" for i in range(6)
+    )
+
+
+def hero_sky(scene: str, code: int | None) -> str:
+    """Everything inside the window pane: sun/moon by IST scene, then real
+    Delhi weather over it (clouds, rain). Cross bars are drawn over this."""
+    parts: list[str] = []
+    if scene == "night":
+        parts.append(
+            '<path class="st-cy" d="M116,84 A20,20 0 1 0 116,126 '
+            'A15,15 0 1 1 116,84 Z" stroke-width="2.4"/>'
+        )
+        parts.append(
+            '<path class="st-cy" d="M228,74 L228,86 M222,80 L234,80" '
+            'stroke-width="2"/>'
+            '<path class="st-cy" d="M244,148 L244,158 M239,153 L249,153" '
+            'stroke-width="1.8"/>'
+            '<path class="st-cy" d="M212,166 L212,174 M208,170 L216,170" '
+            'stroke-width="1.6"/>'
+        )
+    elif scene == "morning":
+        parts.append(sun_disc(110, 140, 13))
+        parts.append(chalk_cloud(190, 100, 0.9))
+    elif scene == "noon":
+        parts.append(sun_disc(190, 85, 15))
+    else:  # evening
+        parts.append(sun_disc(215, 140, 14))
+        parts.append(chalk_cloud(90, 130, 1.0))
+    if code is not None:
+        if code == 1:
+            parts.append(chalk_cloud(200, 120, 0.8))
+        elif code in (2, 3, 45, 48):
+            parts.append(chalk_cloud(120, 110, 1.0))
+            parts.append(chalk_cloud(200, 140, 0.8))
+        if code in (51, 53, 55, 56, 57, 61, 63, 65, 66, 67,
+                    71, 73, 75, 77, 80, 81, 82, 95, 96, 99):
+            parts.append(
+                f'<path class="st-cy" d="{rain_streaks(80, 140)}" '
+                f'stroke-width="1.6"/>'
+            )
+    return "".join(parts)
+
+
+def diya(x: float, y: float) -> str:
+    return (
+        f'<path class="st-y" d="M{f1(x - 10)},{f1(y)} Q{f1(x)},{f1(y + 8)} '
+        f'{f1(x + 10)},{f1(y)}" stroke-width="2.2"/>'
+        f'<path class="st-d" d="M{f1(x - 6)},{f1(y + 8)} L{f1(x + 6)},{f1(y + 8)}" '
+        f'stroke-width="1.6"/>'
+        f'<path class="st-y" d="M{f1(x)},{f1(y - 4)} Q{f1(x + 3)},{f1(y - 10)} '
+        f'{f1(x)},{f1(y - 16)} Q{f1(x - 3)},{f1(y - 10)} {f1(x)},{f1(y - 4)} Z" '
+        f'stroke-width="1.8">'
+        f'<animate attributeName="opacity" values="0.65;1;0.65" dur="1.6s" '
+        f'repeatCount="indefinite"/></path>'
+    )
+
+
+def hero_festival_layer(key: str | None, year: int) -> str:
+    """Doodles that appear on their own: diyas, fairy lights, fireworks,
+    color splashes, a tiny tricolor. Positions avoid every fixed element."""
+    if key == "diwali":
+        return "".join(diya(x, 346) for x in (340, 450, 650))
+    if key == "christmas":
+        bulbs = []
+        for i, x in enumerate((70, 108, 146, 184, 222, 256)):
+            cls = "st-y" if i % 2 == 0 else "st-cy"
+            bulbs.append(
+                f'<circle class="{cls}" cx="{x}" cy="48" r="3.4" '
+                f'stroke-width="1.8">'
+                f'<animate attributeName="opacity" values="1;0.4;1" dur="1.2s" '
+                f'begin="{i * 0.2:.1f}s" repeatCount="indefinite"/></circle>'
+            )
+        return "".join(bulbs)
+    if key == "newyear":
+        bursts = []
+        for cx, cy in ((670, 70), (705, 55), (690, 95)):
+            spokes = " ".join(
+                f"M{cx},{cy} l{f1(10 * math.cos(math.radians(k * 45)))},"
+                f"{f1(10 * math.sin(math.radians(k * 45)))}"
+                for k in range(8)
+            )
+            bursts.append(
+                f'<path class="st-y" d="{spokes}" stroke-width="1.6"/>'
+            )
+        return "".join(bursts) + (
+            f'<text class="tx-y" x="688" y="132" font-size="12" '
+            f'text-anchor="middle">{year}</text>'
+        )
+    if key == "holi":
+        blobs = [
+            (300, 110, 10, "#f9a8d4"), (695, 150, 8, "#fbbf24"),
+            (90, 280, 9, "#7dd3fc"), (620, 320, 8, "#86efac"),
+        ]
+        return "".join(
+            f'<circle cx="{x}" cy="{y}" r="{r}" fill="{color}" '
+            f'fill-opacity="0.45" stroke="none"/>'
+            for x, y, r, color in blobs
+        ) + ('<text class="tx-d" x="90" y="306" font-size="11">holi hai</text>')
+    if key == "independence":
+        return (
+            '<path class="st-c" d="M760,352 L760,310" stroke-width="2"/>'
+            '<rect x="760" y="310" width="24" height="6" fill="#fbbf24" '
+            'stroke="none"/>'
+            '<rect x="760" y="316" width="24" height="6" fill="#f4f1e8" '
+            'stroke="none"/>'
+            '<rect x="760" y="322" width="24" height="6" fill="#7dd3fc" '
+            'stroke="none"/>'
+        )
+    return ""
+
+
+def hero_laptop_line(rows: list[Repo], now: datetime) -> str:
+    if not rows:
+        return "idle · nothing pushed"
+    repo = rows[0]
+    ago = pushed_ago(repo.pushed, now)
+    short = {"pushed today": "today", "pushed yesterday": "yday"}.get(
+        ago, ago.replace("pushed ", "").replace(" ago", "")
+    )
+    line = f"{repo.name} · {short}"
+    return line if len(line) <= 17 else repo.name[:16]
+
+
+def render_hero(
+    rows: list[Repo], stamp: str, moment: datetime,
+    weather: tuple[int, int] | None,
+) -> str:
+    """The room, faithful to the approved hand art, with a living window:
+    IST scene (sun/moon), real Delhi weather over it, festival doodles on
+    their dates, and the laptop screen showing the latest live push."""
+    scene = hero_scene(moment.hour)
+    cap1, cap2 = SCENE_CAPTIONS[scene]
+    code = weather[1] if weather else None
+    sky = hero_sky(scene, code)
+    fest = hero_festival_layer(hero_festival(moment.month, moment.day),
+                               moment.year + (1 if (moment.month, moment.day) >= (12, 30) else 0))
+    readout = ""
+    if weather:
+        temp, wcode = weather
+        readout = (
+            f'<text class="tx-d" x="58" y="182" font-size="10">'
+            f"{temp}\u00b0 \u00b7 {WMO_WORDS.get(wcode, 'sky')}</text>"
+        )
+    laptop = esc(hero_laptop_line(rows, moment))
+    stamp_txt = esc(short_stamp(stamp))
+    desc = (
+        "The room as hero: chalk name on the wall, a window showing the real "
+        f"Delhi sky for the current IST {scene}, tool posters, desk with a "
+        "laptop on the latest live push, streak plant, mug."
+    )
+    return (
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 400" role="img" '
+        f'aria-labelledby="heroTitle heroDesc" font-family="{FONT_STACK}">'
+        f"<title id=\"heroTitle\">PRATHAM, at the desk at {esc(scene)} "
+        f"(IST)</title>"
+        f'<desc id="heroDesc">{esc(desc)}</desc>'
+        f"{HERO_STYLE}"
+        f"{HERO_DEFS}"
+        '<rect class="bg" x="0" y="0" width="860" height="400"/>'
+        '<g id="rules">'
+        '<line x1="24" y1="104" x2="836" y2="104" stroke="#ffffff" '
+        'stroke-opacity="0.06" stroke-width="1"/>'
+        '<line x1="24" y1="176" x2="836" y2="176" stroke="#ffffff" '
+        'stroke-opacity="0.06" stroke-width="1"/>'
+        '<line x1="24" y1="248" x2="836" y2="248" stroke="#ffffff" '
+        'stroke-opacity="0.06" stroke-width="1"/>'
+        '<line x1="24" y1="320" x2="836" y2="320" stroke="#ffffff" '
+        'stroke-opacity="0.06" stroke-width="1"/>'
+        "</g>"
+        '<g filter="url(#wob)" fill="none" stroke-linecap="round" '
+        'stroke-linejoin="round">'
+        '<path class="st-c" d="M48,48 Q156.5,48.8 268,48 Q268.6,119.9 268,192 '
+        'Q156.8,193.3 48,192 Z" stroke-width="3"/>'
+        f"{sky}"
+        f"{readout}"
+        '<path class="st-c" d="M158,50 L158,190 M50,120 L266,120" '
+        'stroke-width="2.2"/>'
+        "</g>"
+        f'<text class="tx-d" x="48" y="216" font-size="12">{esc(cap1)}</text>'
+        f'<text class="tx-d" x="48" y="232" font-size="12">{esc(cap2)}</text>'
+        '<text class="tx-d" x="330" y="86" font-size="15" '
+        'letter-spacing="2">hey, i\'m</text>'
+        '<text class="tx-y" x="326" y="152" font-size="64" font-weight="900" '
+        'letter-spacing="4" font-family="system-ui, -apple-system, '
+        "'Segoe UI', sans-serif\" filter=\"url(#wob2)\">PRATHAM</text>"
+        '<path class="st-y" d="M326,174 Q444.8,171.0 560,170 Q590.4,175.9 624,178" '
+        'stroke-width="3.2" fill="none" stroke-linecap="round"/>'
+        '<text class="tx" x="328" y="206" font-size="16">3D web \u00b7 applied AI '
+        "\u00b7 Delhi \u00b7 ships after midnight</text>"
+        '<g filter="url(#wob)" fill="none">'
+        '<rect class="st-y" x="328" y="224" width="196" height="26" rx="13" '
+        'stroke-width="2"/>'
+        '<text class="tx-y" x="426" y="241" font-size="12" '
+        'text-anchor="middle">3D web \u00b7 three.js enjoyer</text>'
+        "</g>"
+        '<g filter="url(#wob)" fill="none">'
+        '<rect class="st-cy" x="536" y="224" width="182" height="26" rx="13" '
+        'stroke-width="2"/>'
+        '<text class="tx-cy" x="627" y="241" font-size="12" '
+        'text-anchor="middle">AI \u00b7 pytorch gremlin</text>'
+        "</g>"
+        '<g filter="url(#wob)" fill="none" stroke-linecap="round" '
+        'stroke-linejoin="round">'
+        '<g transform="rotate(-2.5 782 96)">'
+        '<rect class="st-c" x="736" y="48" width="92" height="96" rx="4" '
+        'stroke-width="2.4"/>'
+        '<path class="st-y" d="M764,72 L800,88 L764,104 L730,88 Z" '
+        'stroke-width="2"/>'
+        '<path class="st-d" d="M764,72 L764,104 M730,88 L730,120 L764,104 '
+        'M800,88 L764,104 L764,136" stroke-width="1.6"/>'
+        '<text class="tx" x="782" y="136" font-size="12" text-anchor="middle" '
+        'font-weight="bold">three.js</text>'
+        "</g>"
+        '<g transform="rotate(2 782 236)">'
+        '<rect class="st-c" x="736" y="188" width="92" height="96" rx="4" '
+        'stroke-width="2.4"/>'
+        '<path class="st-cy" d="M782,204 C772,216 774,226 782,234 C790,242 '
+        '788,250 782,254 C794,250 800,240 796,240 C804,254 794,268 782,270 '
+        'C770,268 764,256 770,246 C760,236 766,210 782,204 Z" '
+        'stroke-width="1.8"/>'
+        '<text class="tx" x="782" y="276" font-size="12" text-anchor="middle" '
+        'font-weight="bold">pytorch</text>'
+        "</g>"
+        "</g>"
+        '<g transform="rotate(-3 344 252)">'
+        '<rect class="panel st-y" x="304" y="224" width="80" height="56" rx="4" '
+        'stroke-width="2" filter="url(#wob)"/>'
+        '<text class="tx" x="344" y="246" font-size="12" '
+        'text-anchor="middle">shipping</text>'
+        '<text class="tx-y" x="344" y="264" font-size="12" '
+        'text-anchor="middle" font-weight="bold">week</text>'
+        '<path class="st-y" d="M322,262 C338,266 356,266 370,262" '
+        'stroke-width="1.6" fill="none"/>'
+        "</g>"
+        '<g filter="url(#wob)" fill="none" stroke-linecap="round" '
+        'stroke-linejoin="round">'
+        '<path class="st-c" d="M48,356 Q430.4,352.5 812,352" stroke-width="3"/>'
+        '<path class="st-c" d="M84,356 L80,406 M290,354 L294,406 M560,353 '
+        'L556,406 M770,352 L766,406" stroke-width="2.4"/>'
+        '<g transform="rotate(-1 180 320)">'
+        '<rect class="st-c" x="106" y="240" width="150" height="94" rx="6" '
+        'stroke-width="2.6"/>'
+        '<rect class="panel st-c" x="114" y="246" width="134" height="76" '
+        'stroke-width="1.8"/>'
+        '<text class="tx-d" x="122" y="264" font-size="11">'
+        "$ git push origin</text>"
+        f'<text class="tx-y" x="122" y="280" font-size="10">{laptop}</text>'
+        '<rect x="122" y="288" width="7" height="12" fill="#fbbf24" '
+        'stroke="none"/>'
+        '<rect class="st-c" x="98" y="334" width="166" height="8" rx="4" '
+        'stroke-width="2"/>'
+        "</g>"
+        '<g id="plant">'
+        '<path class="st-c" d="M702,333 L701,310 C700.6,296 701.4,292 702,288" '
+        'stroke-width="2.6"/>'
+        '<path class="st-c" d="M702,318 C692,312 682,304 680,292" '
+        'stroke-width="2"/>'
+        '<path class="st-c" d="M702,306 C712,300 720,292 723,282" '
+        'stroke-width="2"/>'
+        '<path class="st-c" d="M702,296 C697,288 695,278 698,274" '
+        'stroke-width="2"/>'
+        '<path class="st-c" d="M702,296 C710,288 716,282 728,278" '
+        'stroke-width="2"/>'
+        '<path class="st-c" d="M701,310 C693,316 686,322 679,320" '
+        'stroke-width="1.8"/>'
+        "</g>"
+        '<g id="leaves">'
+        '<path class="st-c" d="M680,292 Q687,284 683,275 Q676,284 680,292 Z" '
+        'stroke-width="1.8" fill="#7dd3fc" fill-opacity="0.34"/>'
+        '<path class="st-c" d="M728,278 Q736,271 732,263 Q724,271 728,278 Z" '
+        'stroke-width="1.8" fill="#fbbf24" fill-opacity="0.3"/>'
+        '<path class="st-c" d="M698,274 Q705,266 701,260 Q693,266 698,274 Z" '
+        'stroke-width="1.8" fill="#7dd3fc" fill-opacity="0.34"/>'
+        '<path class="st-c" d="M679,320 Q686,312 682,304 Q672,312 679,320 Z" '
+        'stroke-width="1.8" fill="#7dd3fc" fill-opacity="0.28"/>'
+        '<path class="st-c" d="M723,282 Q731,274 727,266 Q719,274 723,282 Z" '
+        'stroke-width="1.8" fill="#7dd3fc" fill-opacity="0.3"/>'
+        '<path class="st-c" d="M706,296 Q714,288 710,280 Q700,288 706,296 Z" '
+        'stroke-width="1.8" fill="#7dd3fc" fill-opacity="0.28"/>'
+        '<path class="st-c" d="M688,314 Q695,306 691,298 Q681,306 688,314 Z" '
+        'stroke-width="1.8" fill="#7dd3fc" fill-opacity="0.26"/>'
+        '<path class="st-c" d="M714,320 Q721,312 717,304 Q709,312 714,320 Z" '
+        'stroke-width="1.8" fill="#7dd3fc" fill-opacity="0.28"/>'
+        '<path class="st-c" d="M702,288 Q709,280 705,272 Q695,280 702,288 Z" '
+        'stroke-width="1.8" fill="#fbbf24" fill-opacity="0.26"/>'
+        "</g>"
+        '<path class="st-y" d="M688,331 L720,331 L716,352 L692,352 Z" '
+        'stroke-width="2"/>'
+        '<path class="st-d" d="M688,331 L720,331" stroke-width="2"/>'
+        '<text class="tx-d" x="702" y="370" font-size="11" '
+        'text-anchor="middle">9 leaves \u00b7 best 12</text>'
+        '<g filter="url(#wob)" fill="none">'
+        '<rect class="st-c" x="576" y="318" width="34" height="30" rx="4" '
+        'stroke-width="2.2"/>'
+        '<path class="st-c" d="M610,324 C622,324 622,340 610,342" '
+        'stroke-width="2"/>'
+        '<path class="st-d" d="M586,308 C584,302 590,298 588,292 M596,308 '
+        'C594,302 600,298 598,292" stroke-width="1.6"/>'
+        "</g>"
+        "</g>"
+        '<path class="st-r" d="M394,228 C400,226 400,230 396,234" '
+        'stroke-width="1.8" fill="none"/>'
+        f"{fest}"
+        f'<g id="stamp">'
+        f'<rect x="774" y="10" width="72" height="20" rx="4" fill="none" '
+        f'class="st-r" stroke-width="1.6"/>'
+        f'<text x="810" y="24" class="tx-r" font-size="11" '
+        f'text-anchor="middle">{stamp_txt}</text>'
+        f'<text x="810" y="42" class="tx-r" font-size="11" '
+        f'text-anchor="middle">\u2713</text>'
+        f"</g>"
+        "</svg>"
+    )
 
 
 # -- variant C: scorecard, wagon wheel, top days, season strip -----------------
@@ -1115,6 +1542,9 @@ def main(argv: list[str] | None = None) -> int:
                         help="render from a JSON fixture on stdin (preview/testing)")
     parser.add_argument("--out-dir", default="assets", help="output directory")
     parser.add_argument("--user", default="iAMv1", help="GitHub login")
+    parser.add_argument("--at", default=None,
+                        help="ISO datetime override for preview "
+                        "(e.g. 2026-11-08T08:00+05:30); naive = UTC")
     args = parser.parse_args(argv)
 
     if args.stdin:
@@ -1132,12 +1562,26 @@ def main(argv: list[str] | None = None) -> int:
             # no token: still REAL data, from public endpoints only
             data = fetch_public(args.user)
 
+    if args.at:
+        try:
+            now = datetime.fromisoformat(args.at)
+        except ValueError:
+            die(f"could not parse --at value: {args.at!r}")
+        if now.tzinfo is None:
+            now = now.replace(tzinfo=timezone.utc)
+    else:
+        now = datetime.now(timezone.utc)
+    if args.stdin:
+        weather = None  # fixture mode: time scenes only, never guessed weather
+    else:
+        weather = fetch_weather()
+
     total, weeks, repos = parse_payload(data, args.user)
     stats = compute_cricket(total, weeks)
 
-    now = datetime.now(timezone.utc)
     stamp = now.strftime("%Y-%m-%d")
     year = now.strftime("%Y")
+    ist_now = now.astimezone(IST)
 
     now_rows = select_now_repos(repos, args.user)
     print(f"now: {[r.name for r in now_rows]} (public, newest pushes first)")
@@ -1146,6 +1590,7 @@ def main(argv: list[str] | None = None) -> int:
 
     # Render EVERYTHING before touching the filesystem: any failure above
     # leaves previously committed SVGs untouched.
+    hero_svg = render_hero(now_rows, stamp, ist_now, weather)
     cricket_svg = render_cricket(stats, weeks, args.user, year, stamp)
     now_svg = render_now(now_rows, args.user, stamp, now)
     ledger_svg = render_ledger(langs, stamp)
@@ -1155,13 +1600,15 @@ def main(argv: list[str] | None = None) -> int:
         (f"chalk-build-{i + 1}", render_build(repo, i, stamp, now))
         for i, repo in enumerate(build_rows)
     ]
-    for name, svg in (("chalk-cricket", cricket_svg), ("chalk-now", now_svg),
-                      ("chalk-ledger", ledger_svg), *build_svgs):
+    for name, svg in (("chalk-hero", hero_svg), ("chalk-cricket", cricket_svg),
+                      ("chalk-now", now_svg), ("chalk-ledger", ledger_svg),
+                      *build_svgs):
         if len(svg.encode("utf-8")) > 60 * 1024:
             die(f"{name}.svg exceeds 60KB")
 
     os.makedirs(args.out_dir, exist_ok=True)
     outputs = {
+        "chalk-hero.svg": hero_svg,
         "chalk-cricket.svg": cricket_svg,
         "chalk-now.svg": now_svg,
         "chalk-ledger.svg": ledger_svg,
