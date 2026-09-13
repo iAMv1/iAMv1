@@ -5,15 +5,15 @@
 <text class="tx-d" x="36" y="66" font-size="12">what the late-night runs sound like</text>
 <g transform="rotate(-1.2 280 230)">
 <g filter="url(#wob)" fill="none" stroke-linecap="round" stroke-linejoin="round">
-<path class="field" d="M50,90 L510,90 L510,370 L50,370 Z" stroke="none"/>
-<path class="st-c" d="M50,94 Q278.5,92.0 510,90 Q508.0,231.9 510,370 Q278.4,370.3 50,370 Z" stroke-width="3"/>
+<path class="field" d="M50,90 L510,90 L510,362 L50,362 Z" stroke="none"/>
+<path class="st-c" d="M50,94 Q278.5,92.0 510,90 Q508.0,231.9 510,362 Q278.4,362.3 50,362 Z" stroke-width="3"/>
 </g>
 <g fill="none" stroke-linecap="round">
 <circle class="st-d" cx="70" cy="110" r="3.4" stroke-width="1.6" filter="url(#wob)"/>
 <circle class="st-d" cx="490" cy="110" r="3.4" stroke-width="1.6" filter="url(#wob)"/>
-<circle class="st-d" cx="70" cy="350" r="3.4" stroke-width="1.6" filter="url(#wob)"/>
-<circle class="st-d" cx="490" cy="350" r="3.4" stroke-width="1.6" filter="url(#wob)"/>
-<circle class="st-d" cx="280" cy="230" r="3.4" stroke-width="1.6" filter="url(#wob)"/>
+<circle class="st-d" cx="70" cy="342" r="3.4" stroke-width="1.6" filter="url(#wob)"/>
+<circle class="st-d" cx="490" cy="342" r="3.4" stroke-width="1.6" filter="url(#wob)"/>
+
 </g>
 <g filter="url(#wob)" fill="none" stroke-linecap="round" stroke-linejoin="round">
 <path class="st-d" d="M86,112 Q254.1,110.0 418,112 Q447.0,123.9 474,136 Q475.9,177.6 474,220 Q281.8,218.5 86,220 Z" stroke-width="2"/>
@@ -45,13 +45,13 @@
 <path class="st-c" d="M381.0,277.8 L387.6,271.7" stroke-width="2"/>
 </g>
 <g filter="url(#wob)" fill="none" stroke-linecap="round">
-<path class="st-d" d="M160,312 Q170.0,325.2 180,338 Q216.0,344.4 250,352 Q264.4,352.6 280,352" stroke-width="1.8"/>
-<path class="st-d" d="M380,314 Q371.4,324.0 360,336 Q336.5,341.2 310,348 Q294.9,351.3 280,352" stroke-width="1.8"/>
-<path class="st-c" d="M236,352 L324,352 L314,366 L246,366 Z" stroke-width="2"/>
-<circle class="st-d" cx="262" cy="359" r="4" stroke-width="1.6"/>
-<circle class="st-d" cx="298" cy="359" r="4" stroke-width="1.6"/>
+<path class="st-d" d="M160,312 Q175,326 196,332 Q222,338 250,340" stroke-width="1.8"/>
+<path class="st-d" d="M380,314 Q368,326 342,332 Q326,338 310,340" stroke-width="1.8"/>
+<path class="st-c" d="M236,340 L324,340 L314,354 L246,354 Z" stroke-width="2"/>
+<circle class="st-d" cx="262" cy="347" r="4" stroke-width="1.6"/>
+<circle class="st-d" cx="298" cy="347" r="4" stroke-width="1.6"/>
 </g>
-<g transform="rotate(35 370 288)"><rect class="st-y" x="366" y="196" width="9" height="86" rx="2" stroke-width="1.8" fill="none"/><path class="st-y" d="M366,240 L370.5,258 L375,240 Z" stroke-width="1.8" fill="none"/><path class="st-c" d="M366,196 L375,196" stroke-width="1.8"/></g>
+<g transform="rotate(35 370.5 288)"><rect class="st-y" x="366" y="225" width="9" height="108" rx="2" stroke-width="1.8" fill="none"/><path class="st-y" d="M366,225 L370.5,207 L375,225 Z" stroke-width="1.8" fill="none"/><path class="st-c" d="M366,333 L375,333" stroke-width="1.8"/></g>
 <path class="st-d" d="M404,262 C412,258 410,250 416,254 M410,250 C416,258 420,252 424,258" stroke-width="1.4" stroke-opacity="0.7" fill="none"/>
 </g>
 <text class="tx-d" x="36" y="374" font-size="12">on loop · side A · 90 min · ↻ rewind, again?</text><g id="stamp"><rect x="474" y="10" width="72" height="20" rx="4" fill="none" class="st-r" stroke-width="1.6"/><text x="510" y="24" class="tx-r" font-size="11" text-anchor="middle">13·09·26</text><text x="510" y="42" class="tx-r" font-size="11" text-anchor="middle">✓</text></g></svg>
