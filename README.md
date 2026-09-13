@@ -79,12 +79,6 @@
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/chalk-music.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/chalk-music.svg">
-  <img src="./assets/chalk-music.svg" alt="doodled cassette: on loop, Lag Ja Gale by Lata Mangeshkar" width="60%">
-</picture>
-
-<picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/chalk-hi.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/chalk-hi.svg">
   <img src="./assets/chalk-hi.svg" alt="chalk mailbox with the flag up: the doors are linked below (linkedin, email, website)" width="100%">
