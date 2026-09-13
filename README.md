@@ -17,32 +17,32 @@
 <table width="100%" cellpadding="0" cellspacing="0">
   <tr>
     <td width="50%" align="center">
-      <a href="https://github.com/iAMv1?tab=repositories">
+      <a href="https://github.com/iAMv1/opencode-pet">
         <img src="./assets/chalk-build-1.svg"
-             alt="showcase project card 1"
+             alt="opencode-pet, no description yet"
              width="100%">
       </a>
     </td>
     <td width="50%" align="center">
-      <a href="https://github.com/iAMv1?tab=repositories">
+      <a href="https://github.com/iAMv1/omnisectester">
         <img src="./assets/chalk-build-2.svg"
-             alt="showcase project card 2"
+             alt="omnisectester, Nation-state grade, defense-in-depth security…"
              width="100%">
       </a>
     </td>
   </tr>
   <tr>
     <td width="50%" align="center">
-      <a href="https://github.com/iAMv1?tab=repositories">
+      <a href="https://github.com/iAMv1/omnisectester-core">
         <img src="./assets/chalk-build-3.svg"
-             alt="showcase project card 3"
+             alt="omnisectester-core, Python scanning engine behind the omnisectester…"
              width="100%">
       </a>
     </td>
     <td width="50%" align="center">
-      <a href="https://github.com/iAMv1?tab=repositories">
+      <a href="https://github.com/iAMv1/itz-pratham-v2">
         <img src="./assets/chalk-build-4.svg"
-             alt="showcase project card 4"
+             alt="itz-pratham-v2, Pratham Nahata — personal portfolio / case-study…"
              width="100%">
       </a>
     </td>
