@@ -18,24 +18,24 @@
   <tr>
     <td width="50%" align="center">
 
-[![defenestrate, Go, deep clean and smart uninstaller for Windows](./assets/chalk-build-1.svg)](https://github.com/iAMv1/defenestrate)
+<a href="https://github.com/iAMv1/defenestrate"><img src="./assets/chalk-build-1.svg" alt="defenestrate, Go, deep clean and smart uninstaller for Windows" width="100%"></a>
 
 </td>
     <td width="50%" align="center">
 
-[![motionforge, JavaScript, zero-dep pure-CSS motion with 135 presets](./assets/chalk-build-2.svg)](https://github.com/iAMv1/motionforge)
+<a href="https://github.com/iAMv1/motionforge"><img src="./assets/chalk-build-2.svg" alt="motionforge, JavaScript, zero-dep pure-CSS motion with 135 presets" width="100%"></a>
 
 </td>
   </tr>
   <tr>
     <td width="50%" align="center">
 
-[![mindpulse, Python, stress detection from typing and mouse](./assets/chalk-build-3.svg)](https://github.com/iAMv1/mindpulse)
+<a href="https://github.com/iAMv1/mindpulse"><img src="./assets/chalk-build-3.svg" alt="mindpulse, Python, stress detection from typing and mouse" width="100%"></a>
 
 </td>
     <td width="50%" align="center">
 
-[![omnisectester, JavaScript, security testing from one CLI](./assets/chalk-build-4.svg)](https://github.com/iAMv1/omnisectester)
+<a href="https://github.com/iAMv1/omnisectester"><img src="./assets/chalk-build-4.svg" alt="omnisectester, JavaScript, security testing from one CLI" width="100%"></a>
 
 </td>
   </tr>
@@ -85,10 +85,26 @@
 
 <table width="100%">
   <tr>
-    <td width="25%" align="center">[![github](./assets/chalk-social-github.svg)](https://github.com/iAMv1)</td>
-    <td width="25%" align="center">[![website](./assets/chalk-social-website.svg)](https://itzpratham.in)</td>
-    <td width="25%" align="center">[![linkedin](./assets/chalk-social-linkedin.svg)](https://www.linkedin.com/in/itzpratham)</td>
-    <td width="25%" align="center">[![email](./assets/chalk-social-email.svg)](mailto:iam1nahata@gmail.com)</td>
+    <td width="25%" align="center">
+
+<a href="https://github.com/iAMv1"><img src="./assets/chalk-social-github.svg" alt="github" width="100%"></a>
+
+</td>
+    <td width="25%" align="center">
+
+<a href="https://itzpratham.in"><img src="./assets/chalk-social-website.svg" alt="website" width="100%"></a>
+
+</td>
+    <td width="25%" align="center">
+
+<a href="https://www.linkedin.com/in/itzpratham"><img src="./assets/chalk-social-linkedin.svg" alt="linkedin" width="100%"></a>
+
+</td>
+    <td width="25%" align="center">
+
+<a href="mailto:iam1nahata@gmail.com"><img src="./assets/chalk-social-email.svg" alt="email" width="100%"></a>
+
+</td>
   </tr>
 </table>
 
