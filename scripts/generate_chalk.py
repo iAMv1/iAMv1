@@ -602,11 +602,17 @@ def hero_sky(scene: str, code: int | None) -> str:
         )
         parts.append(
             '<path class="st-cy" d="M228,74 L228,86 M222,80 L234,80" '
-            'stroke-width="2"/>'
+            'stroke-width="2">'
+            '<animate attributeName="opacity" values="1;0.35;1" dur="2.4s" '
+            'repeatCount="indefinite"/></path>'
             '<path class="st-cy" d="M244,148 L244,158 M239,153 L249,153" '
-            'stroke-width="1.8"/>'
+            'stroke-width="1.8">'
+            '<animate attributeName="opacity" values="1;0.35;1" dur="3.1s" '
+            'begin="0.7s" repeatCount="indefinite"/></path>'
             '<path class="st-cy" d="M212,166 L212,174 M208,170 L216,170" '
-            'stroke-width="1.6"/>'
+            'stroke-width="1.6">'
+            '<animate attributeName="opacity" values="1;0.35;1" dur="2.8s" '
+            'begin="1.3s" repeatCount="indefinite"/></path>'
         )
     elif scene == "morning":
         parts.append(sun_disc(110, 140, 13))
@@ -836,7 +842,10 @@ def render_hero(
         "$ git push origin</text>"
         f'<text class="tx-y" x="122" y="280" font-size="10">{laptop}</text>'
         '<rect x="122" y="288" width="7" height="12" fill="#fbbf24" '
-        'stroke="none"/>'
+        'stroke="none">'
+        '<animate attributeName="opacity" values="1;1;0;0;1" '
+        'keyTimes="0;0.45;0.5;0.95;1" dur="1.1s" repeatCount="indefinite"/>'
+        '</rect>'
         '<rect class="st-c" x="98" y="334" width="166" height="8" rx="4" '
         'stroke-width="2"/>'
         "</g>"
@@ -884,8 +893,20 @@ def render_hero(
         'stroke-width="2.2"/>'
         '<path class="st-c" d="M610,324 C622,324 622,340 610,342" '
         'stroke-width="2"/>'
-        '<path class="st-d" d="M586,308 C584,302 590,298 588,292 M596,308 '
-        'C594,302 600,298 598,292" stroke-width="1.6"/>'
+        '<path class="st-d" d="M586,308 C584,302 590,298 588,292" '
+        'stroke-width="1.6">'
+        '<animateTransform attributeName="transform" type="translate" '
+        'values="0 0;0 -8" dur="2.4s" repeatCount="indefinite"/>'
+        '<animate attributeName="opacity" values="0.9;0" dur="2.4s" '
+        'repeatCount="indefinite"/>'
+        '</path>'
+        '<path class="st-d" d="M596,308 C594,302 600,298 598,292" '
+        'stroke-width="1.6">'
+        '<animateTransform attributeName="transform" type="translate" '
+        'values="0 0;0 -8" dur="2.4s" begin="1.2s" repeatCount="indefinite"/>'
+        '<animate attributeName="opacity" values="0.9;0" dur="2.4s" '
+        'begin="1.2s" repeatCount="indefinite"/>'
+        '</path>'
         "</g>"
         "</g>"
         '<path class="st-r" d="M394,228 C400,226 400,230 396,234" '
@@ -933,9 +954,17 @@ def wheel_c(stats: CricketStats) -> tuple[str, str]:
         rad = math.radians(angle)
         dx, dy = math.cos(rad), math.sin(rad)
         length = WHEEL_R * factor
+        if dx > 0.05:
+            # the top-days table lives right of x=568: spokes (tips,
+            # arrowheads and all) stop at 560
+            length = min(length, (560.0 - WHEEL_CX) / dx)
         ex, ey = WHEEL_CX + length * dx, WHEEL_CY + length * dy
         mx, my = (WHEEL_CX + ex) / 2 - dy * 12.0, (WHEEL_CY + ey) / 2 + dx * 12.0
         delay = 0.15 * n
+        shimmer = (
+            '<animate attributeName="stroke-dashoffset" values="0;-26" '
+            'dur="1.8s" begin="1.2s" repeatCount="indefinite"/>'
+        ) if tag == "6" else ""
         lines.append(
             f'<path class="{cls}" d="M{f1(WHEEL_CX)},{f1(WHEEL_CY)} '
             f'Q{f1(mx)},{f1(my)} {f1(ex)},{f1(ey)}" '
@@ -943,7 +972,7 @@ def wheel_c(stats: CricketStats) -> tuple[str, str]:
             f'<animate attributeName="stroke-dashoffset" from="160" to="0" '
             f'dur="0.9s" begin="{delay:.2f}s" fill="freeze"/>'
             f'<animate attributeName="opacity" from="0" to="1" '
-            f'dur="0.3s" begin="{delay:.2f}s" fill="freeze"/></path>'
+            f'dur="0.3s" begin="{delay:.2f}s" fill="freeze"/>{shimmer}</path>'
         )
         back = math.atan2(WHEEL_CY - ey, WHEEL_CX - ex)
         barbs = "".join(
@@ -973,6 +1002,7 @@ def season_strip(stats: CricketStats, weeks: list[list[Day]]) -> str:
     labels: list[str] = []
     peak_x = ""
     peak_anchor = "start"
+    peak_bx = ""
     prev_month: int | None = None
     for i, total in enumerate(stats.week_totals):
         x = STRIP_X0 + i * pitch
@@ -1012,6 +1042,7 @@ def season_strip(stats: CricketStats, weeks: list[list[Day]]) -> str:
             f'begin="{delay:.2f}s" fill="freeze"/></rect>'
         )
         if peak and total == peak and not peak_x:
+            peak_bx = f1(x + 2.0)
             if x + 2.0 + STRIP_BAR_W + 44.0 <= 830.0:
                 peak_x, peak_anchor = f1(x + 2.0 + STRIP_BAR_W + 5.0), "start"
             else:
@@ -1021,6 +1052,14 @@ def season_strip(stats: CricketStats, weeks: list[list[Day]]) -> str:
         f'text-anchor="{peak_anchor}" style="paint-order:stroke" '
         f'stroke-width="3">{peak}</text>'
     ) if peak else ""
+    if peak_bx:
+        pulse = ('<animate attributeName="opacity" values="1;0.7;1" '
+                 'dur="2s" repeatCount="indefinite"/>')
+        bars = [
+            b.replace('stroke="none">', 'stroke="none">' + pulse, 1)
+            if f'x="{peak_bx}"' in b else b
+            for b in bars
+        ]
     legend = "the season, week by week \u00b7 tall = heavy week, dashed = blank week"
     quip = f"{stats.overs} weeks would be a test match"
     return (
@@ -1040,12 +1079,12 @@ def top_days_table(stats: CricketStats) -> str:
     for i, (day, _angle) in enumerate(
         sorted(stats.shots, key=lambda t: (-t[0].count, t[0].date))
     ):
-        y = 104 + i * 18
+        y = 104 + i * 18  # header sits at 94
         width = max(3.0, 32.0 * day.count / stats.top) if stats.top else 3.0
         cls = "st-y" if day.count >= 6 else ("st-cy" if day.count >= 4 else "st-d")
         rows.append(
-            f'<text class="tx-d" x="576" y="{y}" font-size="12">{esc(day.date[5:])}</text>'
-            f'<path class="{cls}" d="M668,{f1(y - 4)} L{f1(668 + width)},{f1(y - 4)}" '
+            f'<text class="tx-d" x="596" y="{y}" font-size="12">{esc(day.date[5:])}</text>'
+            f'<path class="{cls}" d="M688,{f1(y - 4)} L{f1(688 + width)},{f1(y - 4)}" '
             'stroke-width="3"/>'
             f'<text class="tx" x="816" y="{y}" font-size="12" text-anchor="end" '
             f'font-weight="bold">{day.count}</text>'
@@ -1173,8 +1212,9 @@ def render_cricket(
         '<circle class="st-y" cx="452" cy="210" r="5" stroke-width="2.4" fill="none"/>'
         '<path class="st-y" d="M449,207 C451,209 453,211 455,213" '
         'stroke-width="1.4" fill="none"/>'
-        '<animateMotion dur="2.2s" repeatCount="indefinite" rotate="0" '
-        'path="M452,210 C452,198 452,222 452,210 C452,198 452,222 452,210"/>'
+        '<animateMotion dur="2.6s" repeatCount="indefinite" rotate="0" '
+        'path="M452,178 L452,206 L446,213 L452,238 '
+        'C450,218 454,198 452,178 Z"/>'
         "</g>"
         "</g>"
         '<text class="tx-d halo" x="424" y="214" font-size="12" text-anchor="end" '
@@ -1191,7 +1231,7 @@ def render_cricket(
         '<text class="tx-d" x="649" y="356">nudged around</text>'
         "</g>"
         "<!-- top-8 day table (right) -->"
-        '<text class="tx" x="560" y="94" font-size="12">top days</text>'
+        '<text class="tx" x="580" y="94" font-size="12">top days</text>'
         f"<g>{table}</g>"
         "<!-- the season, week by week (bottom strip) -->"
         '<g id="strip">'
