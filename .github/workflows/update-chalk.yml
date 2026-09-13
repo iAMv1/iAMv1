@@ -23,6 +23,8 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Install dependencies
+        run: pip install requests
       - name: Fixture self-check (parses, markers, budgets)
         run: |
           python scripts/generate_chalk.py --stdin --out-dir /tmp/chalk-fx --at "2026-09-14T12:00+05:30" < scripts/fixture.json
