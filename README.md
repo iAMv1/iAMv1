@@ -7,11 +7,16 @@
 </picture>
 
 <br>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/chalk-cricket.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/chalk-cricket.svg">
+  <img src="./assets/chalk-cricket.svg" alt="chalk cricket scorecard: labeled scoreboard, season stat card, wagon wheel over the pitch, top days table, and the season week by week" width="100%">
+</picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/chalk-notes.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/chalk-notes.svg">
-  <img src="./assets/chalk-notes.svg" alt="three sticky notes: portfolio v2 is live, OOM again at 3am, dark mode is a personality" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/chalk-now.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/chalk-now.svg">
+  <img src="./assets/chalk-now.svg" alt="now building: latest public pushes, generated from live GitHub data" width="100%">
 </picture>
 
 <table width="100%" cellpadding="0" cellspacing="0">
@@ -56,9 +61,9 @@
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/chalk-now.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/chalk-now.svg">
-  <img src="./assets/chalk-now.svg" alt="now building: latest public pushes, generated from live GitHub data" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/chalk-notes.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/chalk-notes.svg">
+  <img src="./assets/chalk-notes.svg" alt="three sticky notes: portfolio v2 is live, OOM again at 3am, dark mode is a personality" width="100%">
 </picture>
 
 <picture>
@@ -74,15 +79,9 @@
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/chalk-cricket.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/chalk-cricket.svg">
-  <img src="./assets/chalk-cricket.svg" alt="chalk cricket scorecard: labeled scoreboard, season stat card, wagon wheel over the pitch, top days table, and the season week by week" width="100%">
-</picture>
-
-<picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/chalk-music.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/chalk-music.svg">
-  <img src="./assets/chalk-music.svg" alt="doodled cassette: on loop, Lag Ja Gale by Lata Mangeshkar" width="100%">
+  <img src="./assets/chalk-music.svg" alt="doodled cassette: on loop, Lag Ja Gale by Lata Mangeshkar" width="60%">
 </picture>
 
 <picture>
