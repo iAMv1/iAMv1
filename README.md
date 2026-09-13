@@ -22,32 +22,32 @@
 <table width="100%" cellpadding="0" cellspacing="0">
   <tr>
     <td width="50%" align="center">
-      <a href="https://github.com/iAMv1/opencode-pet">
+      <a href="https://github.com/iAMv1/filewarden">
         <img src="./assets/chalk-build-1.svg"
-             alt="opencode-pet, no description yet"
+             alt="filewarden, no description yet"
              width="100%">
       </a>
     </td>
     <td width="50%" align="center">
-      <a href="https://github.com/iAMv1/omnisectester">
+      <a href="https://github.com/iAMv1/defenestrate">
         <img src="./assets/chalk-build-2.svg"
-             alt="omnisectester, Nation-state grade, defense-in-depth security…"
+             alt="defenestrate, Throw bloat out the Window. Deep clean, smart…"
              width="100%">
       </a>
     </td>
   </tr>
   <tr>
     <td width="50%" align="center">
-      <a href="https://github.com/iAMv1/omnisectester-core">
+      <a href="https://github.com/iAMv1/opencode-pet">
         <img src="./assets/chalk-build-3.svg"
-             alt="omnisectester-core, Python scanning engine behind the omnisectester…"
+             alt="opencode-pet, no description yet"
              width="100%">
       </a>
     </td>
     <td width="50%" align="center">
-      <a href="https://github.com/iAMv1/itz-pratham-v2">
+      <a href="https://github.com/iAMv1/omnisectester">
         <img src="./assets/chalk-build-4.svg"
-             alt="itz-pratham-v2, Pratham Nahata — personal portfolio / case-study…"
+             alt="omnisectester, Nation-state grade, defense-in-depth security…"
              width="100%">
       </a>
     </td>
