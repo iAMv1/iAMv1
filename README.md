@@ -14,30 +14,38 @@
   <img src="./assets/chalk-notes.svg" alt="three sticky notes: portfolio v2 is live, OOM again at 3am, dark mode is a personality" width="100%">
 </picture>
 
-<table width="100%">
+<table width="100%" cellpadding="0" cellspacing="0">
   <tr>
     <td width="50%" align="center">
-
-<a href="https://github.com/iAMv1?tab=repositories"><img src="./assets/chalk-build-1.svg" alt="showcase project card 1, auto-rotates every two weeks" width="100%"></a>
-
-</td>
+      <a href="https://github.com/iAMv1?tab=repositories">
+        <img src="./assets/chalk-build-1.svg"
+             alt="showcase project card 1"
+             width="100%">
+      </a>
+    </td>
     <td width="50%" align="center">
-
-<a href="https://github.com/iAMv1?tab=repositories"><img src="./assets/chalk-build-2.svg" alt="showcase project card 2, auto-rotates every two weeks" width="100%"></a>
-
-</td>
+      <a href="https://github.com/iAMv1?tab=repositories">
+        <img src="./assets/chalk-build-2.svg"
+             alt="showcase project card 2"
+             width="100%">
+      </a>
+    </td>
   </tr>
   <tr>
     <td width="50%" align="center">
-
-<a href="https://github.com/iAMv1?tab=repositories"><img src="./assets/chalk-build-3.svg" alt="showcase project card 3, auto-rotates every two weeks" width="100%"></a>
-
-</td>
+      <a href="https://github.com/iAMv1?tab=repositories">
+        <img src="./assets/chalk-build-3.svg"
+             alt="showcase project card 3"
+             width="100%">
+      </a>
+    </td>
     <td width="50%" align="center">
-
-<a href="https://github.com/iAMv1?tab=repositories"><img src="./assets/chalk-build-4.svg" alt="showcase project card 4, auto-rotates every two weeks" width="100%"></a>
-
-</td>
+      <a href="https://github.com/iAMv1?tab=repositories">
+        <img src="./assets/chalk-build-4.svg"
+             alt="showcase project card 4"
+             width="100%">
+      </a>
+    </td>
   </tr>
 </table>
 
