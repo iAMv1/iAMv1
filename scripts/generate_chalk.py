@@ -940,8 +940,8 @@ def c_shot_class(count: int) -> tuple[str, str, float, str, str | None]:
     if count >= 4:  # to the fence: cyan, mid-length
         return "st-cy", "2.4", 0.66, "", "4"
     if count >= 2:  # nudged around: thin white, short
-        return "st-c", "1.8", 0.36, "", None
-    return "st-c", "1.8", 0.22, "", None  # single: thin white, very short
+        return "st-c", "1.8", 0.30, "", None
+    return "st-c", "1.8", 0.18, "", None  # single: thin white, very short
 
 
 def wheel_c(stats: CricketStats) -> tuple[str, str]:
@@ -974,13 +974,14 @@ def wheel_c(stats: CricketStats) -> tuple[str, str]:
             f'<animate attributeName="opacity" from="0" to="1" '
             f'dur="0.3s" begin="{delay:.2f}s" fill="freeze"/>{shimmer}</path>'
         )
-        back = math.atan2(WHEEL_CY - ey, WHEEL_CX - ex)
-        barbs = "".join(
-            f"M{f1(ex)},{f1(ey)}L{f1(ex + 8 * math.cos(back + off))},"
-            f"{f1(ey + 8 * math.sin(back + off))}"
-            for off in (0.5, -0.5)
-        )
-        lines.append(f'<path class="{cls}" d="{barbs}" stroke-width="1.8"/>')
+        if tag:
+            back = math.atan2(WHEEL_CY - ey, WHEEL_CX - ex)
+            barbs = "".join(
+                f"M{f1(ex)},{f1(ey)}L{f1(ex + 8 * math.cos(back + off))},"
+                f"{f1(ey + 8 * math.sin(back + off))}"
+                for off in (0.5, -0.5)
+            )
+            lines.append(f'<path class="{cls}" d="{barbs}" stroke-width="1.8"/>')
         if tag:
             tcls = "tx-y" if tag == "6" else "tx-cy"
             lx, ly = ex + 12 * dx, ey + 12 * dy
@@ -1195,15 +1196,15 @@ def render_cricket(
         f'<g font-size="12" text-anchor="middle">{wheel_labels}</g>'
         "<!-- mini pitch: compact strip, worn patch, stumps both ends -->"
         '<g filter="url(#wob)" fill="none" stroke-linecap="round">'
-        '<path class="pitchfill st-c" d="M441,180 C447,179 459,181 463,180 '
-        'C464,198 462,226 463,240 C457,241 447,239 441,240 C440,220 442,200 '
-        '441,180 Z" stroke-width="2.2"/>'
-        '<ellipse class="st-d" cx="452" cy="210" rx="9" ry="3" stroke-width="1.2" '
-        'stroke-opacity="0.45"/>'
-        '<path class="st-c" d="M445,170 L445,180 M452,170 L452,180 M459,170 '
-        'L459,180 M444,169 L460,169" stroke-width="1.6"/>'
-        '<path class="st-c" d="M445,240 L445,250 M452,240 L452,250 M459,240 '
-        'L459,250 M444,251 L460,251" stroke-width="1.6"/>'
+        '<path class="pitchfill st-c" d="M444,186 C448,185 458,187 460,186 '
+'C464,200 462,224 463,240 C457,241 447,239 444,234 C443,218 445,198 '
+'444,186 Z" stroke-width="1.8"/>'
+        '<ellipse class="st-d" cx="452" cy="210" rx="8" ry="2.6" stroke-width="1.1" '
+'stroke-opacity="0.45"/>'
+        '<path class="st-c" d="M447,176 L447,186 M452,176 L452,186 M457,176 '
+'L457,186 M446,175 L458,175" stroke-width="1.4"/>'
+        '<path class="st-c" d="M447,234 L447,244 M452,234 L452,244 M457,234 '
+'L457,244 M446,245 L458,245" stroke-width="1.4"/>'
         "</g>"
         "<!-- the ball: rolls the length of the pitch (SMIL), parks mid-pitch -->"
         '<g filter="url(#wob)">'
