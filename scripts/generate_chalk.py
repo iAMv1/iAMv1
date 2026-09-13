@@ -613,7 +613,7 @@ def top_days_table(stats: CricketStats) -> str:
     for i, (day, _angle) in enumerate(
         sorted(stats.shots, key=lambda t: (-t[0].count, t[0].date))
     ):
-        y = 96 + i * 18
+        y = 104 + i * 18
         width = max(3.0, 32.0 * day.count / stats.top) if stats.top else 3.0
         cls = "st-y" if day.count >= 6 else ("st-cy" if day.count >= 4 else "st-d")
         rows.append(
@@ -654,10 +654,10 @@ def render_cricket(
         f"{notebook_kit(860, 520, short_stamp(stamp))}"
         "<!-- scoreboard strip -->"
         '<g filter="url(#wob2)" fill="none" stroke-linecap="round">'
-        '<path class="st-c" d="M26,12 C240,8 560,14 834,11 C837,30 833,60 835,80 '
-        'C640,84 220,78 25,82 C23,60 27,30 26,12 Z" stroke-width="2.6"/>'
+        '<path class="st-c" d="M26,12 C240,8 560,14 834,11 C837,30 833,52 835,64 '
+        'C640,68 220,66 25,68 C23,50 27,28 26,12 Z" stroke-width="2.6"/>'
         '<path class="st-y" d="M42,52 C120,48 220,55 286,50" stroke-width="2.6"/>'
-        '<path class="st-d" d="M292,18 C290,35 294,55 291,74" stroke-width="2"/>'
+        '<path class="st-d" d="M292,18 C290,30 294,48 291,62" stroke-width="2"/>'
         "</g>"
         "<g>"
         '<text class="tx" x="42" y="44" font-size="26" letter-spacing="3">THE PITCH</text>'
@@ -675,8 +675,6 @@ def render_cricket(
         f'<text class="tx" x="567" y="60" font-size="18" text-anchor="middle">{stats.top}</text>'
         f'<text class="tx-cy" x="641" y="60" font-size="18" text-anchor="middle">{stats.fours}</text>'
         f'<text class="tx-y" x="715" y="60" font-size="18" text-anchor="middle">{stats.sixes}</text>'
-        '<path class="st-cy" d="M320,72 L346,72" stroke-width="2.4"/>'
-        '<text class="tx-d" x="352" y="76" font-size="13">4-5 commits \u00b7 to the fence</text>'
         "</g>"
         "<!-- season stat card (left) -->"
         '<g filter="url(#wob)" fill="none" stroke-linecap="round">'
@@ -766,7 +764,7 @@ def render_cricket(
         '<text class="tx-d" x="649" y="356">nudged around</text>'
         "</g>"
         "<!-- top-8 day table (right) -->"
-        '<text class="tx" x="560" y="84" font-size="12">top days</text>'
+        '<text class="tx" x="560" y="94" font-size="12">top days</text>'
         f"<g>{table}</g>"
         "<!-- the season, week by week (bottom strip) -->"
         '<g id="strip">'
