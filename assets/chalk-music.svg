@@ -25,7 +25,7 @@
 <text class="tx-y" x="436" y="151" font-size="12" text-anchor="middle" font-weight="bold">A</text>
 <text class="tx-d" x="436" y="212" font-size="11" text-anchor="middle">SIDE A →</text>
 </g>
-<g filter="url(#wob)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<g filter="url(#wob)" fill="none" stroke-linecap="round" stroke-linejoin="round"><animateTransform attributeName="transform" type="rotate" from="0 170 288" to="360 170 288" dur="7s" repeatCount="indefinite"/>
 <g filter="url(#wob)" stroke="#d9dde3" fill="none"><circle cx="170" cy="288" r="46" stroke-width="5" stroke-opacity="0.5"/><circle cx="170" cy="288" r="38" stroke-width="4" stroke-opacity="0.4"/><circle cx="170" cy="288" r="30" stroke-width="4" stroke-opacity="0.45"/></g>
 <circle class="st-c" cx="170" cy="288" r="26" stroke-width="2.2"/><circle class="st-c" cx="170" cy="288" r="13" stroke-width="1.8"/>
 <path class="st-c" d="M184.3,292.4 L192.9,295.1" stroke-width="2"/>
@@ -35,7 +35,7 @@
 <path class="st-c" d="M166.7,273.4 L164.7,264.6" stroke-width="2"/>
 <path class="st-c" d="M181.0,277.8 L187.6,271.7" stroke-width="2"/>
 </g>
-<g filter="url(#wob)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<g filter="url(#wob)" fill="none" stroke-linecap="round" stroke-linejoin="round"><animateTransform attributeName="transform" type="rotate" from="0 370 288" to="360 370 288" dur="3.5s" repeatCount="indefinite"/>
 <circle class="st-c" cx="370" cy="288" r="26" stroke-width="2.2"/><circle class="st-c" cx="370" cy="288" r="13" stroke-width="1.8"/>
 <path class="st-c" d="M384.3,292.4 L392.9,295.1" stroke-width="2"/>
 <path class="st-c" d="M373.3,302.6 L375.3,311.4" stroke-width="2"/>

@@ -780,6 +780,183 @@ def render_cricket(
     )
 
 
+# -- rotating build cards (2-week showcase, never stale) --------------------------
+
+BUILD_POOL = 8            # freshest public repos considered for the showcase
+BUILD_ROTATION_DAYS = 14  # the 4-card window slides every two weeks
+
+BUILD_STYLE = (
+    "<style>"
+    "@media (prefers-color-scheme: light){"
+    ".bg{fill:#ffffff}"
+    ".panel{fill:#ffffff}"
+    ".s{stroke:#2d3142}"
+    ".tchalk{fill:#2d3142}"
+    ".tdim{fill:#9aa2b1}"
+    ".ay{stroke:#b45309}"
+    ".ac{stroke:#0369a1}"
+    ".acf{fill:#0369a1}"
+    ".apr{stroke:#b91c1c}"
+    ".aprf{fill:#b91c1c}"
+    "}"
+    ".st-r{stroke:#e26d5c}.tx-r{fill:#e26d5c}"
+    "@media (prefers-color-scheme: light){.st-r{stroke:#b91c1c}.tx-r{fill:#b91c1c}}"
+    "</style>"
+)
+
+BUILD_DEFS = (
+    "<defs>"
+    '<filter id="wob" x="-5%" y="-5%" width="110%" height="110%">'
+    '<feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" '
+    'seed="11" result="n"/>'
+    '<feDisplacementMap in="SourceGraphic" in2="n" scale="3"/>'
+    "</filter>"
+    "</defs>"
+)
+
+# Doodle per primary language (chalk line art, 40x46 box at translate(24,24)).
+BUILD_DOODLES: dict[str, str] = {
+    "Go": (
+        '<g filter="url(#wob)" fill="none" stroke="#7dd3fc" stroke-width="2.6" '
+        'stroke-linecap="round" stroke-linejoin="round" class="ac">'
+        '<path d="M34,2 L18,28"/>'
+        '<path d="M18,28 L8,42 M18,28 L15,43 M18,28 L23,43 M18,28 L29,40"/>'
+        '<path d="M11,34 L27,32"/>'
+        "</g>"
+    ),
+    "JavaScript": (
+        '<g filter="url(#wob)" fill="none" stroke="#fbbf24" stroke-width="2.6" '
+        'stroke-linecap="round" stroke-linejoin="round" class="ay">'
+        '<path d="M26,2 L8,26 L20,26 L18,44 L36,18 L23,18 Z"/>'
+        "</g>"
+    ),
+    "TypeScript": (
+        '<g filter="url(#wob)" fill="none" stroke="#fbbf24" stroke-width="2.6" '
+        'stroke-linecap="round" stroke-linejoin="round" class="ay">'
+        '<path d="M26,2 L8,26 L20,26 L18,44 L36,18 L23,18 Z"/>'
+        "</g>"
+    ),
+    "Python": (
+        '<g filter="url(#wob)" fill="none" stroke="#f9a8d4" stroke-width="2.6" '
+        'stroke-linecap="round" stroke-linejoin="round" class="ap">'
+        '<path d="M4,24 L14,24 L19,10 L26,36 L31,20 L35,24 L42,24"/>'
+        '<circle cx="42" cy="24" r="2.4" fill="#f9a8d4" stroke="none"/>'
+        "</g>"
+    ),
+}
+BUILD_DOODLE_DEFAULT = (
+    '<g filter="url(#wob)" fill="none" stroke="#f4f1e8" stroke-width="2.6" '
+    'stroke-linecap="round" stroke-linejoin="round" class="s">'
+    '<path d="M23,2 L39,8 L39,21 C39,32 31,39 23,43 C15,39 7,32 7,21 L7,8 Z"/>'
+    '<path d="M15,21 L21,27 L31,16" stroke="#7dd3fc" class="ac"/>'
+    "</g>"
+)
+
+
+def select_build_repos(
+    repos: list[Repo], user: str, now: datetime
+) -> list[Repo]:
+    """The 4-card showcase: freshest 8 public repos form the pool, and a
+    4-wide window slides by 2 every BUILD_ROTATION_DAYS. Deterministic per
+    day: same date renders the same cards, and the set visibly refreshes
+    every two weeks so nothing sits stale. Fewer than 4 eligible repos ->
+    render fewer cards honestly."""
+    eligible = [
+        repo
+        for repo in repos
+        if repo.visibility == "PUBLIC" and repo.name.lower() != user.lower()
+    ]
+    eligible.sort(key=lambda r: (-r.pushed.timestamp(), r.name))
+    pool = eligible[:BUILD_POOL]
+    if not pool:
+        return []
+    epoch = datetime(2026, 1, 1, tzinfo=timezone.utc).date()
+    period = max(0, (now.date() - epoch).days) // BUILD_ROTATION_DAYS
+    start = (period * 2) % len(pool)
+    return [pool[(start + k) % len(pool)] for k in range(min(4, len(pool)))]
+
+
+def wrap_two(text: str, first: int = 34, second: int = 36) -> tuple[str, str]:
+    """Split a blurb into two word-boundary lines for the card body."""
+    words = (text or "no description yet").split()
+    line1: list[str] = []
+    rest: list[str] = []
+    for word in words:
+        target = line1 if not rest else rest
+        limit = first if not rest else second
+        if len(" ".join(target + [word])) <= limit:
+            target.append(word)
+        elif not rest:
+            rest.append(word)
+        else:
+            break
+    return " ".join(line1), " ".join(rest)
+
+
+def render_build(
+    repo: Repo, index: int, stamp: str, now: datetime
+) -> str:
+    """One 410x150 chalk project card from a live repo record."""
+    name = repo.name[:18]
+    lang = (repo.lang or "?")[:14]
+    color = repo.color or FALLBACK_LANG_COLOR
+    doodle = BUILD_DOODLES.get(repo.lang or "", BUILD_DOODLE_DEFAULT)
+    line1, line2 = wrap_two(repo.description)
+    ago = pushed_ago(repo.pushed, now)
+    dot_x = 86 + len(name) * 9 + 14
+    title = f"{repo.name}, {truncate_words(repo.description or 'no description yet', 50)}"
+    return (
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410 150" role="img" '
+        f'font-family="{FONT_STACK}">'
+        f"<title>{esc(title)}</title>"
+        f"<desc>Chalkboard project card for {esc(repo.name)}: live description, "
+        f"language and push age, regenerated from GitHub data.</desc>"
+        f"{BUILD_STYLE}"
+        f"{BUILD_DEFS}"
+        '<rect class="bg" x="0" y="0" width="410" height="150" rx="14" fill="#0d1117"/>'
+        '<g id="rules">'
+        '<line x1="24" y1="42" x2="386" y2="42" stroke="#ffffff" '
+        'stroke-opacity="0.06" stroke-width="1"/>'
+        '<line x1="24" y1="69" x2="386" y2="69" stroke="#ffffff" '
+        'stroke-opacity="0.06" stroke-width="1"/>'
+        '<line x1="24" y1="96" x2="386" y2="96" stroke="#ffffff" '
+        'stroke-opacity="0.06" stroke-width="1"/>'
+        '<line x1="24" y1="123" x2="386" y2="123" stroke="#ffffff" '
+        'stroke-opacity="0.06" stroke-width="1"/>'
+        "</g>"
+        '<rect class="panel s" x="8" y="8" width="394" height="134" fill="#171a21" '
+        'stroke="#f4f1e8" stroke-width="2.5" filter="url(#wob)" '
+        'transform="rotate(-0.6 205 75)"/>'
+        '<g transform="translate(24,24)">'
+        f"{doodle}"
+        "</g>"
+        f'<text class="tchalk" x="86" y="50" font-size="16" font-weight="bold" '
+        f'fill="#f4f1e8">{esc(name)}</text>'
+        f'<circle cx="{dot_x}" cy="44" r="4" fill="{esc(color)}" class="acf"/>'
+        f'<text class="tdim" x="{dot_x + 10}" y="49" font-size="12" '
+        f'fill="#d9dde3">{esc(lang)}</text>'
+        f'<text class="tdim" x="86" y="76" font-size="13" fill="#d9dde3">'
+        f"{esc(line1)}</text>"
+        f'<text class="tdim" x="86" y="94" font-size="13" fill="#d9dde3">'
+        f"{esc(line2)}</text>"
+        f'<text class="tdim" x="384" y="68" font-size="10" text-anchor="end" '
+        f'fill="#d9dde3">{esc(ago)}</text>'
+        '<g filter="url(#wob)" fill="none" stroke="#fbbf24" stroke-width="2.2" '
+        'stroke-linecap="round" class="ay">'
+        '<path d="M336,120 C356,116 372,120 388,116 M382,110 L389,116 L382,122"/>'
+        "</g>"
+        '<g filter="url(#wob)" fill="none" stroke="#e26d5c" stroke-width="1.6" '
+        'stroke-linecap="round" class="apr">'
+        '<rect x="304" y="10" width="88" height="22" rx="4"/>'
+        "</g>"
+        f'<text x="348" y="25" font-size="11" text-anchor="middle" fill="#e26d5c" '
+        f'class="aprf">{esc(short_stamp(stamp))}</text>'
+        f'<text x="384" y="50" font-size="11" text-anchor="end" fill="#e26d5c" '
+        f'class="aprf">no. {index + 1}</text>'
+        "</svg>"
+    )
+
+
 def truncate_words(text: str, limit: int = 64) -> str:
     """Collapse whitespace, cut at a word boundary near `limit`, add ellipsis."""
     collapsed = " ".join(text.split())
@@ -974,8 +1151,14 @@ def main(argv: list[str] | None = None) -> int:
     cricket_svg = render_cricket(stats, weeks, args.user, year, stamp)
     now_svg = render_now(now_rows, args.user, stamp, now)
     ledger_svg = render_ledger(langs, stamp)
+    build_rows = select_build_repos(repos, args.user, now)
+    print("builds: " + (", ".join(r.name for r in build_rows) or "empty"))
+    build_svgs = [
+        (f"chalk-build-{i + 1}", render_build(repo, i, stamp, now))
+        for i, repo in enumerate(build_rows)
+    ]
     for name, svg in (("chalk-cricket", cricket_svg), ("chalk-now", now_svg),
-                      ("chalk-ledger", ledger_svg)):
+                      ("chalk-ledger", ledger_svg), *build_svgs):
         if len(svg.encode("utf-8")) > 60 * 1024:
             die(f"{name}.svg exceeds 60KB")
 
@@ -985,6 +1168,7 @@ def main(argv: list[str] | None = None) -> int:
         "chalk-now.svg": now_svg,
         "chalk-ledger.svg": ledger_svg,
     }
+    outputs.update({f"{name}.svg": svg for name, svg in build_svgs})
     for filename, svg in outputs.items():
         path = os.path.join(args.out_dir, filename)
         with open(path, "w", encoding="utf-8", newline="\n") as handle:
