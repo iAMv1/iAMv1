@@ -88,7 +88,7 @@ query($login: String!) {
 # Shared chalk language: charcoal canvas, chalk strokes, wobble filters and
 # the light-mode (paper) variant. Mirrors the approved reference SVGs.
 CHALK_CSS = (
-    ".bg{fill:#111318}"
+    ".bg{fill:#0d1117}"
     ".field{fill:#161a22}"
     ".panel{fill:#1a1e27}"
     ".pitchfill{fill:#1b2029}"
@@ -104,10 +104,10 @@ CHALK_CSS = (
     ".f-cy{fill:#7dd3fc}"
     ".st-r{stroke:#e26d5c}"
     ".tx-r{fill:#e26d5c}"
-    ".halo{stroke:#111318}"
-    ".bgf{fill:#111318}"
+    ".halo{stroke:#0d1117}"
+    ".bgf{fill:#0d1117}"
     "@media (prefers-color-scheme: light){"
-    ".bg{fill:#f8f6ee}"
+    ".bg{fill:#ffffff}"
     ".field{fill:#ece5d2}"
     ".panel{fill:#ffffff}"
     ".pitchfill{fill:#e2d9bf}"
@@ -123,8 +123,8 @@ CHALK_CSS = (
     ".f-cy{fill:#0369a1}"
     ".st-r{stroke:#b91c1c}"
     ".tx-r{fill:#b91c1c}"
-    ".halo{stroke:#f8f6ee}"
-    ".bgf{fill:#f8f6ee}"
+    ".halo{stroke:#ffffff}"
+    ".bgf{fill:#ffffff}"
     "}"
 )
 

@@ -3,7 +3,7 @@
 <desc>Chalkboard project card with lightning-bolt doodle, JavaScript language dot, and hand-drawn arrow.</desc>
 <style>
 @media (prefers-color-scheme: light){
-.bg{fill:#f8f6ee}
+.bg{fill:#ffffff}
 .panel{fill:#ffffff}
 .s{stroke:#2d3142}
 .tchalk{fill:#2d3142}
@@ -20,7 +20,7 @@
 <feDisplacementMap in="SourceGraphic" in2="n" scale="3"/>
 </filter>
 </defs>
-<rect class="bg" x="0" y="0" width="410" height="150" rx="14" fill="#111318"/>
+<rect class="bg" x="0" y="0" width="410" height="150" rx="14" fill="#0d1117"/>
 <g id="rules"><line x1="24" y1="42" x2="386" y2="42" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/><line x1="24" y1="69" x2="386" y2="69" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/><line x1="24" y1="96" x2="386" y2="96" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/><line x1="24" y1="123" x2="386" y2="123" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/></g>
 <rect class="panel ay" x="8" y="8" width="394" height="134" fill="#171a21" stroke="#fbbf24" stroke-width="2.5" filter="url(#wob)" transform="rotate(0.7 205 75)"/>
 <g stroke="#ffffff" stroke-opacity="0.06" stroke-width="1">
