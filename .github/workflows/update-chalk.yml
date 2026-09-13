@@ -1,0 +1,38 @@
+# Regenerates the chalkboard widgets daily from live GitHub data.
+# Uses only the default GITHUB_TOKEN (never a PAT), so the push below does
+# not retrigger this workflow (recursion-safe).
+name: Chalkboard widgets
+
+on:
+  schedule:
+    - cron: '30 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  chalk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Generate chalkboard widgets
+        run: python scripts/generate_chalk.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit and push (idempotent, no-op on clean tree)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/chalk-*.svg && git diff --cached --quiet || (git commit -m "[Automated] chalk refresh" && git push)

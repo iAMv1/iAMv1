@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 210" role="img" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace"><title>Say hi: the mailbox with the flag up</title><desc>A chalk mailbox with its flag raised. Always up for a collaboration on interesting ventures.</desc><style>.bg{fill:#111318}.field{fill:#161a22}.panel{fill:#1a1e27}.st-c{stroke:#f4f1e8}.st-d{stroke:#d9dde3}.st-y{stroke:#fbbf24}.st-cy{stroke:#7dd3fc}.st-r{stroke:#e26d5c}.tx{fill:#f4f1e8}.tx-d{fill:#d9dde3}.tx-y{fill:#fbbf24}.tx-cy{fill:#7dd3fc}.tx-r{fill:#e26d5c}.halo{stroke:#111318}@media (prefers-color-scheme: light){.bg{fill:#f8f6ee}.field{fill:#ece5d2}.panel{fill:#ffffff}.st-c{stroke:#2d3142}.st-d{stroke:#5b6270}.st-y{stroke:#b45309}.st-cy{stroke:#0369a1}.st-r{stroke:#b91c1c}.tx{fill:#2d3142}.tx-d{fill:#5b6270}.tx-y{fill:#b45309}.tx-cy{fill:#0369a1}.tx-r{fill:#b91c1c}.halo{stroke:#f8f6ee}}</style><defs>
+<filter id="wob" x="-6%" y="-6%" width="112%" height="112%"><feTurbulence type="fractalNoise" baseFrequency="0.028" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3"/></filter>
+<filter id="wob2" x="-6%" y="-6%" width="112%" height="112%"><feTurbulence type="fractalNoise" baseFrequency="0.038" numOctaves="2" seed="11" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4"/></filter>
+</defs><rect class="bg" x="0" y="0" width="560" height="210"/><g id="rules"><line x1="24" y1="55" x2="536" y2="55" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/><line x1="24" y1="92" x2="536" y2="92" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/><line x1="24" y1="130" x2="536" y2="130" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/><line x1="24" y1="168" x2="536" y2="168" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/></g><g filter="url(#wob)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path class="st-c" d="M96,118 C96,104 114,100 144,100 C174,100 192,104 192,118 L192,158 L96,158 Z" stroke-width="2.6"/>
+<rect class="st-d" x="128" y="126" width="32" height="14" rx="3" stroke-width="1.8"/>
+<path class="st-c" d="M144,158 L144,190" stroke-width="2.6"/>
+<path class="st-d" d="M118,190 C134,193 156,192 172,190" stroke-width="1.6"/>
+<path class="st-y" d="M188,110 L188,76 L208,82 L188,90" stroke-width="2.4"/>
+</g>
+<text class="tx" x="252" y="84" font-size="28" font-weight="bold" letter-spacing="1" filter="url(#wob2)">say hi</text>
+<path class="st-y" d="M252,98 Q286.6,97.2 322,96" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+<text class="tx-d" x="252" y="134" font-size="13">always up for a collab</text>
+<text class="tx-d" x="252" y="156" font-size="13">on interesting ventures.</text>
+<g id="stamp"><rect x="474" y="10" width="72" height="20" rx="4" fill="none" class="st-r" stroke-width="1.6"/><text x="510" y="24" class="tx-r" font-size="11" text-anchor="middle">13·09·26</text><text x="510" y="42" class="tx-r" font-size="11" text-anchor="middle">✓</text></g></svg>

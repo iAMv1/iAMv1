@@ -1,156 +1,136 @@
-<!-- 
-  PREMIUM HACKER PROFILE v4.2
-  Layout: "The Origin Story" 
-  Vibe: Dark Slate / Cyan Neon
--->
-
 <div align="center">
 
-<!-- ========================================== -->
-<!-- 1. THE HERO BANNERS                        -->
-<!-- ========================================== -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/hero-banner-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/hero-banner-dark.svg">
-  <img src="./assets/hero-banner-dark.svg" alt="Profile Hero Banner" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/chalk-hero.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/chalk-hero.svg">
+  <img src="./assets/chalk-hero.svg" alt="the room at 2am: chalk name on the blackboard wall, moon in the window, tool posters, desk with laptop on the live repo, streak plant" width="100%">
 </picture>
 
-<br />
+<br>
 
-<!-- Typing SVG -->
-<a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=3000&pause=1000&color=38bdf8&center=true&vCenter=true&width=800&lines=I+write+Python+and+break+React.;Building+3D+websites+because+flat+is+boring.;Just+figuring+things+out+one+error+at+a+time.;Training+models+and+touching+grass." alt="Typing SVG" />
-</a>
-
-<br><br>
-
-<!-- ========================================== -->
-<!-- 2. THE PERSONA                             -->
-<!-- ========================================== -->
-<p>
-  Yo. I build 3D websites, chaotic full-stack apps, and train AI models in my room.<br>
-  Just a 21yo figuring out how to make screens look cool and systems run fast. 
-</p>
-<p>
-  🔭 Currently building: <b>Next-Gen 3D Web Experiences</b><br>
-  🧠 Currently fighting: <b>CUDA out of memory errors</b><br>
-  ⚡ Fun fact: <b>Everything looks better in dark mode.</b>
-</p>
+I'm Pratham. I build 3D web experiences and train small models in my room. The screen has to feel good. The system has to run fast. Both, ideally. ✎
 
 <br>
 
-<!-- Audio Feed (Sets the vibe for the scroll) -->
-<!-- CASSETTE_LINK_START -->
-<a href="./assets/audio/lag_ja_gale.mp3">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/now_playing.svg">
-    <source media="(prefers-color-scheme: light)" srcset="./assets/now_playing.svg">
-    <img src="./assets/now_playing.svg" alt="Now Playing" width="100%" style="max-width: 400px;">
-  </picture>
-</a>
-<br>
-<!-- NOW_PLAYING_TITLE_START -->Now Playing: Lag Ja Gale - Lata Mangeshkar<!-- NOW_PLAYING_TITLE_END -->
-<br><br>
-<a href="https://github.com/iAMv1/iAMv1/issues/new?title=cassette%7Cprev&body=Just+click+Submit+new+issue+to+play+the+previous+track."><img src="https://img.shields.io/badge/⏮️_Prev-0f172a?style=for-the-badge&logoColor=white" /></a>
-<a href="https://github.com/iAMv1/iAMv1/issues/new?title=cassette%7Cnext&body=Just+click+Submit+new+issue+to+play+the+next+track."><img src="https://img.shields.io/badge/Next_⏭️-0f172a?style=for-the-badge&logoColor=white" /></a>
-
-<br><br><br>
-
-<!-- ========================================== -->
-<!-- 3. THE ARSENAL                             -->
-<!-- ========================================== -->
-<h2>✦ Stack Loadout</h2>
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/3d_stack.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/3d_stack.svg">
-  <img src="./assets/3d_stack.svg" alt="3D Tech Stack" width="100%" style="max-width: 800px;">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/chalk-notes.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/chalk-notes.svg">
+  <img src="./assets/chalk-notes.svg" alt="three sticky notes: portfolio v2 is live, OOM again at 3am, dark mode is a personality" width="100%">
 </picture>
-<br>
-<img src="https://img.shields.io/badge/Next.js-0f172a?style=for-the-badge&logo=nextdotjs&logoColor=white&labelColor=020617" />
-<img src="https://img.shields.io/badge/Three.js-0f172a?style=for-the-badge&logo=threedotjs&logoColor=white&labelColor=020617" />
-<img src="https://img.shields.io/badge/PyTorch-0f172a?style=for-the-badge&logo=pytorch&logoColor=EE4C2C&labelColor=020617" />
-<img src="https://img.shields.io/badge/LangChain-0f172a?style=for-the-badge&logo=langchain&logoColor=white&labelColor=020617" />
-<img src="https://img.shields.io/badge/Docker-0f172a?style=for-the-badge&logo=docker&logoColor=2496ED&labelColor=020617" />
-<img src="https://img.shields.io/badge/Git-0f172a?style=for-the-badge&logo=git&logoColor=F05032&labelColor=020617" />
 
-<br><br><br>
+- 🔭 Rewriting my portfolio. Next.js 16, motion first.
+- 🧠 Fighting CUDA out of memory errors. Batch size 1 and a prayer.
+- 🌙 Dark mode, always. #1E1E1E supremacy.
 
-<!-- ========================================== -->
-<!-- 4. THE GRIND (Side-by-Side)                -->
-<!-- ========================================== -->
-<table width="100%" align="center">
+## ✎ Things I've built
+
+wobbly on purpose. Click a card to open the repo.
+
+<table width="100%">
   <tr>
-    <td align="center" width="50%">
-      <h2>✦ System Telemetry</h2>
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="./assets/github_stats.svg">
-        <source media="(prefers-color-scheme: light)" srcset="./assets/github_stats.svg">
-        <img src="./assets/github_stats.svg" alt="GitHub Stats" width="100%">
-      </picture>
-    </td>
-    <td align="center" width="50%">
-      <h2>✦ System Capabilities</h2>
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="./assets/contribution_dashboard.svg">
-        <source media="(prefers-color-scheme: light)" srcset="./assets/contribution_dashboard.svg">
-        <img src="./assets/contribution_dashboard.svg" alt="Language Radar" width="100%">
-      </picture>
-    </td>
+    <td width="50%" align="center">
+
+[![defenestrate, Go, deep clean and smart uninstaller for Windows](./assets/chalk-build-1.svg)](https://github.com/iAMv1/defenestrate)
+
+</td>
+    <td width="50%" align="center">
+
+[![motionforge, JavaScript, zero-dep pure-CSS motion with 135 presets](./assets/chalk-build-2.svg)](https://github.com/iAMv1/motionforge)
+
+</td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+
+[![mindpulse, Python, stress detection from typing and mouse](./assets/chalk-build-3.svg)](https://github.com/iAMv1/mindpulse)
+
+</td>
+    <td width="50%" align="center">
+
+[![omnisectester, JavaScript, security testing from one CLI](./assets/chalk-build-4.svg)](https://github.com/iAMv1/omnisectester)
+
+</td>
   </tr>
 </table>
 
-<br><br>
+### the toolbox
 
-<!-- ========================================== -->
-<!-- 5. DEEP SCAN (Side-by-Side)                -->
-<!-- ========================================== -->
-<table width="100%" align="center">
-  <tr>
-    <td align="center" width="50%">
-      <h2>✦ Burn Rate Matrix</h2>
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="./assets/wakatime_heatmap.svg">
-        <source media="(prefers-color-scheme: light)" srcset="./assets/wakatime_heatmap.svg">
-        <img src="./assets/wakatime_heatmap.svg" alt="WakaTime Heatmap" width="100%">
-      </picture>
-    </td>
-    <td align="center" width="50%">
-      <h2>✦ Live Directives 🔴</h2>
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="./assets/crt_terminal_missions.svg">
-        <source media="(prefers-color-scheme: light)" srcset="./assets/crt_terminal_missions.svg">
-        <img src="./assets/crt_terminal_missions.svg" alt="Live Tasks" width="100%">
-      </picture>
-    </td>
-  </tr>
-</table>
+what the ledger is made of, drawn badly on purpose.
 
-<br><br><br>
-
-<!-- ========================================== -->
-<!-- 6. THE IMPACT                              -->
-<!-- ========================================== -->
-<h2>✦ The Pitch — Contribution Cricket 🏏</h2>
-<p>Every commit is a delivery. High-commit days light up as boundaries & sixes.</p>
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/cricket_graph.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/cricket_graph.svg">
-  <img src="./assets/cricket_graph.svg" alt="Cricket Contributions" width="100%" style="max-width: 800px;">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/chalk-stack.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/chalk-stack.svg">
+  <img src="./assets/chalk-stack.svg" alt="the toolbox: hand-drawn chalk brand logos (Python snake, C, TypeScript, JavaScript, SQL cylinder, HTML5 shield) with pill rows of frameworks, deep learning topics and tools" width="100%">
 </picture>
 
-<br><br>
+### now building
 
-<!-- ========================================== -->
-<!-- 7. VISITOR COUNTER                         -->
-<!-- ========================================== -->
+Straight from the repos, no curation.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/chalk-now.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/chalk-now.svg">
+  <img src="./assets/chalk-now.svg" alt="now building: latest public pushes, generated from live GitHub data" width="100%">
+</picture>
+
+### the ledger
+
+Languages by bytes, public repos only.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/chalk-ledger.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/chalk-ledger.svg">
+  <img src="./assets/chalk-ledger.svg" alt="the ledger: top languages by bytes across public repos, generated from live data" width="100%">
+</picture>
+
+## ✎ How I got here
+
+follow the chalk dust. Started with `print("hello")`, now mixing it all :sparkles:
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/chalk-journey.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/chalk-journey.svg">
+  <img src="./assets/chalk-journey.svg" alt="hand-drawn chalk map: door from print(hello) to pytorch camp, three.js bazaar, llm apps post, ending at the 3D×AI observatory, you are here" width="100%">
+</picture>
+
+## 🏏 The Pitch, a season in commits
+
+My commits, drawn as a cricket season. 🏏
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/chalk-cricket.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/chalk-cricket.svg">
+  <img src="./assets/chalk-cricket.svg" alt="chalk cricket scorecard: labeled scoreboard, season stat card, wagon wheel over the pitch, top days table, and the season week by week" width="100%">
+</picture>
+
+## ♪ On loop
+
+doodled cassette, real songs. What the late night training runs sound like :headphones:
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/chalk-music.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/chalk-music.svg">
+  <img src="./assets/chalk-music.svg" alt="doodled cassette: on loop, Lag Ja Gale by Lata Mangeshkar" width="100%">
+</picture>
+
+[Lag Ja Gale · Lata Mangeshkar](https://www.youtube.com/results?search_query=lag+ja+gale+lata+mangeshkar) · [Pal Pal Dil Ke Paas · Kishore Kumar](https://www.youtube.com/results?search_query=pal+pal+dil+ke+paas+kishore+kumar) · [Chaudhvin Ka Chand · Mohammed Rafi](https://www.youtube.com/results?search_query=chaudhvin+ka+chand+mohammed+rafi)
+
+## ✎ Say hi
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/chalk-hi.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/chalk-hi.svg">
+  <img src="./assets/chalk-hi.svg" alt="chalk mailbox with the flag up: the doors are linked below (linkedin, email, website)" width="100%">
+</picture>
+
+| | | | |
+|---|---|---|---|
+| [![github](./assets/chalk-social-github.svg)](https://github.com/iAMv1) | [![website](./assets/chalk-social-website.svg)](https://itzpratham.in) | [![linkedin](./assets/chalk-social-linkedin.svg)](https://www.linkedin.com/in/itzpratham) | [![email](./assets/chalk-social-email.svg)](mailto:iam1nahata@gmail.com) |
+
 <br>
-<img src="https://komarev.com/ghpvc/?username=iAMv1&style=for-the-badge&color=0f172a&labelColor=020617&label=PROFILE+VIEWS" alt="Profile Views" />
 
-<br><br>
+<img src="https://komarev.com/ghpvc/?username=iAMv1&style=for-the-badge&color=0f172a&labelColor=020617&label=PROFILE+VIEWS" alt="Profile Views">
 
-<!-- ========================================== -->
-<!-- 8. FOOTER                                  -->
-<!-- ========================================== -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f172a,100:38bdf8&height=100&section=footer" width="100%" />
+*drawn late at night, fueled by old hindi songs*
 
 </div>

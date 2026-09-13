@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 462" role="img" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace"><title>The toolbox: real brand logos, chalk-drawn</title><desc>Six chalk cards with hand-drawn brand logos: the Python double snake, C, the TypeScript square, the JavaScript square, a database cylinder, and the HTML5 shield.</desc><style>.bg{fill:#111318}.field{fill:#161a22}.panel{fill:#1a1e27}.st-c{stroke:#f4f1e8}.st-d{stroke:#d9dde3}.st-y{stroke:#fbbf24}.st-cy{stroke:#7dd3fc}.st-r{stroke:#e26d5c}.tx{fill:#f4f1e8}.tx-d{fill:#d9dde3}.tx-y{fill:#fbbf24}.tx-cy{fill:#7dd3fc}.tx-r{fill:#e26d5c}.halo{stroke:#111318}@media (prefers-color-scheme: light){.bg{fill:#f8f6ee}.field{fill:#ece5d2}.panel{fill:#ffffff}.st-c{stroke:#2d3142}.st-d{stroke:#5b6270}.st-y{stroke:#b45309}.st-cy{stroke:#0369a1}.st-r{stroke:#b91c1c}.tx{fill:#2d3142}.tx-d{fill:#5b6270}.tx-y{fill:#b45309}.tx-cy{fill:#0369a1}.tx-r{fill:#b91c1c}.halo{stroke:#f8f6ee}}</style><defs>
+<filter id="wob" x="-6%" y="-6%" width="112%" height="112%"><feTurbulence type="fractalNoise" baseFrequency="0.028" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3"/></filter>
+<filter id="wob2" x="-6%" y="-6%" width="112%" height="112%"><feTurbulence type="fractalNoise" baseFrequency="0.038" numOctaves="2" seed="11" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4"/></filter>
+</defs><rect class="bg" x="0" y="0" width="860" height="462"/><g id="rules"><line x1="24" y1="120" x2="836" y2="120" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/><line x1="24" y1="203" x2="836" y2="203" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/><line x1="24" y1="286" x2="836" y2="286" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/><line x1="24" y1="370" x2="836" y2="370" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/></g><text class="tx" x="36" y="42" font-size="22" letter-spacing="2" font-weight="bold" filter="url(#wob2)">the toolbox</text>
+<text class="tx-d" x="36" y="64" font-size="12">languages first, then what they build with</text>
+<g transform="translate(30,84)">
+<path class="st-c" d="M0,0 Q63.5,-1.2 128,0 Q126.5,49.8 128,96 Q64.3,96.8 0,96 Z" stroke-width="2.2" filter="url(#wob)" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path class="st-cy" d="M64,22 C46,22 38,32 38,44 L38,52 C38,58 44,60 52,60 L72,60 C78,60 82,64 82,70 L82,76 L92,70 L92,44 C92,30 82,22 64,22 Z" stroke-width="2.4"/><path class="st-y" d="M64,102 C82,102 90,92 90,80 L90,72 C90,66 84,64 76,64 L56,64 C50,64 44,62 44,56 L46,62 L36,68 L36,80 C36,94 46,102 64,102 Z" stroke-width="2.4"/><circle class="f-cy" cx="54" cy="34" r="2.4"/><circle class="st-y" cx="74" cy="90" r="2.4" stroke-width="1.6"/>
+</g>
+<text class="tx" x="94" y="202" font-size="13" text-anchor="middle" font-weight="bold">Python</text>
+<text class="tx-d" x="94" y="224" font-size="11" text-anchor="middle">the daily driver</text>
+<g transform="translate(166,84)">
+<path class="st-c" d="M0,0 Q64.6,-2.1 128,0 Q127.0,46.8 128,96 Q65.0,96.8 0,96 Z" stroke-width="2.2" filter="url(#wob)" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text class="tx-cy" x="64" y="70" font-size="30" text-anchor="middle" font-weight="900">C</text>
+</g>
+<text class="tx" x="230" y="202" font-size="13" text-anchor="middle" font-weight="bold">C</text>
+<text class="tx-d" x="230" y="224" font-size="11" text-anchor="middle">where it got real</text>
+<g transform="translate(302,84)">
+<path class="st-c" d="M0,0 Q62.0,0.9 128,0 Q126.4,47.8 128,96 Q64.8,97.3 0,96 Z" stroke-width="2.2" filter="url(#wob)" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path class="st-cy" d="M24,30 C24,26 28,24 32,24 L96,24 C100,24 104,26 104,30 L104,86 C104,90 100,92 96,92 L32,92 C28,92 24,90 24,86 Z" stroke-width="2.4"/><text class="tx-cy" x="64" y="66" font-size="24" text-anchor="middle" font-weight="bold">TS</text>
+</g>
+<text class="tx" x="366" y="202" font-size="13" text-anchor="middle" font-weight="bold">TypeScript</text>
+<text class="tx-d" x="366" y="224" font-size="11" text-anchor="middle">portfolio v2</text>
+<g transform="translate(438,84)">
+<path class="st-c" d="M0,0 Q63.6,0.2 128,0 Q129.6,46.6 128,96 Q62.8,93.9 0,96 Z" stroke-width="2.2" filter="url(#wob)" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect class="st-y" x="24" y="24" width="80" height="68" rx="4" stroke-width="2.4"/><text class="tx-y" x="64" y="66" font-size="24" text-anchor="middle" font-weight="bold">JS</text>
+</g>
+<text class="tx" x="502" y="202" font-size="13" text-anchor="middle" font-weight="bold">JavaScript</text>
+<text class="tx-d" x="502" y="224" font-size="11" text-anchor="middle">motion · testing</text>
+<g transform="translate(574,84)">
+<path class="st-c" d="M0,0 Q63.0,-0.1 128,0 Q126.2,47.3 128,96 Q62.1,93.8 0,96 Z" stroke-width="2.2" filter="url(#wob)" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse class="st-cy" cx="64" cy="32" rx="24" ry="9" stroke-width="2.2"/>
+<path class="st-cy" d="M40,32 L40,68 C40,75 88,75 88,68 L88,32" stroke-width="2.2"/>
+<path class="st-d" d="M40,50 C40,56 88,56 88,50" stroke-width="1.6"/>
+<path class="st-d" d="M40,42 C40,48 88,48 88,42" stroke-width="1.6"/>
+</g>
+<text class="tx" x="638" y="202" font-size="13" text-anchor="middle" font-weight="bold">SQL</text>
+<text class="tx-d" x="638" y="224" font-size="11" text-anchor="middle">joins · locks</text>
+<g transform="translate(710,84)">
+<path class="st-c" d="M0,0 Q65.7,-0.4 128,0 Q128.4,49.6 128,96 Q62.8,96.1 0,96 Z" stroke-width="2.2" filter="url(#wob)" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path class="st-y" d="M34,26 L94,26 L88,90 L64,98 L40,90 Z" stroke-width="2.4"/>
+<path class="st-cy" d="M64,34 L64,90 M50,40 L46,54 L64,58 M78,40 L82,54 L64,58" stroke-width="2"/>
+</g>
+<text class="tx" x="774" y="202" font-size="13" text-anchor="middle" font-weight="bold">HTML/CSS</text>
+<text class="tx-d" x="774" y="224" font-size="11" text-anchor="middle">fought it, won</text>
+<text class="tx-d" x="30" y="274" font-size="12" letter-spacing="1">frameworks &amp; libraries</text>
+<path class="st-d" d="M247,270 L830,270" stroke-width="1.2" stroke-opacity="0.4"/>
+<g filter="url(#wob)" fill="none"><rect class="st-d" x="30" y="284" width="67" height="24" rx="12" stroke-width="1.8"/><text class="tx-d" x="63" y="300" font-size="12" text-anchor="middle">FastAPI</text></g>
+<g filter="url(#wob)" fill="none"><rect class="st-d" x="107" y="284" width="67" height="24" rx="12" stroke-width="1.8"/><text class="tx-d" x="140" y="300" font-size="12" text-anchor="middle">Next.js</text></g>
+<g filter="url(#wob)" fill="none"><rect class="st-d" x="184" y="284" width="53" height="24" rx="12" stroke-width="1.8"/><text class="tx-d" x="210" y="300" font-size="12" text-anchor="middle">React</text></g>
+<g filter="url(#wob)" fill="none"><rect class="st-d" x="247" y="284" width="88" height="24" rx="12" stroke-width="1.8"/><text class="tx-d" x="291" y="300" font-size="12" text-anchor="middle">Express.js</text></g>
+<g filter="url(#wob)" fill="none"><rect class="st-d" x="345" y="284" width="67" height="24" rx="12" stroke-width="1.8"/><text class="tx-d" x="378" y="300" font-size="12" text-anchor="middle">PyTorch</text></g>
+<g filter="url(#wob)" fill="none"><rect class="st-d" x="422" y="284" width="123" height="24" rx="12" stroke-width="1.8"/><text class="tx-d" x="483" y="300" font-size="12" text-anchor="middle">HF Transformers</text></g>
+<g filter="url(#wob)" fill="none"><rect class="st-d" x="30" y="332" width="102" height="24" rx="12" stroke-width="1.8"/><text class="tx-d" x="81" y="348" font-size="12" text-anchor="middle">scikit-learn</text></g>
+<g filter="url(#wob)" fill="none"><rect class="st-d" x="142" y="332" width="102" height="24" rx="12" stroke-width="1.8"/><text class="tx-d" x="193" y="348" font-size="12" text-anchor="middle">ONNX Runtime</text></g>
+<g filter="url(#wob)" fill="none"><rect class="st-d" x="254" y="332" width="95" height="24" rx="12" stroke-width="1.8"/><text class="tx-d" x="301" y="348" font-size="12" text-anchor="middle">Drizzle ORM</text></g>
+<g filter="url(#wob)" fill="none"><rect class="st-d" x="359" y="332" width="74" height="24" rx="12" stroke-width="1.8"/><text class="tx-d" x="396" y="348" font-size="12" text-anchor="middle">Pydantic</text></g>
+<text class="tx-d" x="30" y="370" font-size="12" letter-spacing="1">deep learning &amp; ai</text>
+<path class="st-d" d="M218,366 L830,366" stroke-width="1.2" stroke-opacity="0.4"/>
+<g filter="url(#wob)" fill="none"><rect class="st-d" x="30" y="380" width="102" height="24" rx="12" stroke-width="1.8"/><text class="tx-d" x="81" y="396" font-size="12" text-anchor="middle">Transformers</text></g>
+<g filter="url(#wob)" fill="none"><rect class="st-d" x="142" y="380" width="46" height="24" rx="12" stroke-width="1.8"/><text class="tx-d" x="165" y="396" font-size="12" text-anchor="middle">LLMs</text></g>
+<g filter="url(#wob)" fill="none"><rect class="st-d" x="198" y="380" width="39" height="24" rx="12" stroke-width="1.8"/><text class="tx-d" x="217" y="396" font-size="12" text-anchor="middle">RAG</text></g>
+<g filter="url(#wob)" fill="none"><rect class="st-d" x="247" y="380" width="39" height="24" rx="12" stroke-width="1.8"/><text class="tx-d" x="266" y="396" font-size="12" text-anchor="middle">GIN</text></g>
+<g filter="url(#wob)" fill="none"><rect class="st-d" x="296" y="380" width="53" height="24" rx="12" stroke-width="1.8"/><text class="tx-d" x="322" y="396" font-size="12" text-anchor="middle">ESM-2</text></g>
+<g filter="url(#wob)" fill="none"><rect class="st-d" x="359" y="380" width="88" height="24" rx="12" stroke-width="1.8"/><text class="tx-d" x="403" y="396" font-size="12" text-anchor="middle">LoRA/QLoRA</text></g>
+<g filter="url(#wob)" fill="none"><rect class="st-d" x="457" y="380" width="95" height="24" rx="12" stroke-width="1.8"/><text class="tx-d" x="504" y="396" font-size="12" text-anchor="middle">Multi-Agent</text></g>
+<g filter="url(#wob)" fill="none"><rect class="st-d" x="562" y="380" width="39" height="24" rx="12" stroke-width="1.8"/><text class="tx-d" x="581" y="396" font-size="12" text-anchor="middle">MCP</text></g>
+<text class="tx-d" x="30" y="418" font-size="12" letter-spacing="1">tools &amp; platforms</text>
+<path class="st-d" d="M211,414 L830,414" stroke-width="1.2" stroke-opacity="0.4"/>
+<g filter="url(#wob)" fill="none"><rect class="st-d" x="30" y="428" width="39" height="24" rx="12" stroke-width="1.8"/><text class="tx-d" x="49" y="444" font-size="12" text-anchor="middle">Git</text></g>
+<g filter="url(#wob)" fill="none"><rect class="st-d" x="79" y="428" width="60" height="24" rx="12" stroke-width="1.8"/><text class="tx-d" x="109" y="444" font-size="12" text-anchor="middle">Docker</text></g>
+<g filter="url(#wob)" fill="none"><rect class="st-d" x="149" y="428" width="60" height="24" rx="12" stroke-width="1.8"/><text class="tx-d" x="179" y="444" font-size="12" text-anchor="middle">Vercel</text></g>
+<g filter="url(#wob)" fill="none"><rect class="st-d" x="219" y="428" width="74" height="24" rx="12" stroke-width="1.8"/><text class="tx-d" x="256" y="444" font-size="12" text-anchor="middle">Supabase</text></g>
+<g filter="url(#wob)" fill="none"><rect class="st-d" x="303" y="428" width="116" height="24" rx="12" stroke-width="1.8"/><text class="tx-d" x="361" y="444" font-size="12" text-anchor="middle">GitHub Actions</text></g>
+<g filter="url(#wob)" fill="none"><rect class="st-d" x="429" y="428" width="67" height="24" rx="12" stroke-width="1.8"/><text class="tx-d" x="462" y="444" font-size="12" text-anchor="middle">Postman</text></g>
+<g filter="url(#wob)" fill="none"><rect class="st-d" x="506" y="428" width="88" height="24" rx="12" stroke-width="1.8"/><text class="tx-d" x="550" y="444" font-size="12" text-anchor="middle">WebSockets</text></g><g id="stamp"><rect x="774" y="10" width="72" height="20" rx="4" fill="none" class="st-r" stroke-width="1.6"/><text x="810" y="24" class="tx-r" font-size="11" text-anchor="middle">13·09·26</text><text x="810" y="42" class="tx-r" font-size="11" text-anchor="middle">✓</text></g></svg>

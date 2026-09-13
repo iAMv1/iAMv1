@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" role="img" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace"><title>Music corner: cassette on loop, Lag Ja Gale, side A</title><desc>A chalk cassette at proper proportions: label with ruled lines, tape window with a full and an empty reel, head opening, capstan holes, and the pencil winding it.</desc><style>.bg{fill:#111318}.field{fill:#161a22}.panel{fill:#1a1e27}.st-c{stroke:#f4f1e8}.st-d{stroke:#d9dde3}.st-y{stroke:#fbbf24}.st-cy{stroke:#7dd3fc}.st-r{stroke:#e26d5c}.tx{fill:#f4f1e8}.tx-d{fill:#d9dde3}.tx-y{fill:#fbbf24}.tx-cy{fill:#7dd3fc}.tx-r{fill:#e26d5c}.halo{stroke:#111318}@media (prefers-color-scheme: light){.bg{fill:#f8f6ee}.field{fill:#ece5d2}.panel{fill:#ffffff}.st-c{stroke:#2d3142}.st-d{stroke:#5b6270}.st-y{stroke:#b45309}.st-cy{stroke:#0369a1}.st-r{stroke:#b91c1c}.tx{fill:#2d3142}.tx-d{fill:#5b6270}.tx-y{fill:#b45309}.tx-cy{fill:#0369a1}.tx-r{fill:#b91c1c}.halo{stroke:#f8f6ee}}</style><defs>
+<filter id="wob" x="-6%" y="-6%" width="112%" height="112%"><feTurbulence type="fractalNoise" baseFrequency="0.028" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3"/></filter>
+<filter id="wob2" x="-6%" y="-6%" width="112%" height="112%"><feTurbulence type="fractalNoise" baseFrequency="0.038" numOctaves="2" seed="11" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4"/></filter>
+</defs><rect class="bg" x="0" y="0" width="560" height="380"/><g id="rules"><line x1="24" y1="99" x2="536" y2="99" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/><line x1="24" y1="167" x2="536" y2="167" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/><line x1="24" y1="236" x2="536" y2="236" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/><line x1="24" y1="304" x2="536" y2="304" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/></g><text class="tx" x="36" y="44" font-size="22" letter-spacing="2" font-weight="bold" filter="url(#wob2)">music corner</text>
+<text class="tx-d" x="36" y="66" font-size="12">what the late-night runs sound like</text>
+<g transform="rotate(-1.2 280 230)">
+<g filter="url(#wob)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path class="field" d="M50,90 L510,90 L510,370 L50,370 Z" stroke="none"/>
+<path class="st-c" d="M50,94 Q278.5,92.0 510,90 Q508.0,231.9 510,370 Q278.4,370.3 50,370 Z" stroke-width="3"/>
+</g>
+<g fill="none" stroke-linecap="round">
+<circle class="st-d" cx="70" cy="110" r="3.4" stroke-width="1.6" filter="url(#wob)"/>
+<circle class="st-d" cx="490" cy="110" r="3.4" stroke-width="1.6" filter="url(#wob)"/>
+<circle class="st-d" cx="70" cy="350" r="3.4" stroke-width="1.6" filter="url(#wob)"/>
+<circle class="st-d" cx="490" cy="350" r="3.4" stroke-width="1.6" filter="url(#wob)"/>
+<circle class="st-d" cx="280" cy="230" r="3.4" stroke-width="1.6" filter="url(#wob)"/>
+</g>
+<g filter="url(#wob)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path class="st-d" d="M86,112 Q254.1,110.0 418,112 Q447.0,123.9 474,136 Q475.9,177.6 474,220 Q281.8,218.5 86,220 Z" stroke-width="2"/>
+<path class="st-d" d="M110,152 C210,109 340,111 430,114" stroke-width="1.2" stroke-opacity="0.5"/>
+<path class="st-d" d="M104,198 C210,195 350,200 444,204" stroke-width="1.2" stroke-opacity="0.5"/>
+<text class="tx" x="104" y="148" font-size="16" font-weight="bold" letter-spacing="1">LAG JA GALE</text>
+<text class="tx-d" x="104" y="172" font-size="12">Lata Mangeshkar · 1963</text>
+<circle class="st-y" cx="436" cy="146" r="13" stroke-width="2"/>
+<text class="tx-y" x="436" y="151" font-size="12" text-anchor="middle" font-weight="bold">A</text>
+<text class="tx-d" x="436" y="212" font-size="11" text-anchor="middle">SIDE A →</text>
+</g>
+<g filter="url(#wob)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<g filter="url(#wob)" stroke="#d9dde3" fill="none"><circle cx="170" cy="288" r="46" stroke-width="5" stroke-opacity="0.5"/><circle cx="170" cy="288" r="38" stroke-width="4" stroke-opacity="0.4"/><circle cx="170" cy="288" r="30" stroke-width="4" stroke-opacity="0.45"/></g>
+<circle class="st-c" cx="170" cy="288" r="26" stroke-width="2.2"/><circle class="st-c" cx="170" cy="288" r="13" stroke-width="1.8"/>
+<path class="st-c" d="M184.3,292.4 L192.9,295.1" stroke-width="2"/>
+<path class="st-c" d="M173.3,302.6 L175.3,311.4" stroke-width="2"/>
+<path class="st-c" d="M159.0,298.2 L152.4,304.3" stroke-width="2"/>
+<path class="st-c" d="M155.7,283.6 L147.1,280.9" stroke-width="2"/>
+<path class="st-c" d="M166.7,273.4 L164.7,264.6" stroke-width="2"/>
+<path class="st-c" d="M181.0,277.8 L187.6,271.7" stroke-width="2"/>
+</g>
+<g filter="url(#wob)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<circle class="st-c" cx="370" cy="288" r="26" stroke-width="2.2"/><circle class="st-c" cx="370" cy="288" r="13" stroke-width="1.8"/>
+<path class="st-c" d="M384.3,292.4 L392.9,295.1" stroke-width="2"/>
+<path class="st-c" d="M373.3,302.6 L375.3,311.4" stroke-width="2"/>
+<path class="st-c" d="M359.0,298.2 L352.4,304.3" stroke-width="2"/>
+<path class="st-c" d="M355.7,283.6 L347.1,280.9" stroke-width="2"/>
+<path class="st-c" d="M366.7,273.4 L364.7,264.6" stroke-width="2"/>
+<path class="st-c" d="M381.0,277.8 L387.6,271.7" stroke-width="2"/>
+</g>
+<g filter="url(#wob)" fill="none" stroke-linecap="round">
+<path class="st-d" d="M160,312 Q170.0,325.2 180,338 Q216.0,344.4 250,352 Q264.4,352.6 280,352" stroke-width="1.8"/>
+<path class="st-d" d="M380,314 Q371.4,324.0 360,336 Q336.5,341.2 310,348 Q294.9,351.3 280,352" stroke-width="1.8"/>
+<path class="st-c" d="M236,352 L324,352 L314,366 L246,366 Z" stroke-width="2"/>
+<circle class="st-d" cx="262" cy="359" r="4" stroke-width="1.6"/>
+<circle class="st-d" cx="298" cy="359" r="4" stroke-width="1.6"/>
+</g>
+<g transform="rotate(35 370 288)"><rect class="st-y" x="366" y="196" width="9" height="86" rx="2" stroke-width="1.8" fill="none"/><path class="st-y" d="M366,240 L370.5,258 L375,240 Z" stroke-width="1.8" fill="none"/><path class="st-c" d="M366,196 L375,196" stroke-width="1.8"/></g>
+<path class="st-d" d="M404,262 C412,258 410,250 416,254 M410,250 C416,258 420,252 424,258" stroke-width="1.4" stroke-opacity="0.7" fill="none"/>
+</g>
+<text class="tx-d" x="36" y="374" font-size="12">on loop · side A · 90 min · ↻ rewind, again?</text><g id="stamp"><rect x="474" y="10" width="72" height="20" rx="4" fill="none" class="st-r" stroke-width="1.6"/><text x="510" y="24" class="tx-r" font-size="11" text-anchor="middle">13·09·26</text><text x="510" y="42" class="tx-r" font-size="11" text-anchor="middle">✓</text></g></svg>
