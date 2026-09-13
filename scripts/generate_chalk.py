@@ -984,7 +984,7 @@ def wheel_c(stats: CricketStats) -> tuple[str, str]:
         if tag:
             tcls = "tx-y" if tag == "6" else "tx-cy"
             lx, ly = ex + 12 * dx, ey + 12 * dy
-            if lx > 568.0 or ly > 338.0:  # keep clear of table / legend bands
+            if lx > 568.0 or ly > 338.0 or ly < 92.0:  # table / legend / scoreboard
                 lx, ly = ex - 14 * dx, ey - 14 * dy
             labels.append(
                 f'<text class="{tcls}" x="{f1(lx)}" y="{f1(ly)}">{tag}</text>'
@@ -1079,7 +1079,7 @@ def top_days_table(stats: CricketStats) -> str:
     for i, (day, _angle) in enumerate(
         sorted(stats.shots, key=lambda t: (-t[0].count, t[0].date))
     ):
-        y = 104 + i * 18  # header sits at 94
+        y = 106 + i * 18  # header sits at 96, box bottom at ~74
         width = max(3.0, 32.0 * day.count / stats.top) if stats.top else 3.0
         cls = "st-y" if day.count >= 6 else ("st-cy" if day.count >= 4 else "st-d")
         rows.append(
@@ -1120,10 +1120,10 @@ def render_cricket(
         f"{notebook_kit(860, 520, short_stamp(stamp))}"
         "<!-- scoreboard strip -->"
         '<g filter="url(#wob2)" fill="none" stroke-linecap="round">'
-        '<path class="st-c" d="M26,12 C240,8 560,14 834,11 C837,30 833,52 835,64 '
-        'C640,68 220,66 25,68 C23,50 27,28 26,12 Z" stroke-width="2.6"/>'
+        '<path class="st-c" d="M26,12 C240,8 560,14 834,11 C837,30 833,56 835,70 '
+'C640,74 220,73 25,74 C23,50 27,28 26,12 Z" stroke-width="2.6"/>'
         '<path class="st-y" d="M42,52 C120,48 220,55 286,50" stroke-width="2.6"/>'
-        '<path class="st-d" d="M292,18 C290,30 294,48 291,62" stroke-width="2"/>'
+        '<path class="st-d" d="M292,18 C290,32 294,52 291,70" stroke-width="2"/>'
         "</g>"
         "<g>"
         '<text class="tx" x="42" y="44" font-size="26" letter-spacing="3">THE PITCH</text>'
@@ -1231,7 +1231,7 @@ def render_cricket(
         '<text class="tx-d" x="649" y="356">nudged around</text>'
         "</g>"
         "<!-- top-8 day table (right) -->"
-        '<text class="tx" x="580" y="94" font-size="12">top days</text>'
+        '<text class="tx" x="580" y="96" font-size="12">top days</text>'
         f"<g>{table}</g>"
         "<!-- the season, week by week (bottom strip) -->"
         '<g id="strip">'
@@ -1378,7 +1378,7 @@ def render_build(
         f"language and push age, regenerated from GitHub data.</desc>"
         f"{BUILD_STYLE}"
         f"{BUILD_DEFS}"
-        '<rect class="bg" x="0" y="0" width="410" height="150" rx="14" fill="#0d1117"/>'
+        '<rect class="bg" x="0" y="0" width="410" height="150" rx="6" fill="#0d1117"/>'
         '<g id="rules">'
         '<line x1="24" y1="42" x2="386" y2="42" stroke="#ffffff" '
         'stroke-opacity="0.06" stroke-width="1"/>'
@@ -1389,13 +1389,13 @@ def render_build(
         '<line x1="24" y1="123" x2="386" y2="123" stroke="#ffffff" '
         'stroke-opacity="0.06" stroke-width="1"/>'
         "</g>"
-        '<rect class="panel s" x="8" y="8" width="394" height="134" fill="#171a21" '
+        '<rect class="panel s" x="3" y="3" width="404" height="144" fill="#171a21" '
         'stroke="#f4f1e8" stroke-width="2.5" filter="url(#wob)" '
         'transform="rotate(-0.6 205 75)"/>'
         '<g transform="translate(24,24)">'
         f"{doodle}"
         "</g>"
-        f'<text class="tchalk" x="86" y="50" font-size="16" font-weight="bold" '
+        f'<text class="tchalk" x="86" y="50" font-size="17" font-weight="bold" '
         f'fill="#f4f1e8">{esc(name)}</text>'
         f'<circle cx="{dot_x}" cy="44" r="4" fill="{esc(color)}" class="acf"/>'
         f'<text class="tdim" x="{dot_x + 10}" y="49" font-size="12" '
@@ -1535,17 +1535,24 @@ def aggregate_languages(repos: list[Repo]) -> list[tuple[str, str, int, float]]:
 
 
 def render_ledger(langs: list[tuple[str, str, int, float]], stamp: str) -> str:
+    """The ledger: ranked language tracks scaled to the top language, so the
+    bars always fill the canvas instead of dying at 28%."""
     if langs:
+        top = max(p for _n, _c, _s, p in langs)
         rows = []
         for i, (name, color, _size, pct) in enumerate(langs):
             y = 108 + i * 44
-            width = max(3.0, 420.0 * pct / 100.0)
+            fill = max(4.0, 360.0 * pct / top) if top else 4.0
             rows.append(
-                f'<text class="tx" x="42" y="{y}" font-size="14">{esc(name[:16])}</text>'
-                f'<rect x="210" y="{y - 12}" width="{f1(width)}" height="16" rx="8" '
-                f'fill="{esc(color)}" fill-opacity="0.28" stroke="{esc(color)}" '
-                f'stroke-width="2" filter="url(#wob)"/>'
-                f'<text class="tx-d" x="{f1(210 + width + 14)}" y="{y}" '
+                f'<text class="tx-d" x="42" y="{y}" font-size="12">'
+                f"{i + 1:02d}</text>"
+                f'<text class="tx" x="76" y="{y}" font-size="14">{esc(name[:14])}</text>'
+                f'<rect x="250" y="{y - 12}" width="360" height="14" rx="7" '
+                f'fill="#ffffff" fill-opacity="0.07" stroke="none"/>'
+                f'<rect x="250" y="{y - 12}" width="{f1(fill)}" height="14" rx="7" '
+                f'fill="{esc(color)}" fill-opacity="0.85" stroke="none" '
+                f'filter="url(#wob)"/>'
+                f'<text class="tx-d" x="624" y="{y}" '
                 f'font-size="13">{f1(pct)}%</text>'
             )
         body = "".join(rows)
