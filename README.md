@@ -14,32 +14,13 @@
   <img src="./assets/chalk-notes.svg" alt="three sticky notes: portfolio v2 is live, OOM again at 3am, dark mode is a personality" width="100%">
 </picture>
 
-<table width="100%">
-  <tr>
-    <td width="50%" align="center">
-
 <a href="https://github.com/iAMv1/defenestrate"><img src="./assets/chalk-build-1.svg" alt="defenestrate, Go, deep clean and smart uninstaller for Windows" width="100%"></a>
-
-</td>
-    <td width="50%" align="center">
 
 <a href="https://github.com/iAMv1/motionforge"><img src="./assets/chalk-build-2.svg" alt="motionforge, JavaScript, zero-dep pure-CSS motion with 135 presets" width="100%"></a>
 
-</td>
-  </tr>
-  <tr>
-    <td width="50%" align="center">
-
 <a href="https://github.com/iAMv1/mindpulse"><img src="./assets/chalk-build-3.svg" alt="mindpulse, Python, stress detection from typing and mouse" width="100%"></a>
 
-</td>
-    <td width="50%" align="center">
-
 <a href="https://github.com/iAMv1/omnisectester"><img src="./assets/chalk-build-4.svg" alt="omnisectester, JavaScript, security testing from one CLI" width="100%"></a>
-
-</td>
-  </tr>
-</table>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/chalk-stack.svg">

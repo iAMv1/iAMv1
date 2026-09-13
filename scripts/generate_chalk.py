@@ -729,19 +729,17 @@ def render_cricket(
         "<!-- wagon wheel: the top days' spokes, drawn in one by one -->"
         f'<g filter="url(#wob)" fill="none" stroke-linecap="round">{wheel}</g>'
         f'<g font-size="12" text-anchor="middle">{wheel_labels}</g>'
-        "<!-- mini pitch: worn strip, creases, stumps both ends -->"
+        "<!-- mini pitch: compact strip, worn patch, stumps both ends -->"
         '<g filter="url(#wob)" fill="none" stroke-linecap="round">'
-        '<path class="pitchfill st-c" d="M438,168 C446,167 462,169 466,168 '
-        'C467,180 465,240 466,256 C458,257 446,255 438,256 C437,226 439,196 '
-        '438,168 Z" stroke-width="2.4"/>'
-        '<ellipse class="st-d" cx="452" cy="212" rx="10" ry="3" stroke-width="1.2" '
+        '<path class="pitchfill st-c" d="M441,180 C447,179 459,181 463,180 '
+        'C464,198 462,226 463,240 C457,241 447,239 441,240 C440,220 442,200 '
+        '441,180 Z" stroke-width="2.2"/>'
+        '<ellipse class="st-d" cx="452" cy="210" rx="9" ry="3" stroke-width="1.2" '
         'stroke-opacity="0.45"/>'
-        '<path class="st-c" d="M444,158 L444,168 M452,158 L452,168 M460,158 '
-        'L460,168 M443,157 L461,157" stroke-width="1.8"/>'
-        '<path class="st-c" d="M444,256 L444,266 M452,256 L452,266 M460,256 '
-        'L460,266 M443,267 L461,267" stroke-width="1.8"/>'
-        '<path class="st-c" d="M438,176 L466,176 M438,248 L466,248" '
-        'stroke-width="1.3" stroke-opacity="0.7"/>'
+        '<path class="st-c" d="M445,170 L445,180 M452,170 L452,180 M459,170 '
+        'L459,180 M444,169 L460,169" stroke-width="1.6"/>'
+        '<path class="st-c" d="M445,240 L445,250 M452,240 L452,250 M459,240 '
+        'L459,250 M444,251 L460,251" stroke-width="1.6"/>'
         "</g>"
         "<!-- the ball: rolls the length of the pitch (SMIL), parks mid-pitch -->"
         '<g filter="url(#wob)">'
