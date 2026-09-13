@@ -14,7 +14,7 @@
   <img src="./assets/chalk-notes.svg" alt="three sticky notes: portfolio v2 is live, OOM again at 3am, dark mode is a personality" width="100%">
 </picture>
 
-<table width="100%">
+<table width="100%" cellpadding="0" cellspacing="0">
   <tr>
     <td width="50%" align="center">
 
