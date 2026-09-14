@@ -5,7 +5,9 @@ name: Chalkboard widgets
 
 on:
   schedule:
-    - cron: '30 0,6,12,18 * * *' # 06:00 / 12:00 / 18:00 / 00:00 IST
+    - cron: '30 0,6,12,18 * * *' # fallback: 06:00 / 12:00 / 18:00 / 00:00 IST
+  repository_dispatch:
+    types: [chalk-tick] # punctual external trigger (cron-job.org, Asia/Kolkata)
   workflow_dispatch:
 
 permissions:
