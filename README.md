@@ -22,32 +22,32 @@
 <table width="100%" cellpadding="0" cellspacing="0">
   <tr>
     <td width="50%" align="center">
-      <a href="https://github.com/iAMv1/opencode-pet">
+      <a href="https://github.com/iAMv1/defenestrate">
         <img src="./assets/chalk-build-1.svg"
-             alt="opencode-pet, no description yet"
+             alt="defenestrate, Throw bloat out the Window. Deep clean, smart…"
              width="100%">
       </a>
     </td>
     <td width="50%" align="center">
-      <a href="https://github.com/iAMv1/omnisectester">
+      <a href="https://github.com/iAMv1/opencode-pet">
         <img src="./assets/chalk-build-2.svg"
-             alt="omnisectester, Nation-state grade, defense-in-depth security…"
+             alt="opencode-pet, no description yet"
              width="100%">
       </a>
     </td>
   </tr>
   <tr>
     <td width="50%" align="center">
-      <a href="https://github.com/iAMv1/ffaa-backend">
+      <a href="https://github.com/iAMv1/product-price-tracker">
         <img src="./assets/chalk-build-3.svg"
-             alt="ffaa-backend, no description yet"
+             alt="product-price-tracker, INE Product Price Tracker — closed-loop scraper…"
              width="100%">
       </a>
     </td>
     <td width="50%" align="center">
-      <a href="https://github.com/iAMv1/ffaa-frontend">
+      <a href="https://github.com/iAMv1/ffaa-backend">
         <img src="./assets/chalk-build-4.svg"
-             alt="ffaa-frontend, no description yet"
+             alt="ffaa-backend, no description yet"
              width="100%">
       </a>
     </td>
