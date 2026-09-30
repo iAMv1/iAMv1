@@ -38,16 +38,16 @@
   </tr>
   <tr>
     <td width="50%" align="center">
-      <a href="https://github.com/iAMv1/product-price-tracker">
+      <a href="https://github.com/iAMv1/bvest">
         <img src="./assets/chalk-build-3.svg"
-             alt="product-price-tracker, INE Product Price Tracker — closed-loop scraper…"
+             alt="bvest, no description yet"
              width="100%">
       </a>
     </td>
     <td width="50%" align="center">
-      <a href="https://github.com/iAMv1/ffaa-backend">
+      <a href="https://github.com/iAMv1/product-price-tracker">
         <img src="./assets/chalk-build-4.svg"
-             alt="ffaa-backend, no description yet"
+             alt="product-price-tracker, INE Product Price Tracker — closed-loop scraper…"
              width="100%">
       </a>
     </td>
