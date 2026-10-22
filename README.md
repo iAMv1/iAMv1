@@ -22,32 +22,32 @@
 <table width="100%" cellpadding="0" cellspacing="0">
   <tr>
     <td width="50%" align="center">
-      <a href="https://github.com/iAMv1/bvest">
-        <img src="./assets/chalk-build-1.svg"
-             alt="bvest, no description yet"
-             width="100%">
-      </a>
-    </td>
-    <td width="50%" align="center">
-      <a href="https://github.com/iAMv1/product-price-tracker">
-        <img src="./assets/chalk-build-2.svg"
-             alt="product-price-tracker, INE Product Price Tracker — closed-loop scraper…"
-             width="100%">
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" align="center">
       <a href="https://github.com/iAMv1/ffaa-backend">
-        <img src="./assets/chalk-build-3.svg"
+        <img src="./assets/chalk-build-1.svg"
              alt="ffaa-backend, no description yet"
              width="100%">
       </a>
     </td>
     <td width="50%" align="center">
       <a href="https://github.com/iAMv1/ffaa-frontend">
-        <img src="./assets/chalk-build-4.svg"
+        <img src="./assets/chalk-build-2.svg"
              alt="ffaa-frontend, no description yet"
+             width="100%">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <a href="https://github.com/iAMv1/motionforge">
+        <img src="./assets/chalk-build-3.svg"
+             alt="motionforge, Zero-dependency pure-CSS motion library: 135…"
+             width="100%">
+      </a>
+    </td>
+    <td width="50%" align="center">
+      <a href="https://github.com/iAMv1/filewarden">
+        <img src="./assets/chalk-build-4.svg"
+             alt="filewarden, no description yet"
              width="100%">
       </a>
     </td>
