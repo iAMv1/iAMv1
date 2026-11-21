@@ -22,32 +22,32 @@
 <table width="100%" cellpadding="0" cellspacing="0">
   <tr>
     <td width="50%" align="center">
-      <a href="https://github.com/iAMv1/defenestrate">
+      <a href="https://github.com/iAMv1/filewarden">
         <img src="./assets/chalk-build-1.svg"
-             alt="defenestrate, Throw bloat out the Window. Deep clean, smart…"
+             alt="filewarden, no description yet"
              width="100%">
       </a>
     </td>
     <td width="50%" align="center">
-      <a href="https://github.com/iAMv1/opencode-pet">
+      <a href="https://github.com/iAMv1/defenestrate">
         <img src="./assets/chalk-build-2.svg"
-             alt="opencode-pet, no description yet"
+             alt="defenestrate, Throw bloat out the Window. Deep clean, smart…"
              width="100%">
       </a>
     </td>
   </tr>
   <tr>
     <td width="50%" align="center">
-      <a href="https://github.com/iAMv1/bvest">
+      <a href="https://github.com/iAMv1/minorproject">
         <img src="./assets/chalk-build-3.svg"
-             alt="bvest, no description yet"
+             alt="minorproject, Intelligent invoice processing with OCR,…"
              width="100%">
       </a>
     </td>
     <td width="50%" align="center">
-      <a href="https://github.com/iAMv1/product-price-tracker">
+      <a href="https://github.com/iAMv1/bvest">
         <img src="./assets/chalk-build-4.svg"
-             alt="product-price-tracker, INE Product Price Tracker — closed-loop scraper…"
+             alt="bvest, no description yet"
              width="100%">
       </a>
     </td>
